@@ -1,0 +1,510 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfb0h (188336) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfd8 vaddr=3ffbdb60 size=02040h (  8256) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c55d4h (808404) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=001055fc vaddr=3ffbfba0 size=0409ch ( 16540) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001096a0 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  d4b4ba953...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD61E0 len 00009E20 (39 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (707) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (709) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (712) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1373) WIFI_UART: GAP event: 10[0m
+[0;32mI (1380) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1384) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1390) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1392) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1439) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1482) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1491) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1501) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1511) MPU6500: Initializating MPU6500[0m
+[0;32mI (1516) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1521) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1526) main_task: Returned from app_main()[0m
+[0;32mI (1646) BMP280: Initializating BMP280[0m
+[0;32mI (1758) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;33mW (43431) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (43436) WIFI_UART: GAP event: 16[0m
+[0;32mI (43527) WIFI_UART: GAP event: 21[0m
+[0;33mW (43623) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (45662) WIFI_UART: SSID: Tien
+ PASS: tien1123
+ IP: 192.168.1.12
+[0m
+[0;32mI (45663) MAIN: Disabling Bluetooth...[0m
+[0;33mW (45679) BT_APPL: bta_jv_rfc_port_to_cb(port_handle:0x2):jv handle:0x0 not FOUND[0m
+[0;33mW (45680) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 3 closed: Closed (res: 19)[0m
+[0;33mW (45690) BT_BTC: spp_free_pending_slots found slot(rfc_handle=0x81) pending to close, close it now![0m
+[0;33mW (45770) BT_HCI: hci cmd send: disconnect: hdl 0x80, rsn:0x13[0m
+[0;33mW (45847) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x16[0m
+[0;32mI (45848) WIFI_UART: GAP event: 17[0m
+[0;32mI (46959) MAIN: Bluetooth disabled[0m
+[0;32mI (46965) wifi:wifi driver task: 3ffdc574, prio:23, stack:3584, core=0[0m
+[0;32mI (46984) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (46985) wifi:wifi certification version: v7.0[0m
+[0;32mI (46985) wifi:config NVS flash: enabled[0m
+[0;32mI (46986) wifi:config nano formating: disabled[0m
+[0;32mI (46990) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (46995) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (46999) wifi:Init management short buffer num: 32[0m
+[0;32mI (47004) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (47008) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (47012) wifi:Init static rx buffer num: 10[0m
+[0;32mI (47016) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (47022) wifi_init: tcpip mbox: 32[0m
+[0;32mI (47024) wifi_init: udp mbox: 6[0m
+[0;32mI (47028) wifi_init: tcp mbox: 6[0m
+[0;32mI (47032) wifi_init: tcp tx win: 5760[0m
+[0;32mI (47037) wifi_init: tcp rx win: 5760[0m
+[0;32mI (47041) wifi_init: tcp mss: 1440[0m
+[0;32mI (47045) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (47056) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (47057) wifi:enable tsf[0m
+[0;32mI (47057) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (47071) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (47073) wifi:state: init -> auth (b0)[0m
+[0;32mI (47079) wifi:state: auth -> assoc (0)[0m
+[0;32mI (47088) wifi:state: assoc -> run (10)[0m
+[0;32mI (47122) wifi:connected with Tien, aid = 22, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (47123) wifi:security: WPA2-PSK, phy: bgn, rssi: -41[0m
+[0;32mI (47128) wifi:pm start, type: 1[0m
+
+[0;32mI (47128) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (47170) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (50146) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (50147) WIFI_UART: Got IP: 192.168.1.17[0m
+[0;32mI (50151) TCP_CONNECT: Connecting to 192.168.1.12:12345...[0m
+[0;32mI (50463) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+����������������������������������������������������������������0;32mI (313366) MAIN: Recording: ON[0m
+[0;32mI (313375) SD_CARD_SPI: Started writing to file: /data/data4.bin[0m
+[0;32mI (313376) MAIN: Cycling file: flushing and reopening to prevent data loss[0m
+[0;32mI (319973) MAIN: Recording: OFF[0m
+[0;32mI (319997) SD_CARD_SPI: File closed[0m
+[0;32mI (320924) MAIN: Recording: ON[0m
+[0;32mI (320931) SD_CARD_SPI: Started writing to file: /data/data5.bin[0m
+[0;32mI (330327) MAIN: Recording: OFF[0m
+[0;32mI (330350) SD_CARD_SPI: File closed[0m
+[0;32mI (331177) MAIN: Recording: ON[0m
+[0;32mI (331183) SD_CARD_SPI: Started writing to file: /data/data6.bin[0m
+[0;32mI (332029) MAIN: Recording: OFF[0m
+[0;32mI (332070) SD_CARD_SPI: File closed[0m
+����������������������������������������������������������������ts Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfb0h (188336) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfd8 vaddr=3ffbdb60 size=02040h (  8256) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c55d4h (808404) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=001055fc vaddr=3ffbfba0 size=0409ch ( 16540) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001096a0 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  d4b4ba953...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD61E0 len 00009E20 (39 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (707) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (709) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (712) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (797) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1380) WIFI_UART: GAP event: 10[0m
+[0;32mI (1387) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1391) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1397) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1399) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1446) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1474) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1483) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1492) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1503) MPU6500: Initializating MPU6500[0m
+[0;32mI (1508) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1512) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1518) main_task: Returned from app_main()[0m
+[0;32mI (1637) BMP280: Initializating BMP280[0m
+[0;32mI (1749) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;33mW (268337) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (268353) WIFI_UART: GAP event: 16[0m
+[0;33mW (271505) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (271506) WIFI_UART: GAP event: 17[0m
+����������������������������������������������������������������[0;33mW (691651) BT_HCI: hcif conn complete: hdl 0x81, st 0x0[0m
+[0;32mI (691657) WIFI_UART: GAP event: 16[0m
+[0;32mI (691760) WIFI_UART: GAP event: 21[0m
+[0;33mW (691852) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (693886) WIFI_UART: SSID: Tien
+ PASS: tien1123
+ IP: 192.168.1.12
+[0m
+[0;32mI (693887) MAIN: Disabling Bluetooth...[0m
+[0;33mW (693895) BT_BTC: spp_free_pending_slots found slot(rfc_handle=0x81) pending to close, close it now![0m
+[0;33mW (693923) BT_APPL: bta_jv_rfc_port_to_cb(port_handle:0x2):jv handle:0x0 not FOUND[0m
+[0;33mW (693924) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 3 closed: Closed (res: 19)[0m
+[0;33mW (693994) BT_HCI: hci cmd send: disconnect: hdl 0x81, rsn:0x13[0m
+[0;33mW (694085) BT_HCI: hcif disc complete: hdl 0x81, rsn 0x16[0m
+[0;32mI (694086) WIFI_UART: GAP event: 17[0m
+[0;32mI (695197) MAIN: Bluetooth disabled[0m
+[0;32mI (695202) wifi:wifi driver task: 3ffd7c54, prio:23, stack:3584, core=0[0m
+[0;32mI (695221) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (695221) wifi:wifi certification version: v7.0[0m
+[0;32mI (695221) wifi:config NVS flash: enabled[0m
+[0;32mI (695222) wifi:config nano formating: disabled[0m
+[0;32mI (695227) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (695232) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (695236) wifi:Init management short buffer num: 32[0m
+[0;32mI (695241) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (695245) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (695249) wifi:Init static rx buffer num: 10[0m
+[0;32mI (695253) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (695259) wifi_init: tcpip mbox: 32[0m
+[0;32mI (695262) wifi_init: udp mbox: 6[0m
+[0;32mI (695266) wifi_init: tcp mbox: 6[0m
+[0;32mI (695270) wifi_init: tcp tx win: 5760[0m
+[0;32mI (695274) wifi_init: tcp rx win: 5760[0m
+[0;32mI (695278) wifi_init: tcp mss: 1440[0m
+[0;32mI (695283) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (695293) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (695294) wifi:enable tsf[0m
+[0;32mI (695295) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (695312) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (695314) wifi:state: init -> auth (b0)[0m
+[0;32mI (695319) wifi:state: auth -> assoc (0)[0m
+[0;32mI (695330) wifi:state: assoc -> run (10)[0m
+[0;32mI (695360) wifi:connected with Tien, aid = 22, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (695361) wifi:security: WPA2-PSK, phy: bgn, rssi: -37[0m
+[0;32mI (695366) wifi:pm start, type: 1[0m
+
+[0;32mI (695367) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (695394) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (698384) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (698385) WIFI_UART: Got IP: 192.168.1.17[0m
+[0;32mI (698389) TCP_CONNECT: Connecting to 192.168.1.12:12345...[0m
+[0;32mI (698680) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+[0;31mE (836406) MAIN: Send audio to GUI failed[0m
+ imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui fullaudio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imuptets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfb0h (188336) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfd8 vaddr=3ffbdb60 size=02040h (  8256) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c55d4h (808404) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=001055fc vaddr=3ffbfba0 size=0409ch ( 16540) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001096a0 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  d4b4ba953...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD61E0 len 00009E20 (39 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (705) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (708) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (710) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (795) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1366) WIFI_UART: GAP event: 10[0m
+[0;32mI (1373) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1376) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1383) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1385) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1432) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1459) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1468) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1478) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1488) MPU6500: Initializating MPU6500[0m
+[0;32mI (1493) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1498) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1503) main_task: Returned from app_main()[0m
+[0;32mI (1623) BMP280: Initializating BMP280[0m
+[0;32mI (1735) DS18B20_1_WIRE: Initializating DS18B20[0m
+����������������������������������������������������������������s Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfb0h (188336) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfd8 vaddr=3ffbdb60 size=02040h (  8256) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c55d4h (808404) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=001055fc vaddr=3ffbfba0 size=0409ch ( 16540) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001096a0 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  d4b4ba953...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD61E0 len 00009E20 (39 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (706) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (708) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (711) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (795) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1385) WIFI_UART: GAP event: 10[0m
+[0;32mI (1391) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1395) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1402) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1403) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1450) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1477) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1486) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1496) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1506) MPU6500: Initializating MPU6500[0m
+[0;32mI (1511) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1516) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1521) main_task: Returned from app_main()[0m
+[0;32mI (1641) BMP280: Initializating BMP280[0m
+[0;32mI (1753) DS18B20_1_WIRE: Initializating DS18B20[0m
+����������������������������������������������������������������[0;33mW (145554) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (145559) WIFI_UART: GAP event: 16[0m
+[0;32mI (145675) WIFI_UART: GAP event: 21[0m
+[0;33mW (145822) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (147867) WIFI_UART: SSID: Tien
+ PASS: tien1123
+ IP: 192.168.1.12
+[0m
+[0;32mI (147868) MAIN: Disabling Bluetooth...[0m
+[0;33mW (147879) BT_BTC: spp_free_pending_slots found slot(rfc_handle=0x81) pending to close, close it now![0m
+[0;33mW (147884) BT_APPL: bta_jv_rfc_port_to_cb(port_handle:0x2):jv handle:0x0 not FOUND[0m
+[0;33mW (147892) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 3 closed: Closed (res: 19)[0m
+[0;33mW (147975) BT_HCI: hci cmd send: disconnect: hdl 0x80, rsn:0x13[0m
+[0;33mW (148048) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x16[0m
+[0;32mI (148049) WIFI_UART: GAP event: 17[0m
+[0;32mI (149160) MAIN: Bluetooth disabled[0m
+[0;32mI (149165) wifi:wifi driver task: 3ffd7c30, prio:23, stack:3584, core=0[0m
+[0;32mI (149184) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (149184) wifi:wifi certification version: v7.0[0m
+[0;32mI (149184) wifi:config NVS flash: enabled[0m
+[0;32mI (149185) wifi:config nano formating: disabled[0m
+[0;32mI (149190) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (149195) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (149199) wifi:Init management short buffer num: 32[0m
+[0;32mI (149204) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (149208) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (149213) wifi:Init static rx buffer num: 10[0m
+[0;32mI (149216) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (149222) wifi_init: tcpip mbox: 32[0m
+[0;32mI (149225) wifi_init: udp mbox: 6[0m
+[0;32mI (149229) wifi_init: tcp mbox: 6[0m
+[0;32mI (149233) wifi_init: tcp tx win: 5760[0m
+[0;32mI (149237) wifi_init: tcp rx win: 5760[0m
+[0;32mI (149242) wifi_init: tcp mss: 1440[0m
+[0;32mI (149246) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (149256) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (149257) wifi:enable tsf[0m
+[0;32mI (149258) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (149294) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (149296) wifi:state: init -> auth (b0)[0m
+[0;32mI (149301) wifi:state: auth -> assoc (0)[0m
+[0;32mI (149309) wifi:state: assoc -> run (10)[0m
+[0;32mI (149344) wifi:connected with Tien, aid = 22, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (149345) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (149350) wifi:pm start, type: 1[0m
+
+[0;32mI (149350) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (149392) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (152368) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (152369) WIFI_UART: Got IP: 192.168.1.17[0m
+[0;32mI (152373) TCP_CONNECT: Connecting to 192.168.1.12:12345...[0m
+[0;32mI (152684) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+ imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full  imupt_queue_gui full audio_queue_gui fullaudio_queue_gui fullaudio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui full audio_queue_gui full imupt_queue_gui full audio_queue_gui full imupt_queue_gui full  imupt_queue_gui

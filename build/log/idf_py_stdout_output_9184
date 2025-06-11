@@ -1,0 +1,291 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 12:13:06[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dee0h (188128) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003df08 vaddr=3ffbdb60 size=02110h (  8464) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c54f8h (808184) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=00105520 vaddr=3ffbfc70 size=03fcch ( 16332) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001094f4 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (533) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (550) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 12:12:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  3e7b41ca8...[0m
+[0;32mI (567) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (577) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (582) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (587) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (594) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (600) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (606) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD1878 len 0000E788 (57 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (642) spi_flash: flash io: dio[0m
+[0;33mW (646) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (660) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (670) coexist: coex firmware version: 994b23e[0m
+[0;32mI (676) main_task: Started on CPU0[0m
+[0;32mI (680) main_task: Calling app_main()[0m
+[0;32mI (720) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (722) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (725) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (810) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1408) WIFI_UART: GAP event: 10[0m
+[0;32mI (1415) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1420) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1426) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1428) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1476) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1503) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1512) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1522) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1532) MPU6500: Initializating MPU6500[0m
+[0;32mI (1538) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1542) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1547) main_task: Returned from app_main()[0m
+[0;32mI (1667) BMP280: Initializating BMP280[0m
+[0;32mI (1779) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;33mW (30559) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (30564) WIFI_UART: GAP event: 16[0m
+[0;32mI (30682) WIFI_UART: GAP event: 21[0m
+[0;33mW (30825) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (32857) WIFI_UART: SSID: Tien
+ PASS: tien1123
+ IP: 192.168.1.12
+[0m
+[0;32mI (32859) MAIN: Disabling Bluetooth...[0m
+[0;33mW (32866) BT_BTC: spp_free_pending_slots found slot(rfc_handle=0x81) pending to close, close it now![0m
+[0;33mW (32895) BT_APPL: bta_jv_rfc_port_to_cb(port_handle:0x2):jv handle:0x0 not FOUND[0m
+[0;33mW (32896) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 3 closed: Closed (res: 19)[0m
+[0;33mW (32966) BT_HCI: hci cmd send: disconnect: hdl 0x80, rsn:0x13[0m
+[0;33mW (33042) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x16[0m
+[0;32mI (33043) WIFI_UART: GAP event: 17[0m
+[0;32mI (34154) MAIN: Bluetooth disabled[0m
+[0;32mI (34159) wifi:wifi driver task: 3ffd32c8, prio:23, stack:3584, core=0[0m
+[0;32mI (34178) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (34178) wifi:wifi certification version: v7.0[0m
+[0;32mI (34178) wifi:config NVS flash: enabled[0m
+[0;32mI (34179) wifi:config nano formating: disabled[0m
+[0;32mI (34183) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (34188) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (34192) wifi:Init management short buffer num: 32[0m
+[0;32mI (34197) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (34201) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (34206) wifi:Init static rx buffer num: 10[0m
+[0;32mI (34209) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (34215) wifi_init: tcpip mbox: 32[0m
+[0;32mI (34218) wifi_init: udp mbox: 6[0m
+[0;32mI (34222) wifi_init: tcp mbox: 6[0m
+[0;32mI (34225) wifi_init: tcp tx win: 5760[0m
+[0;32mI (34230) wifi_init: tcp rx win: 5760[0m
+[0;32mI (34234) wifi_init: tcp mss: 1440[0m
+[0;32mI (34238) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (34249) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (34250) wifi:enable tsf[0m
+[0;32mI (34251) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (34266) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (34268) wifi:state: init -> auth (b0)[0m
+[0;32mI (34275) wifi:state: auth -> assoc (0)[0m
+[0;32mI (34283) wifi:state: assoc -> run (10)[0m
+[0;32mI (34315) wifi:connected with Tien, aid = 18, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (34316) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (34321) wifi:pm start, type: 1[0m
+
+[0;32mI (34321) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (34330) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (37344) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (37345) WIFI_UART: Got IP: 192.168.1.17[0m
+[0;32mI (37349) TCP_CONNECT: Connecting to 192.168.1.12:12345...[0m
+[0;32mI (37607) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+Guru Meditation Error: Core  0 panic'ed (InstrFetchProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0xff1fff1f  PS      : 0x00050033  A0      : 0xff1fff1f  A1      : 0x3fff2560  
+A2      : 0xff2bff2b  A3      : 0xff38ff38  A4      : 0xff50ff50  A5      : 0xff67ff67  
+A6      : 0xff87ff87  A7      : 0xff84ff84  A8      : 0xff8bff8b  A9      : 0xffafffaf  
+A10     : 0xffc0ffc0  A11     : 0xffc4ffc4  A12     : 0xffd8ffd8  A13     : 0x00070007  
+A14     : 0x00070007  A15     : 0xfff4fff4  SAR     : 0x00000018  EXCCAUSE: 0x00000014  
+EXCVADDR: 0xff1fff1c  LBEG    : 0x00270027  LEND    : 0x005c005c  LCOUNT  : 0x00740074  
+
+
+Backtrace: 0x7f1fff1c:0x3fff2560 0x7f1fff1c:0xff08ff08 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 3e7b41ca8
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 12:13:06[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dee0h (188128) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003df08 vaddr=3ffbdb60 size=02110h (  8464) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c54f8h (808184) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=00105520 vaddr=3ffbfc70 size=03fcch ( 16332) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=001094f4 vaddr=40080000 size=1e030h (122928) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (533) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (550) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun  7 2025 12:12:24[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  3e7b41ca8...[0m
+[0;32mI (567) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (577) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (582) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (587) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (594) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (600) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (606) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFD1878 len 0000E788 (57 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 4009E030 len 00001FD0 (7 KiB): IRAM[0m
+[0;32mI (639) spi_flash: detected chip: generic[0m
+[0;32mI (642) spi_flash: flash io: dio[0m
+[0;33mW (646) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (659) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (670) coexist: coex firmware version: 994b23e[0m
+[0;32mI (676) main_task: Started on CPU0[0m
+[0;32mI (680) main_task: Calling app_main()[0m
+[0;32mI (719) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (721) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (724) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1375) WIFI_UART: GAP event: 10[0m
+[0;32mI (1382) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1388) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1393) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1396) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1444) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1471) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1480) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1490) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1500) MPU6500: Initializating MPU6500[0m
+[0;32mI (1506) INMP441_I2S: INMP441 I2S initialized (port 0)[0m
+[0;32mI (1510) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (1515) main_task: Returned from app_main()[0m
+[0;32mI (1635) BMP280: Initializating BMP280[0m
+[0;32mI (1747) DS18B20_1_WIRE: Initializating DS18B20[0m
+����������������������������������������������������������������0;33mW (808595) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;32mI (808601) WIFI_UART: GAP event: 16[0m
+[0;32mI (808761) WIFI_UART: GAP event: 21[0m
+[0;33mW (808878) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (810923) WIFI_UART: SSID: Tien
+ PASS: tien1123
+ IP: 192.168.1.12
+[0m
+[0;32mI (810924) MAIN: Disabling Bluetooth...[0m
+[0;33mW (810931) BT_BTC: spp_free_pending_slots found slot(rfc_handle=0x81) pending to close, close it now![0m
+[0;33mW (810964) BT_APPL: bta_jv_rfc_port_to_cb(port_handle:0x2):jv handle:0x0 not FOUND[0m
+[0;33mW (810964) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 3 closed: Closed (res: 19)[0m
+[0;33mW (811031) BT_HCI: hci cmd send: disconnect: hdl 0x80, rsn:0x13[0m
+[0;33mW (811111) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x16[0m
+[0;32mI (811112) WIFI_UART: GAP event: 17[0m
+[0;32mI (812224) MAIN: Bluetooth disabled[0m
+[0;32mI (812229) wifi:wifi driver task: 3ffd7b34, prio:23, stack:3584, core=0[0m
+[0;32mI (812248) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (812248) wifi:wifi certification version: v7.0[0m
+[0;32mI (812248) wifi:config NVS flash: enabled[0m
+[0;32mI (812249) wifi:config nano formating: disabled[0m
+[0;32mI (812254) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (812259) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (812263) wifi:Init management short buffer num: 32[0m
+[0;32mI (812268) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (812272) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (812276) wifi:Init static rx buffer num: 10[0m
+[0;32mI (812280) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (812286) wifi_init: tcpip mbox: 32[0m
+[0;32mI (812289) wifi_init: udp mbox: 6[0m
+[0;32mI (812293) wifi_init: tcp mbox: 6[0m
+[0;32mI (812297) wifi_init: tcp tx win: 5760[0m
+[0;32mI (812301) wifi_init: tcp rx win: 5760[0m
+[0;32mI (812305) wifi_init: tcp mss: 1440[0m
+[0;32mI (812310) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (812320) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (812321) wifi:enable tsf[0m
+[0;32mI (812322) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (812341) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (812343) wifi:state: init -> auth (b0)[0m
+[0;32mI (812352) wifi:state: auth -> assoc (0)[0m
+[0;32mI (812360) wifi:state: assoc -> run (10)[0m
+[0;32mI (812393) wifi:connected with Tien, aid = 18, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (812394) wifi:security: WPA2-PSK, phy: bgn, rssi: -37[0m
+[0;32mI (812399) wifi:pm start, type: 1[0m
+
+[0;32mI (812400) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (812454) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (815418) esp_netif_handlers: sta ip: 192.168.1.17, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (815419) WIFI_UART: Got IP: 192.168.1.17[0m
+[0;32mI (815424) TCP_CONNECT: Connecting to 192.168.1.12:12345...[0m

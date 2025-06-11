@@ -1,0 +1,151 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11d94h ( 73108) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=00021dbc vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=000259a4 vaddr=40080000 size=0a674h ( 42612) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c40ch (181260) map[0m
+[0;32mI (215) esp_image: segment 4: paddr=0005c434 vaddr=4008a674 size=067b8h ( 26552) load[0m
+[0;32mI (234) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (255) cpu_start: Application information:[0m
+[0;32mI (258) cpu_start: Project name:     main[0m
+[0;32mI (263) cpu_start: App version:      2486dbd-dirty[0m
+[0;32mI (269) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
+[0;32mI (275) cpu_start: ELF file SHA256:  160f7433c...[0m
+[0;32mI (280) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (285) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (290) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (295) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFCA850 len 000157B0 (85 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (325) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 40090E2C len 0000F1D4 (60 KiB): IRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (347) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (358) coexist: coex firmware version: 994b23e[0m
+[0;32mI (363) main_task: Started on CPU0[0m
+[0;32mI (366) main_task: Calling app_main()[0m
+[0;32mI (371) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (376) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (386) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (434) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (462) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (471) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (481) MPU6500: Initializating MPU6500[0m
+[0;32mI (486) INMP441_I2S: INMP441 I2S initialized with 16000, 32 bit, mono (left)[0m
+[0;32mI (492) BMP280: Initializating BMP280[0m
+[0;32mI (497) main_task: Returned from app_main()[0m
+[0;32mI (609) DS18B20_1_WIRE: Initializating DS18B20[0m
+593.484253                   34.125000                    645843
+995.112183                   34.125000                    1383649
+996.735474                   34.000000                    2645603
+998.358887                   34.000000                    3370565
+995.137573                   34.000000                    4645624
+998.384216                   34.000000                    5383648
+996.760864                   33.875000                    6645683
+998.384216                   33.875000                    7458796
+998.384216                   33.750000                    8645623
+993.539673                   33.750000                    9383648
+993.539673                   33.750000                    10645683
+998.384216                   33.750000                    11623648
+995.137573                   33.625000                    12645715
+995.137573                   33.625000                    13383649
+993.514404                   33.500000                    14645689
+993.514404                   33.500000                    15623648
+995.137573                   33.500000                    16645715
+995.137573                   33.500000                    17383648
+995.137573                   33.500000                    18645781
+996.760864                   33.500000                    19370565
+996.760864                   33.375000                    20645715
+996.760864                   33.375000                    21383649
+996.760864                   33.375000                    22645788
+998.384216                   33.375000                    23623649
+998.384216                   33.250000                    24645715
+998.384216                   33.250000                    25383648
+998.384216                   33.250000                    26645781
+996.760864                   33.250000                    27370566
+996.760864                   33.125000                    28645715
+996.760864                   33.125000                    29383648
+996.760864                   33.125000                    30645788
+996.760864                   33.125000                    31370566
+995.137573                   33.000000                    32645810
+995.137573                   33.000000                    33383648
+993.514404                   33.000000                    34645872
+995.137573                   33.000000                    35623648
+993.514404                   33.000000                    36645810
+996.760864                   32.875000                    37645814
+996.760864                   32.875000                    38645781
+996.760864                   32.875000                    39370566
+996.760864                   32.875000                    40645811
+998.384216                   32.875000                    41383648
+996.760864                   32.750000                    42645873
+995.137573                   32.750000                    43458796
+996.760864                   32.750000                    44645810
+996.760864                   32.750000                    45645814
+996.760864                   32.750000                    46645872
+998.384216                   32.750000                    47623648
+998.384216                   32.625000                    48645811
+998.384216                   32.625000                    49383648
+998.384216                   32.625000                    50645873
+998.384216                   32.625000                    51623648
+993.539673                   32.625000                    52645811
+998.384216                   32.625000                    53383648
+998.384216                   32.625000                    54645872
+995.162964                   32.625000                    55370566
+993.539673                   32.625000                    56645811
+998.384216                   32.625000                    57383648
+996.760864                   32.500000                    58645872
+998.384216                   32.500000                    59623648
+996.760864                   32.500000                    60645812
+995.137573                   32.500000                    61383648
+995.137573                   32.500000                    62645873
+996.760864                   32.500000                    63370565
+995.137573                   32.375000                    64645812
+993.514404                   32.375000                    65383648
+995.137573                   32.375000                    66645873
+995.137573                   32.375000                    67458796
+996.760864                   32.375000                    68645812
+993.514404                   32.375000                    69383648
+993.514404                   32.250000                    70645873
+996.760864                   32.250000                    71370566
+996.760864                   32.250000                    72645812
+998.384216                   32.250000                    73383648
+998.384216                   32.250000                    74645873
+998.384216                   32.250000                    75623648
+998.384216                   32.250000                    76645812
