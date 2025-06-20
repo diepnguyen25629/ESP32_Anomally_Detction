@@ -1,4 +1,3 @@
-
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
@@ -11,7 +10,6 @@
 static const char *TAG = "DS18B20_1_WIRE";
 
 uint8_t DS_GPIO;
-uint8_t bitResolution = 12;
 uint8_t devices = 0;
 
 DeviceAddress ROM_NO;
@@ -174,24 +172,21 @@ esp_err_t ds18b20_select(const DeviceAddress *address){
 	return ESP_OK;
 }
 
-esp_err_t ds18b20_requestTemperatures(){
+esp_err_t ds18b20_start_conversion() {
 	ds18b20_reset();
 	ds18b20_write_byte(SKIPROM);
 	ds18b20_write_byte(GETTEMP);
-    unsigned long start = esp_timer_get_time() / 1000ULL;
-    while (!isConversionComplete() && ((esp_timer_get_time() / 1000ULL) - start < millisToWaitForConversion())) vPortYield();
 	return ESP_OK;
 }
 
-bool isConversionComplete() {
-	uint8_t b = ds18b20_read();
-	return (b == 1);
+bool ds18b20_is_conversion_done() {
+	return ds18b20_read();
 }
 
-uint16_t millisToWaitForConversion() {
+uint16_t millisToWaitForConversion(temp_resolution bitResolution) {
 	switch (bitResolution) {
 	case RESOLUTION_9_BIT:
-		return 94;
+		return 100;
 	case RESOLUTION_10_BIT:
 		return 188;
 	case RESOLUTION_11_BIT:
@@ -225,10 +220,9 @@ bool ds18b20_isAllZeros(const uint8_t * const scratchPad) {
 	return true;
 }
 
-esp_err_t ds18b20_getTempC(const DeviceAddress *deviceAddress, float *temp) {
+esp_err_t ds18b20_read_temperate(const DeviceAddress *deviceAddress, float *temp) {
 
 	ScratchPad scratchPad;
-	ds18b20_requestTemperatures();
 
 	if (ds18b20_isConnected(deviceAddress, scratchPad)){
 		int16_t rawTemp = calculateTemperature(deviceAddress, scratchPad);

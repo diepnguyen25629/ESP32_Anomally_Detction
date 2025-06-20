@@ -1,0 +1,296 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2df10h (188176) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003df38 vaddr=3ffbdb60 size=020e0h (  8416) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c67cch (813004) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=001067f4 vaddr=3ffbfc40 size=0400ch ( 16396) load[0m
+[0;32mI (460) esp_image: segment 4: paddr=0010a808 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (535) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (552) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (558) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (564) cpu_start: ELF file SHA256:  417936b9d...[0m
+[0;32mI (569) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (579) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (584) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (589) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (596) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (602) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (608) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (614) heap_init: At 3FFD2658 len 0000D9A8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (627) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (641) spi_flash: detected chip: generic[0m
+[0;32mI (644) spi_flash: flash io: dio[0m
+[0;33mW (648) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (659) coexist: coex firmware version: 994b23e[0m
+[0;32mI (665) main_task: Started on CPU0[0m
+[0;32mI (669) main_task: Calling app_main()[0m
+[0;32mI (708) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (711) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (713) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (797) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1391) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1396) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1404) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1405) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1453) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1480) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1489) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1499) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1508) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1512) MPU6500: Initializating MPU6500[0m
+[0;32mI (1546) BMP280: Initializating BMP280[0m
+[0;32mI (1546) main_task: Returned from app_main()[0m
+[0;33mW (47324) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (47568) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;33mW (49634) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (49645) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (49648) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+[0;33mW (52802) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (60509) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (60509) WIFI_BT: Waiting for WiFi config via Bluetooth...[0m
+[0;33mW (60732) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+[0;32mI (61048) WIFI_BT: Bluetooth disabled[0m
+[0;32mI (61053) wifi:wifi driver task: 3ffbaf34, prio:23, stack:3584, core=0[0m
+[0;32mI (61072) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (61072) wifi:wifi certification version: v7.0[0m
+[0;32mI (61072) wifi:config NVS flash: enabled[0m
+[0;32mI (61073) wifi:config nano formating: disabled[0m
+[0;32mI (61077) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (61082) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (61086) wifi:Init management short buffer num: 32[0m
+[0;32mI (61091) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (61095) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (61100) wifi:Init static rx buffer num: 10[0m
+[0;32mI (61103) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (61109) wifi_init: tcpip mbox: 32[0m
+[0;32mI (61112) wifi_init: udp mbox: 6[0m
+[0;32mI (61115) wifi_init: tcp mbox: 6[0m
+[0;32mI (61119) wifi_init: tcp tx win: 5760[0m
+[0;32mI (61124) wifi_init: tcp rx win: 5760[0m
+[0;32mI (61128) wifi_init: tcp mss: 1440[0m
+[0;32mI (61132) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (61143) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (61144) wifi:enable tsf[0m
+[0;32mI (61146) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (61160) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (61162) wifi:state: init -> auth (b0)[0m
+[0;32mI (61169) wifi:state: auth -> assoc (0)[0m
+[0;32mI (61175) wifi:state: assoc -> run (10)[0m
+[0;32mI (61280) wifi:connected with VINH HUYEN, aid = 6, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (61281) wifi:security: WPA2-PSK, phy: bgn, rssi: -76[0m
+[0;32mI (61286) wifi:pm start, type: 1[0m
+
+[0;32mI (61286) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (61300) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (64301) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (64302) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (64598) TCP_CONNECT: Successfully connected to 192.168.1.3:12345[0m
+[0;32mI (106313) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (106317) wifi:state: run -> init (0)[0m
+[0;32mI (106321) wifi:pm stop, total sleep time: 6797732 us / 45035105 us[0m
+
+[0;32mI (106323) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (106328) WIFI_BT: Retry to connect...[0m
+[0;32mI (106328) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (106355) wifi:flush txq[0m
+[0;32mI (106355) wifi:stop sw txq[0m
+[0;32mI (106355) wifi:lmac stop hw txq[0m
+[0;32mI (106359) wifi:Deinit lldesc rx mblock:10[0m
+[0;32mI (184211) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (184213) wifi:wifi driver task: 3ffbb1e4, prio:23, stack:3584, core=0[0m
+[0;32mI (184231) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (184232) wifi:wifi certification version: v7.0[0m
+[0;32mI (184232) wifi:config NVS flash: enabled[0m
+[0;32mI (184233) wifi:config nano formating: disabled[0m
+[0;32mI (184237) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (184242) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (184247) wifi:Init management short buffer num: 32[0m
+[0;32mI (184251) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (184256) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (184260) wifi:Init static rx buffer num: 10[0m
+[0;32mI (184264) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (184269) wifi_init: tcpip mbox: 32[0m
+[0;32mI (184272) wifi_init: udp mbox: 6[0m
+[0;32mI (184276) wifi_init: tcp mbox: 6[0m
+[0;32mI (184280) wifi_init: tcp tx win: 5760[0m
+[0;32mI (184285) wifi_init: tcp rx win: 5760[0m
+[0;32mI (184289) wifi_init: tcp mss: 1440[0m
+[0;32mI (184293) wifi_init: WiFi IRAM OP enabled[0m
+[0;33mW (184298) event: handler already registered, overwriting[0m
+[0;33mW (184304) event: handler already registered, overwriting[0m
+[0;32mI (184316) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (184317) wifi:enable tsf[0m
+[0;32mI (184320) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (184331) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (184333) wifi:state: init -> auth (b0)[0m
+[0;32mI (184341) wifi:state: auth -> assoc (0)[0m
+[0;32mI (184349) wifi:state: assoc -> run (10)[0m
+[0;32mI (184476) wifi:connected with VINH HUYEN, aid = 6, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (184477) wifi:security: WPA2-PSK, phy: bgn, rssi: -83[0m
+[0;32mI (184482) wifi:pm start, type: 1[0m
+
+[0;32mI (184483) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (184591) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (187497) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (187498) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (220174) TCP_CONNECT: Successfully connected to 192.168.1.3:12345[0m
+[0;32mI (221111) MAIN: Recording: ON[0m
+[0;32mI (221163) SD_CARD_SPI: Started writing to file: /data/data30.bin[0m
+[0;32mI (225514) MAIN: Recording: OFF[0m
+[0;32mI (225553) SD_CARD_SPI: File closed[0m
+[0;32mI (274517) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (274518) wifi:state: run -> init (0)[0m
+[0;32mI (274522) wifi:pm stop, total sleep time: 23695497 us / 90039625 us[0m
+
+[0;32mI (274524) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (274531) WIFI_BT: Retry to connect...[0m
+[0;32mI (274532) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (274539) wifi:flush txq[0m
+[0;32mI (274539) wifi:stop sw txq[0m
+[0;32mI (274541) wifi:lmac stop hw txq[0m
+[0;32mI (274550) wifi:Deinit lldesc rx mblock:10[0m
+[0;32mI (450353) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (450355) wifi:wifi driver task: 3ffbb1e4, prio:23, stack:3584, core=0[0m
+[0;32mI (450373) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (450374) wifi:wifi certification version: v7.0[0m
+[0;32mI (450374) wifi:config NVS flash: enabled[0m
+[0;32mI (450375) wifi:config nano formating: disabled[0m
+[0;32mI (450379) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (450385) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (450389) wifi:Init management short buffer num: 32[0m
+[0;32mI (450393) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (450398) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (450402) wifi:Init static rx buffer num: 10[0m
+[0;32mI (450406) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (450412) wifi_init: tcpip mbox: 32[0m
+[0;32mI (450414) wifi_init: udp mbox: 6[0m
+[0;32mI (450418) wifi_init: tcp mbox: 6[0m
+[0;32mI (450422) wifi_init: tcp tx win: 5760[0m
+[0;32mI (450427) wifi_init: tcp rx win: 5760[0m
+[0;32mI (450431) wifi_init: tcp mss: 1440[0m
+[0;32mI (450435) wifi_init: WiFi IRAM OP enabled[0m
+[0;33mW (450440) event: handler already registered, overwriting[0m
+[0;33mW (450446) event: handler already registered, overwriting[0m
+[0;32mI (450458) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (450459) wifi:enable tsf[0m
+[0;32mI (450462) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (450474) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (450476) wifi:state: init -> auth (b0)[0m
+[0;32mI (450484) wifi:state: auth -> assoc (0)[0m
+[0;32mI (450491) wifi:state: assoc -> run (10)[0m
+[0;32mI (450593) wifi:connected with VINH HUYEN, aid = 6, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (450594) wifi:security: WPA2-PSK, phy: bgn, rssi: -82[0m
+[0;32mI (450600) wifi:pm start, type: 1[0m
+
+[0;32mI (450600) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (450724) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (454116) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (454117) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (454349) TCP_CONNECT: Successfully connected to 192.168.1.3:12345[0m
+[0;32mI (517556) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (517559) wifi:state: run -> init (0)[0m
+[0;32mI (517565) wifi:pm stop, total sleep time: 20278825 us / 66964734 us[0m
+
+[0;32mI (517566) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (517571) WIFI_BT: Retry to connect...[0m
+[0;32mI (517572) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (517580) wifi:flush txq[0m
+[0;32mI (517580) wifi:stop sw txq[0m
+[0;32mI (517581) wifi:lmac stop hw txq[0m
+[0;32mI (517589) wifi:Deinit lldesc rx mblock:10[0m
+[0;32mI (700042) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (700044) wifi:wifi driver task: 3ffbb1e4, prio:23, stack:3584, core=0[0m
+[0;32mI (700062) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (700063) wifi:wifi certification version: v7.0[0m
+[0;32mI (700063) wifi:config NVS flash: enabled[0m
+[0;32mI (700064) wifi:config nano formating: disabled[0m
+[0;32mI (700068) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (700074) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (700078) wifi:Init management short buffer num: 32[0m
+[0;32mI (700082) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (700087) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (700091) wifi:Init static rx buffer num: 10[0m
+[0;32mI (700095) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (700101) wifi_init: tcpip mbox: 32[0m
+[0;32mI (700103) wifi_init: udp mbox: 6[0m
+[0;32mI (700107) wifi_init: tcp mbox: 6[0m
+[0;32mI (700111) wifi_init: tcp tx win: 5760[0m
+[0;32mI (700116) wifi_init: tcp rx win: 5760[0m
+[0;32mI (700120) wifi_init: tcp mss: 1440[0m
+[0;32mI (700124) wifi_init: WiFi IRAM OP enabled[0m
+[0;33mW (700129) event: handler already registered, overwriting[0m
+[0;33mW (700135) event: handler already registered, overwriting[0m
+[0;32mI (700147) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (700148) wifi:enable tsf[0m
+[0;32mI (700151) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (700163) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (700165) wifi:state: init -> auth (b0)[0m
+[0;32mI (700171) wifi:state: auth -> assoc (0)[0m
+[0;32mI (700181) wifi:state: assoc -> run (10)[0m
+[0;32mI (700295) wifi:connected with VINH HUYEN, aid = 6, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (700296) wifi:security: WPA2-PSK, phy: bgn, rssi: -85[0m
+[0;32mI (700302) wifi:pm start, type: 1[0m
+
+[0;32mI (700302) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (700375) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (703317) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (703318) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (703669) TCP_CONNECT: Successfully connected to 192.168.1.3:12345[0m
+[0;32mI (801720) MAIN: Recording: ON[0m
+[0;32mI (801778) SD_CARD_SPI: Started writing to file: /data/data31.bin[0m
+[0;32mI (802020) MAIN: Recording: OFF[0m
+[0;32mI (802049) SD_CARD_SPI: File closed[0m
+[0;32mI (803220) MAIN: Recording: ON[0m
+[0;32mI (803276) SD_CARD_SPI: Started writing to file: /data/data32.bin[0m
+[0;32mI (803620) MAIN: Recording: OFF[0m
+[0;32mI (803646) SD_CARD_SPI: File closed[0m
+[0;32mI (808270) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (808275) wifi:state: run -> init (0)[0m
+[0;32mI (808278) wifi:pm stop, total sleep time: 12436498 us / 107976222 us[0m
+
+[0;32mI (808279) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (808284) WIFI_BT: Retry to connect...[0m
+[0;32mI (808285) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (808292) wifi:flush txq[0m
+[0;32mI (808292) wifi:stop sw txq[0m
+[0;32mI (808294) wifi:lmac stop hw txq[0m
+[0;32mI (808301) wifi:Deinit lldesc rx mblock:10[0m

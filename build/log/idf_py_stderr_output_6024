@@ -1,0 +1,235 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM12 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM12 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'Access is denied.', None, 5))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m.[0m[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m.[0m[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m.[0m[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m.[0m[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m.[0m[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m.[0m[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m--- 0x400e28da: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:41
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m.[0m[0;33m--- 0x400e28d7: i2s_std_calculate_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:40
+0x400e29a1: i2s_std_set_clock at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:76
+0x400e2d2f: i2s_channel_init_std_mode at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/driver/i2s/i2s_std.c:225
+0x400d78c6: inmp441_i2s_init at F:/esp/Espressif/frameworks/anomaly detection/components/inmp441_i2s.c:58
+0x400d6992: read_audio_task at F:/esp/Espressif/frameworks/anomaly detection/main/main.c:253
+0x4008959d: vPortTaskWrapper at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m

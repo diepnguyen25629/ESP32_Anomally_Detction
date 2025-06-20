@@ -3,18 +3,31 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
+#include "mpu6500.h"
 
 typedef struct {
     char ssid[32];
     char password[64];
-    char gui_ip[16];
-} wifi_bt_config_t;
+    char ip[16];
+} wifi_gui_config_t;
 
-void wifi_bt_init(void); // Khởi tạo Bluetooth Classic và SPP server 
-void wifi_bt_start_wifi(const char *ssid, const char *password); // Khởi tạo wifi 
-int wifi_bt_tcp_connect(const char *ip, uint16_t port); // Kết nối TCP Socket để gửi dữ liệu cảm biến đến GUI
+typedef struct {
+    accel_fs_t accel_fs;
+    gyro_fs_t gyro_fs;
 
-SemaphoreHandle_t wifi_bt_get_semaphore(void); // Khởi tạo Semaphore để chờ khi GUI gửi dữ liệu cấu hình
-wifi_bt_config_t wifi_bt_get_config(void);
+    mpu6500_calibration_t calibration;
+    uint16_t imu_sample_rate;
+    int audio_sample_rate;
+} sensor_config_t;
 
+void bluetooth_init(void);
+void bluetooth_disconnect(void);
+
+void wifi_connect(const char *ssid, const char *password);
+void wifi_disconnect(void); 
+
+int tcp_socket_connect(const char *ip, uint16_t port);
+
+void wait_wifi_config(wifi_gui_config_t *config);
+esp_err_t wait_sensor_config(sensor_config_t *config, int sock);
 #endif

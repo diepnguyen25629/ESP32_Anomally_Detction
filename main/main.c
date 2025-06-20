@@ -40,7 +40,6 @@ static const char *TAG = "MAIN";
 
 // Khởi tạo chân giao tiếp 1-Wire
 #define ONE_WIRE_GPIO 4
-
 // Khởi tạo các chân button, led ghi dũ liệu và led kết nối đến GUI
 #define BUTTON_GPIO GPIO_NUM_0
 #define LED_RECORD_GPIO GPIO_NUM_15
@@ -48,11 +47,7 @@ static const char *TAG = "MAIN";
 // Số lượng lô dữ liệu cảm biến ghi vào thẻ SD  
 #define IMU_WRITE_BATCH 50
 #define AUDIO_BUF_LEN 512
-#define AUDIO_WRITE_BATCH 20// Ghi 16 buffer 512 mẫu mỗi lần 
-
-// Số lượng packet gửi đến cho GUI 
-#define MAX_SEND_IMU 25
-#define MAX_SEND_AUDIO 2
+#define AUDIO_WRITE_BATCH 15// Ghi 16 buffer 512 mẫu mỗi lần 
 
 #define PACKET_MAGIC                0xABCD      // Vị trí bắt đầu của packet
 #define PACKET_TYPE_IMU             0x01
@@ -62,17 +57,17 @@ static const char *TAG = "MAIN";
 // Cấu hình các tham số hiệu chỉnh, phạm vi đo và tần số lấy mẫu cho cảm biến mpu6500
 mpu6500_config_t mpu6500_cfg = {
     .calibration = {
-        .gyro_bias_offset = {.x = -2.0721499, .y = 9.80414906, .z = 0.37228756},
-        .accel_bias_offset = {.x = 0.00153134  , .y = 0.00623305, .z = -0.01285148},
+        .gyro_bias_offset = {.x = 0, .y = 0, .z = 0},
+        .accel_bias_offset = {.x = 0  , .y = 0, .z = 0},
         .accel_cal_matric = {
-            {1.00048822, 0.00636324, -0.00751618},
-            {-0.00930936, 0.99997852, 0.00544903},
-            { 0.03680844 , -0.0051126 , 0.98680229}
+            {1, 0, 0},
+            {0, 1, 0},
+            {0 , 0 , 1}
         }
     },
     .imu_sample_rate = 100,
     .accel_fs = ACCEL_FS_16G,
-    .gyro_fs = GYRO_FS_2500DPS
+    .gyro_fs = GYRO_FS_2000DPS
 
 };
 
@@ -81,14 +76,14 @@ bmp280_config_t bmp280_cfg = {
         .mode = BMP280_MODE_NORMAL,
         .filter = BMP280_FILTER_8,
         .oversampling_pressure = BMP280_ULTRA_HIGH_RES,     
-        .oversampling_temperature = BMP280_LOW_POWER,  
-        .stanby = BMP280_STANDBY_250, 
+        .oversampling_temperature = BMP280_ULTRA_LOW_POWER,  
+        .stanby = BMP280_STANDBY_125, 
         .pre_sample_rate = 1
 };
 
 // Cấu hình độ phân giải và tần số lấy mẫu của cảm biến ds18b20
 ds18b20_config_t ds18b20_cfg = {
-        .temp_resol = RESOLUTION_11_BIT,
+        .temp_resol = RESOLUTION_10_BIT,
         .temp_sample_rate = 1
 };
 
@@ -98,6 +93,7 @@ inmp441_config_t inmp441_cfg = {
     .bclk_io_num = 26,
     .ws_io_num = 27,
     .data_in_io_num = 25,
+    .data_bit_width = I2S_DATA_BIT_WIDTH_16BIT
 };
 
 // Cấu hình các chân giao tiếp SPI của sd card 
@@ -111,17 +107,17 @@ sd_spi_config_t sd_cfg = {
 
 typedef struct {
     vector_t accel_data, gyro_data;
-    uint32_t count;
+   // uint64_t timestamp;
 }imu_data_t;
 
 typedef struct {
     float temp_data, pre_data;
-    uint32_t count;
+    //uint64_t timestamp;
 }pre_temp_data_t;
 
 typedef struct {
-    int32_t audio_buf[AUDIO_BUF_LEN];
-    uint32_t count;
+    int16_t audio_buf[AUDIO_BUF_LEN];
+    // uint64_t timestamp;
 }audio_data_t;
 
 // Bộ đệm và biến đếm để ghi dữ liệu imu theo batch vào sd card
@@ -139,17 +135,36 @@ typedef struct __attribute__((packed)) {
     uint16_t length;
 } packet_header_t;
 
+// Khai báo các biến timer để gọi các task đọc dữ liệu cảm biến imu và pre_temp
+esp_timer_handle_t imu_timer;
+esp_timer_handle_t pre_temp_timer;
+
+TaskHandle_t imu_task_handle;
+TaskHandle_t pre_temp_task_handle;
+TaskHandle_t audio_task_handle;
+
 QueueHandle_t imu_queue;                              // Hàng đợi chứa dữ liệu cảm biến để ghi dữ liệu vào thẻ sd 
-QueueHandle_t audio_queue;
 QueueHandle_t pre_temp_queue;
+QueueHandle_t audio_queue;
 
 volatile bool is_recording = false;                     // Trạng thái record vào sd card 
+
+void imu_timer_callback(void* arg) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xTaskNotifyFromISR(imu_task_handle, 0, eNoAction, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void pre_temp_timer_callback(void* arg) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xTaskNotifyFromISR(pre_temp_task_handle, 0, eNoAction, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 
 // Khởi tạo các cảm biến accelerometer, gyroscope, pressure, temperate rồi đưa dữ liệu vào hàng đợi
 void read_imu_task(void *pvParameter)
 {   
     imu_data_t imu_data;
-    imu_data.count = 0; 
 
     // Khởi tạo giao tiếp I2C
     esp_err_t ret = i2c_master_init(I2C_MASTER_NUM, I2C_SDA_GPIO, I2C_SCL_GPIO);
@@ -166,41 +181,24 @@ void read_imu_task(void *pvParameter)
         vTaskDelete(NULL);
         return;
     }
- 
-    // Khoảng thời gian giữa các lần lặp dựa theo tần số của IMU
-    TickType_t loop_interval = pdMS_TO_TICKS(1000 / mpu6500_cfg.imu_sample_rate);
-
-    TickType_t xLastWakeTime = xTaskGetTickCount();
 
     while (1)
     {
-        if (get_accel_gyro(&imu_data.accel_data, &imu_data.gyro_data) != ESP_OK)
-            ESP_LOGE(TAG, "Failed to read MPU6500");
-
-        imu_data.count++;
-        if (xQueueSend(imu_queue, &imu_data, 0) != pdTRUE) {
-           //printf("imu_queue full\n ");
-        } 
-        vTaskDelayUntil(&xLastWakeTime, loop_interval);
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        get_accel_gyro(&imu_data.accel_data, &imu_data.gyro_data);
+        
+        //imu_data.timestamp = esp_timer_get_time();
+        if (is_recording) xQueueSend(imu_queue, &imu_data, 0);      
     }
 }
 void read_pre_temp_task(void *pvParameter) 
 {
     pre_temp_data_t pre_temp_data;
-    pre_temp_data.count = 0;
-
-    // Khởi tạo BMP280
-    esp_err_t ret = bmp280_init(&bmp280_cfg);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize BMP280");
-        vTaskDelete(NULL);
-        return;
-    }
 
     // Khởi tạo DS18B20
-    ret = ds18b20_init(ONE_WIRE_GPIO);
+    esp_err_t ret = ds18b20_init(ONE_WIRE_GPIO);
     if(ret != ESP_OK){
-        ESP_LOGE(TAG, " Failed to initialize DS18B20");
+        ESP_LOGE(TAG, " Failed to initialize 1-Wire");
         vTaskDelete(NULL);
         return;
     }
@@ -215,25 +213,26 @@ void read_pre_temp_task(void *pvParameter)
     }
     ds18b20_setResolution(&sensorAddr, 1, ds18b20_cfg.temp_resol);                         // Cấu hình độ phân giải cho cảm biến DS18B20 
 
-    // Khoảng thời gian giữa các lần lặp dựa theo tần số của IMU
-    TickType_t loop_interval = pdMS_TO_TICKS(1000 / bmp280_cfg.pre_sample_rate);
-    TickType_t xLastWakeTime = xTaskGetTickCount();
+    // Khởi tạo BMP280
+    ret = bmp280_init(&bmp280_cfg);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize BMP280");
+        vTaskDelete(NULL);
+        return;
+    }
 
     while (1) {
-        if (bmp280_read_pre(&pre_temp_data.pre_data) != ESP_OK) {
-            ESP_LOGE(TAG, "Failed to read BMP280");
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);        
+        bmp280_read_pre(&pre_temp_data.pre_data);
+        //pre_temp_data.timestamp = esp_timer_get_time();
+        ds18b20_start_conversion();
+        // Đợi để ds18b20 chuyển đổi xong 
+        vTaskDelay(pdMS_TO_TICKS(millisToWaitForConversion(ds18b20_cfg.temp_resol)));
+        if (ds18b20_is_conversion_done()) {
+            ds18b20_read_temperate(&sensorAddr, &pre_temp_data.temp_data);
         }
 
-        pre_temp_data.count++;
-        if (ds18b20_getTempC(&sensorAddr, &pre_temp_data.temp_data) != ESP_OK) {
-            ESP_LOGE(TAG, "Failed to read DS18B20");
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(650));
-        if (xQueueSend(pre_temp_queue, &pre_temp_data, 0) != pdTRUE) {
-            //printf("pre_temp_queue full\n ");
-        } 
-        vTaskDelayUntil(&xLastWakeTime, loop_interval);
+        if (is_recording) xQueueSend(pre_temp_queue, &pre_temp_data, 0);
     }
 }
 
@@ -241,7 +240,6 @@ void read_pre_temp_task(void *pvParameter)
 void read_audio_task(void *pvParameter)
 {
     audio_data_t audio_data;
-    audio_data.count = 0;
     //Khởi tạo INMP441
     esp_err_t ret = inmp441_i2s_init(&inmp441_cfg);
     if (ret != ESP_OK) {
@@ -253,11 +251,9 @@ void read_audio_task(void *pvParameter)
     while (1) {
         int bytes = inmp441_i2s_read(audio_data.audio_buf, sizeof(audio_data.audio_buf));
 
-        audio_data.count++;
+        //audio_data.timestamp = esp_timer_get_time();
         if (bytes > 0 ) {
-            if (xQueueSend(audio_queue, &audio_data, 0) != pdTRUE) {
-                //printf("audio_queue full\n ");
-            }   
+            if (is_recording) xQueueSend(audio_queue, &audio_data, 0);               
         }
     }
 }
@@ -319,7 +315,7 @@ void write_data_to_sd_task(void *pvParameter) {
 
         // fflush file theo chu kì 
         if (data_file != NULL && now - last_reopen_us > REOPEN_INTERVAL_US) {
-            ESP_LOGI(TAG, "fflushing file");
+            //ESP_LOGI(TAG, "fflushing file");
 
             fflush(data_file);
             last_reopen_us = now;
@@ -402,9 +398,6 @@ void button_monitor_task(void *pvParameter)
         // Nút được nhấn (LOW)
         if (!button_state && last_button_state) {
             is_recording = !is_recording;
-            xQueueReset(imu_queue);   // Xoá dữ liệu cũ
-            xQueueReset(audio_queue);
-            xQueueReset(pre_temp_queue);
             ESP_LOGI(TAG, "Recording: %s", is_recording ? "ON" : "OFF");
             vTaskDelay(pdMS_TO_TICKS(200));  // Chống dội nút
         }
@@ -446,9 +439,25 @@ void app_main(void)
     xTaskCreate(button_monitor_task, "Button", 2048, NULL, 4, NULL);
     xTaskCreate(led_blink_task, "LED", 1024, NULL, 4, NULL);
 
-    xTaskCreate(read_imu_task, "ReadIMU", 6000, NULL, 7, NULL);
-    xTaskCreate(read_audio_task, "ReadAudio", 6000, NULL, 8, NULL);
-    xTaskCreate(read_pre_temp_task, "ReadPreTemp", 2048, NULL, 6, NULL);
+    xTaskCreatePinnedToCore(read_imu_task, "ReadIMU", 6000, NULL, 7, &imu_task_handle, 0);
+    xTaskCreatePinnedToCore(read_audio_task, "ReadAudio", 8192, NULL, 8, &audio_task_handle, 1);
+    xTaskCreatePinnedToCore(read_pre_temp_task, "ReadPreTemp", 2048, NULL, 6, &pre_temp_task_handle, 1);
 
     xTaskCreate(write_data_to_sd_task, "WriteDataToSDCard", 8192, NULL, 5, NULL);
+
+    // Tạo timer IMU
+    const esp_timer_create_args_t imu_timer_args = {
+        .callback = &imu_timer_callback,
+        .name = "imu_timer"
+    };
+    esp_timer_create(&imu_timer_args, &imu_timer);
+    esp_timer_start_periodic(imu_timer, 1000000/(mpu6500_cfg.imu_sample_rate));
+
+    // Tạo timer Pre/Temp
+    const esp_timer_create_args_t pre_temp_timer_args = {
+        .callback = &pre_temp_timer_callback,
+        .name = "pre_temp_timer"
+    };
+    esp_timer_create(&pre_temp_timer_args, &pre_temp_timer);
+    esp_timer_start_periodic(pre_temp_timer, 1000000/(bmp280_cfg.pre_sample_rate));
 }

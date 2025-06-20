@@ -32,7 +32,7 @@ esp_err_t inmp441_i2s_init(inmp441_config_t *config)
     i2s_std_config_t std_cfg = {
         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(config->audio_sample_rate),
         .slot_cfg = {
-            .data_bit_width = I2S_DATA_BIT_WIDTH_32BIT,
+            .data_bit_width = config->data_bit_width,
             .slot_bit_width = I2S_SLOT_BIT_WIDTH_AUTO,
             .slot_mode = I2S_SLOT_MODE_MONO,
             .slot_mask = I2S_STD_SLOT_LEFT,
@@ -66,12 +66,10 @@ esp_err_t inmp441_i2s_init(inmp441_config_t *config)
         ESP_LOGE(TAG, "Failed to enable channel: %s", esp_err_to_name(ret));
         return ret;
     }
-
-    ESP_LOGI(TAG, "INMP441 I2S initialized with %d, 32 bit, mono (left)", config->audio_sample_rate);
     return ESP_OK;
 }
 
-int inmp441_i2s_read(int32_t *buf, size_t buf_size)
+int inmp441_i2s_read(int16_t *buf, size_t buf_size)
 {
     size_t bytes_read = 0;
     esp_err_t ret = i2s_channel_read(rx_handle, buf, buf_size, &bytes_read, portMAX_DELAY);

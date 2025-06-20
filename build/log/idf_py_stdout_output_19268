@@ -24,169 +24,419 @@ entry 0x40080640
 [0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
 [0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
 [0;32mI (92) boot: End of partition table[0m
-[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11d94h ( 73108) map[0m
-[0;32mI (130) esp_image: segment 1: paddr=00021dbc vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
-[0;32mI (136) esp_image: segment 2: paddr=000259a4 vaddr=40080000 size=0a674h ( 42612) load[0m
-[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c414h (181268) map[0m
-[0;32mI (215) esp_image: segment 4: paddr=0005c43c vaddr=4008a674 size=067b8h ( 26552) load[0m
-[0;32mI (234) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11cf4h ( 72948) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=00021d1c vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=00025904 vaddr=40080000 size=0a714h ( 42772) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c45ch (181340) map[0m
+[0;32mI (215) esp_image: segment 4: paddr=0005c484 vaddr=4008a714 size=068c0h ( 26816) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
 [0;32mI (235) boot: Disabling RNG early entropy source...[0m
 [0;32mI (246) cpu_start: Multicore app[0m
 [0;32mI (255) cpu_start: Pro cpu start user code[0m
 [0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
-[0;32mI (255) cpu_start: Application information:[0m
+[0;32mI (256) cpu_start: Application information:[0m
 [0;32mI (258) cpu_start: Project name:     main[0m
-[0;32mI (263) cpu_start: App version:      2486dbd-dirty[0m
-[0;32mI (269) cpu_start: Compile time:     Jun  7 2025 18:27:24[0m
-[0;32mI (275) cpu_start: ELF file SHA256:  a9d77ee22...[0m
+[0;32mI (263) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (269) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (275) cpu_start: ELF file SHA256:  3026f58a6...[0m
 [0;32mI (280) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
 [0;32mI (285) cpu_start: Min chip rev:     v0.0[0m
 [0;32mI (290) cpu_start: Max chip rev:     v3.99 [0m
 [0;32mI (295) cpu_start: Chip rev:         v3.1[0m
 [0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
 [0;32mI (307) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
-[0;32mI (313) heap_init: At 3FFCA850 len 000157B0 (85 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFC6458 len 00019BA8 (102 KiB): DRAM[0m
 [0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
-[0;32mI (325) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
-[0;32mI (332) heap_init: At 40090E2C len 0000F1D4 (60 KiB): IRAM[0m
+[0;32mI (326) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 40090FD4 len 0000F02C (60 KiB): IRAM[0m
 [0;32mI (340) spi_flash: detected chip: generic[0m
 [0;32mI (343) spi_flash: flash io: dio[0m
 [0;33mW (347) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
 [0;32mI (358) coexist: coex firmware version: 994b23e[0m
-[0;32mI (363) main_task: Started on CPU0[0m
-[0;32mI (366) main_task: Calling app_main()[0m
-[0;32mI (371) SD_CARD_SPI: Mounting SD card at /data[0m
-[0;32mI (376) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (386) sdspi_transaction: cmd=52, R1 response: command not supported[0m
-[0;32mI (434) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;32mI (364) main_task: Started on CPU0[0m
+[0;32mI (367) main_task: Calling app_main()[0m
+[0;32mI (372) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (377) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (428) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;31mE (1446) sdmmc_sd: sdmmc_init_sd_ssr: sdmmc_send_cmd returned 0x107[0m
+[0;31mE (1447) vfs_fat_sdmmc: sdmmc_card_init failed (0x107).[0m
+[0;32mI (1448) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (1457) SD_CARD_SPI: Failed to mount SD card: ESP_ERR_TIMEOUT[0m
+[0;32mI (1464) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11cf4h ( 72948) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=00021d1c vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=00025904 vaddr=40080000 size=0a714h ( 42772) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c45ch (181340) map[0m
+[0;32mI (215) esp_image: segment 4: paddr=0005c484 vaddr=4008a714 size=068c0h ( 26816) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (256) cpu_start: Application information:[0m
+[0;32mI (258) cpu_start: Project name:     main[0m
+[0;32mI (263) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (269) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (275) cpu_start: ELF file SHA256:  3026f58a6...[0m
+[0;32mI (280) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (285) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (290) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (295) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFC6458 len 00019BA8 (102 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (326) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 40090FD4 len 0000F02C (60 KiB): IRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (347) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (358) coexist: coex firmware version: 994b23e[0m
+[0;32mI (364) main_task: Started on CPU0[0m
+[0;32mI (367) main_task: Calling app_main()[0m
+[0;32mI (372) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (377) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (428) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;31mE (3729) sdmmc_common: sdmmc_init_ocr: send_op_cond (1) returned 0x107[0m
+[0;31mE (3729) vfs_fat_sdmmc: sdmmc_card_init failed (0x107).[0m
+[0;32mI (3731) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (3740) SD_CARD_SPI: Failed to mount SD card: ESP_ERR_TIMEOUT[0m
+[0;32mI (3747) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11cf4h ( 72948) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=00021d1c vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=00025904 vaddr=40080000 size=0a714h ( 42772) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c45ch (181340) map[0m
+[0;32mI (215) esp_image: segment 4: paddr=0005c484 vaddr=4008a714 size=068c0h ( 26816) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (256) cpu_start: Application information:[0m
+[0;32mI (258) cpu_start: Project name:     main[0m
+[0;32mI (263) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (269) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (275) cpu_start: ELF file SHA256:  3026f58a6...[0m
+[0;32mI (280) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (285) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (290) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (295) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFC6458 len 00019BA8 (102 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (326) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 40090FD4 len 0000F02C (60 KiB): IRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (347) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (358) coexist: coex firmware version: 994b23e[0m
+[0;32mI (364) main_task: Started on CPU0[0m
+[0;32mI (367) main_task: Calling app_main()[0m
+[0;32mI (372) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (377) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (435) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+[0;31mE (3736) sdmmc_common: sdmmc_init_ocr: send_op_cond (1) returned 0x107[0m
+[0;31mE (3736) vfs_fat_sdmmc: sdmmc_card_init failed (0x107).[0m
+[0;32mI (3738) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;31mE (3747) SD_CARD_SPI: Failed to mount SD card: ESP_ERR_TIMEOUT[0m
+[0;32mI (3754) main_task: Returned from app_main()[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=11cf4h ( 72948) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=00021d1c vaddr=3ffbdb60 size=03be0h ( 15328) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=00025904 vaddr=40080000 size=0a714h ( 42772) load[0m
+[0;32mI (153) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=2c45ch (181340) map[0m
+[0;32mI (215) esp_image: segment 4: paddr=0005c484 vaddr=4008a714 size=068c0h ( 26816) load[0m
+[0;32mI (235) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (235) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Multicore app[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (256) cpu_start: Application information:[0m
+[0;32mI (258) cpu_start: Project name:     main[0m
+[0;32mI (263) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (269) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (275) cpu_start: ELF file SHA256:  3026f58a6...[0m
+[0;32mI (280) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (285) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (290) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (295) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (300) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (307) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (313) heap_init: At 3FFC6458 len 00019BA8 (102 KiB): DRAM[0m
+[0;32mI (319) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (326) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (332) heap_init: At 40090FD4 len 0000F02C (60 KiB): IRAM[0m
+[0;32mI (340) spi_flash: detected chip: generic[0m
+[0;32mI (343) spi_flash: flash io: dio[0m
+[0;33mW (347) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (358) coexist: coex firmware version: 994b23e[0m
+[0;32mI (364) main_task: Started on CPU0[0m
+[0;32mI (367) main_task: Calling app_main()[0m
+[0;32mI (372) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (377) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (428) sdspi_transaction: cmd=5, R1 response: command not supported[0m
 Name: 00000
 Type: SDHC/SDXC
 Speed: 20.00 MHz (limit: 20.00 MHz)
 Size: 14910MB
 CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
 SSR: bus_width=1
-[0;32mI (462) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
-[0;32mI (471) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
-[0;32mI (481) MPU6500: Initializating MPU6500[0m
-[0;32mI (486) INMP441_I2S: INMP441 I2S initialized with 16000, 32 bit, mono (left)[0m
-[0;32mI (492) BMP280: Initializating BMP280[0m
-[0;32mI (497) main_task: Returned from app_main()[0m
-[0;32mI (608) DS18B20_1_WIRE: Initializating DS18B20[0m
-1004.338440                   32.375000                    1305107
-1004.338440                   32.375000                    2304109
-1004.364075                   32.375000                    3304109
-1004.364075                   32.375000                    4304109
-1004.364075                   32.375000                    5304109
-1004.364075                   32.375000                    6304109
-1004.364075                   32.375000                    7304109
-1004.364075                   32.375000                    8304109
-[0;32mI (8930) MAIN: Recording: ON[0m
-[0;32mI (8938) SD_CARD_SPI: Started writing to file: /data/data12.bin[0m
-1004.364075                   32.250000                    9304107
-1004.364075                   32.250000                    10014109
-1004.364075                   32.375000                    10991109
-1004.364075                   32.375000                    12304107
-1004.364075                   32.375000                    13304107
-1004.364075                   32.375000                    14304109
-1004.364075                   -127.000000                    15304108
-1004.364075                   32.250000                    16304108
-1004.389709                   32.250000                    16984107
-1004.389709                   32.250000                    18010107
-1004.364075                   32.250000                    19304107
-1004.389709                   32.250000                    20055107
-1004.389709                   32.375000                    21261107
-1004.389709                   -127.000000                    22095107
-1004.389709                   32.250000                    23304107
-1004.389709                   32.250000                    24304107
-1004.389709                   32.375000                    25304109
-����������������������������������������������������������������04.389709                   32.375000                    26065107
-1004.389709                   32.250000                    27304107
-1004.389709                   32.250000                    28264109
-1004.415283                   32.250000                    29304107
-1004.415283                   32.250000                    30244107
-1004.389709                   32.250000                    31183108
-1004.389709                   32.375000                    32304107
-1004.389709                   32.375000                    33304107
-1004.389709                   32.375000                    34304107
-1004.389709                   32.375000                    35304109
-1004.389709                   32.250000                    36304107
-1004.389709                   32.375000                    37304108
-1004.389709                   32.375000                    37984107
-1004.389709                   32.250000                    39020107
-1004.364075                   32.375000                    40305109
-1004.364075                   32.250000                    41304107
-1004.364075                   32.250000                    42025107
-1004.364075                   32.250000                    43183107
-1004.364075                   32.375000                    44052109
-1004.364075                   32.250000                    45304107
-1004.364075                   32.250000                    46112107
-1004.364075                   32.375000                    47274109
-1004.364075                   32.250000                    48304107
-1004.364075                   32.250000                    49201107
-1004.364075                   32.250000                    50304107
-1004.338440                   32.250000                    51304107
-1004.364075                   32.250000                    52143108
-1004.364075                   32.250000                    53304107
-1004.338440                   32.250000                    54262107
-1004.338440                   32.250000                    55305107
-1004.338440                   32.250000                    56258179
-1004.338440                   32.250000                    57304109
-1004.338440                   32.250000                    58304107
-1004.338440                   32.250000                    59294107
-1004.338440                   32.250000                    60304107
-1004.338440                   32.250000                    61001109
-1004.338440                   32.250000                    62054107
-1004.338440                   32.250000                    63304107
-1004.338440                   32.250000                    64271107
-1004.338440                   32.250000                    65304107
-����������������������������������������������������������������04.364075                   -127.000000                    66072107
-1004.364075                   32.250000                    67092109
-1004.364075                   32.375000                    68304107
-1004.364075                   32.375000                    69044107
-1004.364075                   32.250000                    70234108
-1004.364075                   32.250000                    71304109
-1004.364075                   32.250000                    72231107
-1004.364075                   32.250000                    73304107
-1004.364075                   32.250000                    74304107
-1004.338440                   32.250000                    75304109
-1004.338440                   32.250000                    76305109
-1004.338440                   32.250000                    77304107
-1004.338440                   32.250000                    78263107
-1004.338440                   32.250000                    79304108
-1004.338440                   32.250000                    80304107
-1004.338440                   32.250000                    81304107
-1004.338440                   32.250000                    82304107
-1004.364075                   32.250000                    83304109
-1004.364075                   32.250000                    83995107
-1004.338440                   32.250000                    85304107
-1004.338440                   32.250000                    86005107
-1004.338440                   32.250000                    87127182
-1004.338440                   32.250000                    88304109
-1004.338440                   32.250000                    89133108
-1004.338440                   32.250000                    90304107
-1004.338440                   32.250000                    91154107
-1004.364075                   32.250000                    92304107
-1004.364075                   32.250000                    93305107
-1004.364075                   32.250000                    94245107
-1004.364075                   32.250000                    95304107
-1004.364075                   32.250000                    96047181
-1004.364075                   32.250000                    97305109
-1004.364075                   32.250000                    98304109
-1004.364075                   32.250000                    99304107
-1004.364075                   32.250000                    100304108
-1004.389709                   32.250000                    101304109
-����������������������������������������������������������������004.389709                   32.250000                    102223107
-1004.389709                   32.250000                    103247181
-1004.389709                   32.250000                    104031108
-1004.389709                   32.250000                    105144109
-1004.389709                   32.250000                    106304107
-1004.389709                   32.250000                    107304107
-1004.389709                   32.250000                    108114109
-1004.389709                   32.250000                    109304107
-1004.389709                   32.250000                    110205107
-1004.389709                   32.375000                    111304109
-1004.389709                   32.250000                    112304109
-1004.389709                   32.250000                    113304107
-1004.389709                   32.250000                    114304110
-1004.389709                   32.250000                    115304110
-1004.364075                   32.250000                    116224107
+[0;32mI (456) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (465) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (474) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (477) MPU6500: Initializating MPU6500[0m
+[0;32mI (511) BMP280: Initializating BMP280[0m
+[0;32mI (512) main_task: Returned from app_main()[0m
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+[0;32mI (7524) MAIN: Recording: ON[0m
+[0;32mI (7536) SD_CARD_SPI: Started writing to file: /data/data1.bin[0m
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+-127.000000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.250000
+30.250000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.500000
+30.250000
+30.250000
+30.500000
+30.500000
+30.500000
+30.500000
+30.250000
+30.500000
+30.250000
+30.250000
+30.250000
+30.500000
+30.500000
+30.250000
+30.250000
+30.250000
+����������������������������������������������������������������0.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.500000
+30.500000
+30.500000
+30.250000
+30.250000
+30.250000
+30.250000
+-127.000000
+30.250000
+30.500000
+-127.000000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.500000
+30.500000
+30.500000
+30.250000
+-127.000000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+-127.000000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+30.250000
+[0;32mI (169418) MAIN: Recording: OFF[0m
+[0;32mI (169440) SD_CARD_SPI: File closed[0m
+30.250000
+30.250000

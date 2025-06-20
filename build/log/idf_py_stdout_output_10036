@@ -1,0 +1,1064 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfc0h (188352) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfe8 vaddr=3ffbdb60 size=02030h (  8240) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f20h (814880) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f48 vaddr=3ffbfb90 size=040ach ( 16556) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010affc vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  7885fbf3f...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2648 len 0000D9B8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (666) main_task: Started on CPU0[0m
+[0;32mI (670) main_task: Calling app_main()[0m
+[0;32mI (710) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (712) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (715) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (800) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1381) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1387) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1393) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1394) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1442) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1469) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1478) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1488) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1498) main_task: Returned from app_main()[0m
+[0;32mI (1501) MPU6500: Initializating MPU6500[0m
+[0;32mI (1501) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1544) BMP280: Initializating BMP280[0m
+[0;32mI (2619) MAIN: 33.000000[0m
+[0;32mI (3619) MAIN: 33.000000[0m
+[0;32mI (4619) MAIN: 33.000000[0m
+[0;32mI (5619) MAIN: 33.000000[0m
+[0;32mI (6619) MAIN: 33.000000[0m
+[0;32mI (7619) MAIN: 33.000000[0m
+[0;32mI (8619) MAIN: 33.000000[0m
+[0;32mI (9619) MAIN: 33.000000[0m
+[0;32mI (10619) MAIN: 33.000000[0m
+[0;32mI (11619) MAIN: 33.000000[0m
+[0;32mI (12619) MAIN: 33.000000[0m
+[0;32mI (13619) MAIN: 33.000000[0m
+[0;32mI (14619) MAIN: 33.000000[0m
+[0;32mI (15619) MAIN: 33.000000[0m
+[0;32mI (16619) MAIN: 33.000000[0m
+[0;32mI (17619) MAIN: 33.000000[0m
+[0;32mI (18619) MAIN: 33.000000[0m
+[0;32mI (19619) MAIN: 33.000000[0m
+[0;32mI (20619) MAIN: 33.000000[0m
+[0;32mI (21619) MAIN: 33.000000[0m
+[0;32mI (22619) MAIN: 33.000000[0m
+[0;32mI (23619) MAIN: 33.000000[0m
+[0;32mI (24619) MAIN: 33.000000[0m
+[0;32mI (25619) MAIN: 33.000000[0m
+[0;32mI (26619) MAIN: 33.000000[0m
+[0;32mI (27619) MAIN: 33.000000[0m
+[0;32mI (28619) MAIN: 33.000000[0m
+[0;32mI (29619) MAIN: 33.000000[0m
+[0;32mI (30619) MAIN: 33.000000[0m
+[0;32mI (31619) MAIN: 33.000000[0m
+[0;32mI (32619) MAIN: 33.000000[0m
+[0;32mI (33619) MAIN: 33.000000[0m
+[0;32mI (34619) MAIN: 33.000000[0m
+[0;32mI (35619) MAIN: 33.000000[0m
+[0;32mI (36619) MAIN: 33.000000[0m
+[0;32mI (37619) MAIN: 33.000000[0m
+[0;32mI (38619) MAIN: 33.000000[0m
+[0;32mI (39619) MAIN: 33.000000[0m
+[0;32mI (40619) MAIN: 33.000000[0m
+[0;32mI (41619) MAIN: 33.000000[0m
+[0;32mI (42619) MAIN: 33.000000[0m
+[0;32mI (43619) MAIN: 33.000000[0m
+[0;32mI (44619) MAIN: 33.000000[0m
+[0;32mI (45619) MAIN: 33.000000[0m
+[0;32mI (46619) MAIN: 33.000000[0m
+[0;32mI (47619) MAIN: 33.000000[0m
+[0;32mI (48619) MAIN: 33.000000[0m
+[0;32mI (49619) MAIN: 33.000000[0m
+[0;32mI (50619) MAIN: 33.000000[0m
+[0;32mI (51619) MAIN: 33.000000[0m
+[0;32mI (52619) MAIN: 33.000000[0m
+[0;32mI (53619) MAIN: 33.000000[0m
+[0;32mI (54619) MAIN: 33.000000[0m
+[0;32mI (55619) MAIN: 33.000000[0m
+[0;32mI (56619) MAIN: 33.000000[0m
+[0;32mI (57619) MAIN: 33.000000[0m
+[0;32mI (58619) MAIN: 33.000000[0m
+[0;32mI (59619) MAIN: 33.000000[0m
+[0;32mI (60619) MAIN: 33.000000[0m
+[0;32mI (61619) MAIN: 33.000000[0m
+[0;32mI (62619) MAIN: 33.000000[0m
+[0;32mI (63619) MAIN: 33.000000[0m
+[0;32mI (64619) MAIN: 33.000000[0m
+[0;32mI (65619) MAIN: 33.000000[0m
+[0;32mI (66619) MAIN: 33.000000[0m
+[0;32mI (67619) MAIN: 33.000000[0m
+[0;32mI (68619) MAIN: 33.000000[0m
+[0;32mI (69619) MAIN: 33.000000[0m
+����������������������������������������������������������������;32mI (70619) MAIN: 33.000000[0m
+[0;32mI (71619) MAIN: 33.000000[0m
+[0;32mI (72619) MAIN: 33.000000[0m
+[0;33mW (73205) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (73439) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (73621) MAIN: -127.000000[0m
+[0;32mI (74620) MAIN: -127.000000[0m
+[0;33mW (75504) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (75516) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (75519) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+[0;32mI (75620) MAIN: -127.000000[0m
+[0;32mI (76619) MAIN: 33.000000[0m
+[0;32mI (77619) MAIN: 33.000000[0m
+[0;32mI (78619) MAIN: 33.000000[0m
+[0;33mW (78671) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (79619) MAIN: 33.000000[0m
+[0;32mI (80619) MAIN: 33.000000[0m
+[0;32mI (81619) MAIN: 33.000000[0m
+[0;32mI (82619) MAIN: 33.000000[0m
+[0;32mI (83619) MAIN: 33.000000[0m
+[0;32mI (84619) MAIN: 33.000000[0m
+[0;32mI (85619) MAIN: 33.000000[0m
+[0;32mI (86619) MAIN: 33.000000[0m
+[0;32mI (87297) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (87297) WIFI_BT: Waiting for WiFi config via Bluetooth...[0m
+[0;33mW (87403) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+[0;32mI (87621) MAIN: -127.000000[0m
+[0;32mI (87718) WIFI_BT: Bluetooth disabled[0m
+[0;32mI (87723) wifi:wifi driver task: 3ffbb094, prio:23, stack:3584, core=0[0m
+[0;32mI (87742) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (87742) wifi:wifi certification version: v7.0[0m
+[0;32mI (87743) wifi:config NVS flash: enabled[0m
+[0;32mI (87743) wifi:config nano formating: disabled[0m
+[0;32mI (87748) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (87753) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (87757) wifi:Init management short buffer num: 32[0m
+[0;32mI (87761) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (87766) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (87770) wifi:Init static rx buffer num: 10[0m
+[0;32mI (87774) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (87779) wifi_init: tcpip mbox: 32[0m
+[0;32mI (87782) wifi_init: udp mbox: 6[0m
+[0;32mI (87786) wifi_init: tcp mbox: 6[0m
+[0;32mI (87790) wifi_init: tcp tx win: 5760[0m
+[0;32mI (87794) wifi_init: tcp rx win: 5760[0m
+[0;32mI (87798) wifi_init: tcp mss: 1440[0m
+[0;32mI (87803) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (87813) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (87814) wifi:enable tsf[0m
+[0;32mI (87817) WIFI_BT: WiFi connecting to Tien[0m
+[0;32mI (87830) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1[0m
+[0;32mI (87831) wifi:state: init -> auth (b0)[0m
+[0;32mI (87842) wifi:state: auth -> assoc (0)[0m
+[0;32mI (87851) wifi:state: assoc -> run (10)[0m
+[0;32mI (87884) wifi:connected with Tien, aid = 25, channel 1, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (87885) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (87890) wifi:pm start, type: 1[0m
+
+[0;32mI (87890) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (87982) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (88619) MAIN: 33.000000[0m
+[0;32mI (89619) MAIN: 33.000000[0m
+[0;32mI (90619) MAIN: 33.000000[0m
+[0;32mI (90908) esp_netif_handlers: sta ip: 192.168.1.42, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (90909) WIFI_BT: Got IP: 192.168.1.42[0m
+[0;32mI (91171) TCP_CONNECT: Successfully connected to 192.168.1.41:12345[0m
+[0;32mI (91623) MAIN: -127.000000[0m
+[0;32mI (92620) MAIN: 33.000000[0m
+[0;32mI (93620) MAIN: -127.000000[0m
+[0;32mI (94619) MAIN: 33.000000[0m
+����������������������������������������������������������������[0;32mI (95619) MAIN: 33.000000[0m
+[0;32mI (96623) MAIN: -127.000000[0m
+[0;32mI (97621) MAIN: -127.000000[0m
+[0;32mI (98619) MAIN: 33.000000[0m
+[0;32mI (99620) MAIN: -127.000000[0m
+[0;32mI (100619) MAIN: 33.000000[0m
+[0;32mI (101620) MAIN: -127.000000[0m
+[0;32mI (102619) MAIN: 33.000000[0m
+[0;32mI (103619) MAIN: 33.000000[0m
+[0;32mI (104620) MAIN: -127.000000[0m
+[0;32mI (105619) MAIN: 33.000000[0m
+[0;32mI (106620) MAIN: 33.000000[0m
+[0;32mI (107620) MAIN: -127.000000[0m
+[0;32mI (108620) MAIN: 33.000000[0m
+[0;32mI (109619) MAIN: 33.000000[0m
+[0;32mI (110619) MAIN: 33.000000[0m
+[0;32mI (111619) MAIN: 33.000000[0m
+[0;32mI (112624) MAIN: -127.000000[0m
+[0;32mI (113620) MAIN: 33.000000[0m
+[0;32mI (114619) MAIN: 33.000000[0m
+[0;32mI (115622) MAIN: -127.000000[0m
+[0;32mI (116619) MAIN: 33.000000[0m
+[0;32mI (117619) MAIN: 33.000000[0m
+[0;32mI (118622) MAIN: -127.000000[0m
+[0;32mI (119620) MAIN: 33.000000[0m
+[0;32mI (120622) MAIN: -127.000000[0m
+[0;32mI (121619) MAIN: 33.000000[0m
+[0;32mI (122620) MAIN: -127.000000[0m
+[0;32mI (123621) MAIN: -127.000000[0m
+[0;32mI (124620) MAIN: -127.000000[0m
+[0;32mI (125619) MAIN: 33.000000[0m
+[0;32mI (126619) MAIN: 33.000000[0m
+[0;32mI (127619) MAIN: 33.000000[0m
+[0;32mI (128623) MAIN: -127.000000[0m
+[0;32mI (129619) MAIN: 33.000000[0m
+[0;32mI (130620) MAIN: 33.000000[0m
+[0;32mI (131621) MAIN: -127.000000[0m
+[0;32mI (132619) MAIN: 33.000000[0m
+[0;32mI (133619) MAIN: 33.000000[0m
+[0;32mI (134619) MAIN: 33.000000[0m
+[0;32mI (135619) MAIN: 33.000000[0m
+[0;32mI (136621) MAIN: -127.000000[0m
+[0;32mI (137619) MAIN: 33.000000[0m
+[0;32mI (138619) MAIN: 33.000000[0m
+[0;32mI (139620) MAIN: -127.000000[0m
+[0;32mI (140620) MAIN: 33.000000[0m
+[0;32mI (141620) MAIN: -127.000000[0m
+[0;32mI (142619) MAIN: 33.000000[0m
+[0;32mI (143619) MAIN: 33.000000[0m
+[0;32mI (144623) MAIN: -127.000000[0m
+[0;32mI (145620) MAIN: -127.000000[0m
+[0;32mI (146619) MAIN: 33.000000[0m
+[0;32mI (147621) MAIN: -127.000000[0m
+[0;32mI (148619) MAIN: 33.000000[0m
+[0;32mI (149620) MAIN: -127.000000[0m
+[0;32mI (150619) MAIN: 33.000000[0m
+[0;32mI (151620) MAIN: -127.000000[0m
+[0;32mI (152629) MAIN: -127.000000[0m
+[0;32mI (153620) MAIN: -127.000000[0m
+[0;32mI (154619) MAIN: 33.000000[0m
+[0;32mI (155620) MAIN: -127.000000[0m
+[0;32mI (156619) MAIN: 33.000000[0m
+[0;32mI (157619) MAIN: 33.000000[0m
+[0;32mI (157702) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (157706) wifi:state: run -> init (0)[0m
+[0;32mI (157710) wifi:pm stop, total sleep time: 24106185 us / 69819930 us[0m
+
+[0;32mI (157711) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1[0m
+[0;32mI (157716) WIFI_BT: Retry to connect...[0m
+[0;32mI (157717) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (157824) wifi:flush txq[0m
+[0;32mI (157824) wifi:stop sw txq[0m
+[0;32mI (157825) wifi:lmac stop hw txq[0m
+[0;32mI (157828) wifi:Deinit lldesc rx mblock:10[0m
+[0;32mI (158619) MAIN: 33.000000[0m
+[0;32mI (159619) MAIN: 33.000000[0m
+[0;32mI (160619) MAIN: 33.000000[0m
+[0;32mI (161619) MAIN: 33.000000[0m
+[0;32mI (162619) MAIN: 33.000000[0m
+[0;32mI (163619) MAIN: 33.000000[0m
+[0;32mI (164619) MAIN: 33.000000[0m
+[0;32mI (165619) MAIN: 33.000000[0m
+[0;32mI (166619) MAIN: 33.000000[0m
+[0;32mI (167619) MAIN: 33.000000[0m
+[0;32mI (168619) MAIN: 33.000000[0m
+[0;32mI (169619) MAIN: 33.000000[0m
+[0;32mI (170619) MAIN: 33.000000[0m
+[0;32mI (171619) MAIN: 33.000000[0m
+[0;32mI (172619) MAIN: 33.000000[0m
+[0;32mI (173619) MAIN: 33.000000[0m
+[0;32mI (174619) MAIN: 33.000000[0m
+[0;32mI (175619) MAIN: 33.000000[0m
+[0;32mI (176619) MAIN: 33.000000[0m
+[0;32mI (177619) MAIN: 33.000000[0m
+[0;32mI (178619) MAIN: 33.000000[0m
+[0;32mI (179619) MAIN: 33.000000[0m
+[0;32mI (180619) MAIN: 33.000000[0m
+[0;32mI (181619) MAIN: 33.000000[0m
+[0;32mI (182619) MAIN: 33.000000[0m
+[0;32mI (183619) MAIN: 33.000000[0m
+[0;32mI (184619) MAIN: 33.000000[0m
+[0;32mI (185619) MAIN: 33.000000[0m
+[0;32mI (186619) MAIN: 33.000000[0m
+����������������������������������������������������������������[0;32mI (187619) MAIN: 33.000000[0m
+[0;32mI (188619) MAIN: 33.000000[0m
+[0;32mI (189619) MAIN: 33.000000[0m
+[0;32mI (190619) MAIN: 33.000000[0m
+[0;32mI (191619) MAIN: 33.000000[0m
+[0;32mI (192619) MAIN: 33.000000[0m
+[0;32mI (193619) MAIN: 33.000000[0m
+[0;32mI (194619) MAIN: 33.000000[0m
+[0;32mI (195619) MAIN: 33.000000[0m
+[0;32mI (196619) MAIN: 33.000000[0m
+[0;32mI (197619) MAIN: 33.000000[0m
+[0;32mI (198619) MAIN: 33.000000[0m
+[0;32mI (199619) MAIN: 33.000000[0m
+[0;32mI (200619) MAIN: 33.000000[0m
+[0;32mI (201619) MAIN: 33.000000[0m
+[0;32mI (202619) MAIN: 33.000000[0m
+[0;32mI (203619) MAIN: 33.000000[0m
+[0;32mI (204619) MAIN: 33.000000[0m
+[0;32mI (205619) MAIN: 33.000000[0m
+[0;32mI (206619) MAIN: 33.000000[0m
+[0;32mI (207619) MAIN: 33.000000[0m
+[0;32mI (208619) MAIN: 33.000000[0m
+[0;32mI (209619) MAIN: 33.000000[0m
+[0;32mI (210619) MAIN: 33.000000[0m
+[0;32mI (211619) MAIN: 33.000000[0m
+[0;32mI (212619) MAIN: 33.000000[0m
+[0;32mI (213619) MAIN: 33.000000[0m
+[0;32mI (214619) MAIN: 33.000000[0m
+[0;32mI (215619) MAIN: 33.000000[0m
+[0;32mI (216619) MAIN: 33.000000[0m
+[0;32mI (217619) MAIN: 33.000000[0m
+[0;32mI (218619) MAIN: 33.000000[0m
+[0;32mI (219619) MAIN: 33.000000[0m
+[0;32mI (220619) MAIN: 33.000000[0m
+[0;32mI (221619) MAIN: 33.000000[0m
+[0;32mI (222619) MAIN: 33.000000[0m
+[0;32mI (223619) MAIN: 33.000000[0m
+[0;32mI (224619) MAIN: 33.000000[0m
+[0;32mI (225619) MAIN: 33.000000[0m
+[0;32mI (226619) MAIN: 33.000000[0m
+[0;32mI (227619) MAIN: 33.000000[0m
+[0;32mI (228619) MAIN: 33.000000[0m
+[0;32mI (229619) MAIN: 33.000000[0m
+[0;32mI (230619) MAIN: 33.000000[0m
+[0;32mI (231619) MAIN: 33.000000[0m
+[0;32mI (232619) MAIN: 33.000000[0m
+[0;32mI (233619) MAIN: 33.000000[0m
+[0;32mI (234619) MAIN: 33.000000[0m
+[0;32mI (235619) MAIN: 33.000000[0m
+[0;32mI (236619) MAIN: 33.000000[0m
+[0;32mI (237619) MAIN: 33.000000[0m
+[0;32mI (238619) MAIN: 33.000000[0m
+[0;32mI (239619) MAIN: 33.000000[0m
+[0;32mI (240619) MAIN: 33.000000[0m
+[0;32mI (241619) MAIN: 33.000000[0m
+[0;32mI (242619) MAIN: 33.000000[0m
+[0;32mI (243619) MAIN: 33.000000[0m
+[0;32mI (244619) MAIN: 33.000000[0m
+[0;32mI (245619) MAIN: 33.000000[0m
+[0;32mI (246619) MAIN: 33.000000[0m
+[0;32mI (247619) MAIN: 33.000000[0m
+[0;32mI (248619) MAIN: 33.000000[0m
+[0;32mI (249619) MAIN: 33.000000[0m
+[0;32mI (250619) MAIN: 33.000000[0m
+[0;32mI (251619) MAIN: 33.000000[0m
+[0;32mI (252619) MAIN: 33.000000[0m
+[0;32mI (253619) MAIN: 33.000000[0m
+[0;32mI (254619) MAIN: 33.000000[0m
+[0;32mI (255619) MAIN: 33.000000[0m
+[0;32mI (256619) MAIN: 33.000000[0m
+[0;32mI (257619) MAIN: 33.000000[0m
+[0;32mI (258619) MAIN: 33.000000[0m
+[0;32mI (259619) MAIN: 33.000000[0m
+[0;32mI (260619) MAIN: 33.000000[0m
+[0;32mI (261619) MAIN: 32.500000[0m
+[0;32mI (262619) MAIN: 33.000000[0m
+[0;32mI (263619) MAIN: 33.000000[0m
+[0;32mI (264619) MAIN: 33.000000[0m
+[0;32mI (265619) MAIN: 32.500000[0m
+[0;32mI (266619) MAIN: 32.500000[0m
+[0;32mI (267619) MAIN: 33.000000[0m
+[0;32mI (268619) MAIN: 32.500000[0m
+[0;32mI (269619) MAIN: 33.000000[0m
+[0;32mI (270619) MAIN: 33.000000[0m
+[0;32mI (271619) MAIN: 33.000000[0m
+[0;32mI (272619) MAIN: 33.000000[0m
+[0;32mI (273619) MAIN: 33.000000[0m
+[0;32mI (274619) MAIN: 32.500000[0m
+[0;32mI (275619) MAIN: 33.000000[0m
+[0;32mI (276619) MAIN: 33.000000[0m
+[0;32mI (277619) MAIN: 32.500000[0m
+[0;32mI (278619) MAIN: 33.000000[0m
+[0;32mI (279619) MAIN: 33.000000[0m
+[0;32mI (280619) MAIN: 33.000000[0m
+[0;32mI (281619) MAIN: 33.000000[0m
+[0;32mI (282619) MAIN: 32.500000[0m
+[0;32mI (283619) MAIN: 33.000000[0m
+[0;32mI (284619) MAIN: 33.000000[0m
+[0;32mI (285619) MAIN: 32.500000[0m
+[0;32mI (286619) MAIN: 33.000000[0m
+[0;32mI (287619) MAIN: 33.000000[0m
+[0;32mI (288619) MAIN: 32.500000[0m
+[0;32mI (289619) MAIN: 33.000000[0m
+[0;32mI (290619) MAIN: 32.500000[0m
+����������������������������������������������������������������0;32mI (291619) MAIN: 33.000000[0m
+[0;32mI (292619) MAIN: 33.000000[0m
+[0;32mI (293619) MAIN: 32.500000[0m
+[0;32mI (294619) MAIN: 33.000000[0m
+[0;32mI (295619) MAIN: 33.000000[0m
+[0;32mI (296619) MAIN: 33.000000[0m
+[0;32mI (297619) MAIN: 33.000000[0m
+[0;32mI (298619) MAIN: 33.000000[0m
+[0;32mI (299619) MAIN: 33.000000[0m
+[0;32mI (300619) MAIN: 33.000000[0m
+[0;32mI (301619) MAIN: 32.500000[0m
+[0;32mI (302619) MAIN: 33.000000[0m
+[0;32mI (303619) MAIN: 33.000000[0m
+[0;32mI (304619) MAIN: 33.000000[0m
+[0;32mI (305619) MAIN: 33.000000[0m
+[0;32mI (306619) MAIN: 33.000000[0m
+[0;32mI (307619) MAIN: 33.000000[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfc0h (188352) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfe8 vaddr=3ffbdb60 size=02030h (  8240) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f20h (814880) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f48 vaddr=3ffbfb90 size=040ach ( 16556) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010affc vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  7885fbf3f...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2648 len 0000D9B8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (666) main_task: Started on CPU0[0m
+[0;32mI (670) main_task: Calling app_main()[0m
+[0;32mI (710) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (712) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (715) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (799) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1406) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1413) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1420) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1422) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1470) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1497) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1507) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1516) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1526) main_task: Returned from app_main()[0m
+[0;32mI (1529) MPU6500: Initializating MPU6500[0m
+[0;32mI (1529) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1572) BMP280: Initializating BMP280[0m
+[0;32mI (2647) MAIN: 33.000000[0m
+[0;32mI (3647) MAIN: 33.000000[0m
+[0;32mI (4647) MAIN: 33.000000[0m
+[0;32mI (5647) MAIN: 33.000000[0m
+[0;32mI (6647) MAIN: 33.000000[0m
+[0;32mI (7647) MAIN: 33.000000[0m
+[0;32mI (8647) MAIN: 33.000000[0m
+[0;32mI (9647) MAIN: 33.000000[0m
+[0;32mI (10647) MAIN: 32.500000[0m
+[0;32mI (11647) MAIN: 33.000000[0m
+[0;32mI (12647) MAIN: 33.000000[0m
+[0;32mI (13647) MAIN: 33.000000[0m
+[0;32mI (14647) MAIN: 33.000000[0m
+[0;32mI (15647) MAIN: 32.500000[0m
+[0;32mI (16647) MAIN: 33.000000[0m
+[0;32mI (17647) MAIN: 33.000000[0m
+[0;32mI (18647) MAIN: 33.000000[0m
+[0;32mI (19647) MAIN: 33.000000[0m
+[0;32mI (20647) MAIN: 33.000000[0m
+[0;32mI (21647) MAIN: 33.000000[0m
+[0;32mI (22647) MAIN: 32.500000[0m
+[0;32mI (23647) MAIN: 32.500000[0m
+[0;32mI (24647) MAIN: 33.000000[0m
+[0;32mI (25647) MAIN: 33.000000[0m
+[0;32mI (26647) MAIN: 33.000000[0m
+[0;32mI (27647) MAIN: 32.500000[0m
+[0;32mI (28647) MAIN: 32.500000[0m
+[0;32mI (29647) MAIN: 32.500000[0m
+[0;32mI (30647) MAIN: 32.500000[0m
+[0;32mI (31647) MAIN: 33.000000[0m
+[0;32mI (32647) MAIN: 33.000000[0m
+[0;32mI (33647) MAIN: 33.000000[0m
+[0;32mI (34647) MAIN: 32.500000[0m
+[0;32mI (35647) MAIN: 33.000000[0m
+[0;32mI (36647) MAIN: 32.500000[0m
+[0;32mI (37647) MAIN: 33.000000[0m
+[0;32mI (38647) MAIN: 32.500000[0m
+[0;32mI (39647) MAIN: 33.000000[0m
+[0;32mI (40647) MAIN: 33.000000[0m
+[0;32mI (41647) MAIN: 33.000000[0m
+[0;32mI (42647) MAIN: 33.000000[0m
+[0;32mI (43647) MAIN: 33.000000[0m
+[0;32mI (44647) MAIN: 33.000000[0m
+[0;32mI (45647) MAIN: 32.500000[0m
+[0;32mI (46647) MAIN: 33.000000[0m
+[0;32mI (47647) MAIN: 33.000000[0m
+[0;32mI (48647) MAIN: 33.000000[0m
+[0;32mI (49647) MAIN: 32.500000[0m
+[0;32mI (50647) MAIN: 33.000000[0m
+[0;32mI (51647) MAIN: 33.000000[0m
+[0;32mI (52647) MAIN: 33.000000[0m
+[0;32mI (53647) MAIN: 33.000000[0m
+[0;32mI (54647) MAIN: 33.000000[0m
+[0;32mI (55647) MAIN: 33.000000[0m
+[0;32mI (56647) MAIN: 33.000000[0m
+[0;32mI (57647) MAIN: 33.000000[0m
+[0;32mI (58647) MAIN: 33.000000[0m
+[0;32mI (59647) MAIN: 33.000000[0m
+[0;32mI (60647) MAIN: 33.000000[0m
+[0;32mI (61647) MAIN: 33.000000[0m
+[0;32mI (62647) MAIN: 33.000000[0m
+[0;32mI (63647) MAIN: 33.000000[0m
+[0;32mI (64647) MAIN: 33.000000[0m
+[0;32mI (65647) MAIN: 33.000000[0m
+[0;32mI (66647) MAIN: 33.000000[0m
+[0;32mI (67647) MAIN: 33.000000[0m
+[0;32mI (68647) MAIN: 33.000000[0m
+[0;32mI (69647) MAIN: 33.000000[0m
+����������������������������������������������������������������0;32mI (70647) MAIN: 33.000000[0m
+[0;32mI (71647) MAIN: 33.000000[0m
+[0;32mI (72647) MAIN: 33.000000[0m
+[0;32mI (73647) MAIN: 33.000000[0m
+[0;32mI (74647) MAIN: 33.000000[0m
+[0;32mI (75647) MAIN: 33.000000[0m
+[0;32mI (76647) MAIN: 33.000000[0m
+[0;32mI (77647) MAIN: 33.000000[0m
+[0;32mI (78647) MAIN: 33.000000[0m
+[0;32mI (79647) MAIN: 32.500000[0m
+[0;32mI (80647) MAIN: 33.000000[0m
+[0;32mI (81647) MAIN: 33.000000[0m
+[0;32mI (82647) MAIN: 33.000000[0m
+[0;32mI (83647) MAIN: 33.000000[0m
+[0;32mI (84647) MAIN: 33.000000[0m
+[0;32mI (85647) MAIN: 33.000000[0m
+[0;32mI (86647) MAIN: 32.500000[0m
+[0;32mI (87647) MAIN: 33.000000[0m
+[0;32mI (88647) MAIN: 33.000000[0m
+[0;32mI (89647) MAIN: 33.000000[0m
+[0;32mI (90647) MAIN: 32.500000[0m
+[0;32mI (91647) MAIN: 33.000000[0m
+[0;32mI (92647) MAIN: 32.500000[0m
+[0;32mI (93647) MAIN: 33.000000[0m
+[0;32mI (94647) MAIN: 33.000000[0m
+[0;32mI (95647) MAIN: 33.000000[0m
+[0;32mI (96647) MAIN: 33.000000[0m
+[0;32mI (97647) MAIN: 33.000000[0m
+[0;32mI (98647) MAIN: 33.000000[0m
+[0;32mI (99647) MAIN: 33.000000[0m
+[0;32mI (100647) MAIN: 33.000000[0m
+[0;32mI (101647) MAIN: 33.000000[0m
+[0;32mI (102647) MAIN: 33.000000[0m
+[0;32mI (103647) MAIN: 33.000000[0m
+[0;32mI (104647) MAIN: 33.000000[0m
+[0;32mI (105647) MAIN: 33.000000[0m
+[0;32mI (106647) MAIN: 33.000000[0m
+[0;32mI (107647) MAIN: 33.000000[0m
+[0;32mI (108647) MAIN: 33.000000[0m
+[0;32mI (109647) MAIN: 33.000000[0m
+[0;32mI (110647) MAIN: 32.500000[0m
+[0;32mI (111647) MAIN: 33.000000[0m
+[0;32mI (112647) MAIN: 32.500000[0m
+[0;32mI (113647) MAIN: 33.000000[0m
+[0;32mI (114647) MAIN: 32.500000[0m
+[0;32mI (115647) MAIN: 33.000000[0m
+[0;32mI (116647) MAIN: 33.000000[0m
+[0;32mI (117647) MAIN: 32.500000[0m
+[0;32mI (118647) MAIN: 33.000000[0m
+[0;32mI (119647) MAIN: 33.000000[0m
+[0;32mI (120647) MAIN: 33.000000[0m
+[0;32mI (121647) MAIN: 33.000000[0m
+[0;32mI (122647) MAIN: 33.000000[0m
+[0;32mI (123647) MAIN: 33.000000[0m
+[0;32mI (124647) MAIN: 33.000000[0m
+[0;32mI (125647) MAIN: 33.000000[0m
+[0;32mI (126647) MAIN: 32.500000[0m
+[0;32mI (127647) MAIN: 33.000000[0m
+[0;32mI (128647) MAIN: 33.000000[0m
+[0;32mI (129647) MAIN: 33.000000[0m
+[0;32mI (130647) MAIN: 33.000000[0m
+[0;32mI (131647) MAIN: 33.000000[0m
+[0;32mI (132647) MAIN: 33.000000[0m
+[0;32mI (133647) MAIN: 33.000000[0m
+[0;32mI (134647) MAIN: 33.000000[0m
+[0;32mI (135647) MAIN: 33.000000[0m
+[0;32mI (136647) MAIN: 33.000000[0m
+[0;32mI (137647) MAIN: 33.000000[0m
+[0;32mI (138647) MAIN: 33.000000[0m
+[0;32mI (139647) MAIN: 33.000000[0m
+[0;32mI (140647) MAIN: 33.000000[0m
+[0;32mI (141647) MAIN: 33.000000[0m
+[0;32mI (142647) MAIN: 32.500000[0m
+[0;32mI (143647) MAIN: 33.000000[0m
+[0;32mI (144647) MAIN: 33.000000[0m
+[0;32mI (145647) MAIN: 33.000000[0m
+[0;32mI (146647) MAIN: 32.500000[0m
+[0;32mI (147647) MAIN: 33.000000[0m
+[0;32mI (148647) MAIN: 33.000000[0m
+[0;32mI (149647) MAIN: 33.000000[0m
+[0;32mI (150647) MAIN: 33.000000[0m
+[0;32mI (151647) MAIN: 33.000000[0m
+[0;32mI (152647) MAIN: 33.000000[0m
+[0;32mI (153647) MAIN: 32.500000[0m
+[0;32mI (154647) MAIN: 33.000000[0m
+[0;32mI (155647) MAIN: 32.500000[0m
+[0;32mI (156647) MAIN: 33.000000[0m
+[0;32mI (157647) MAIN: 33.000000[0m
+[0;32mI (158647) MAIN: 33.000000[0m
+[0;32mI (159647) MAIN: 33.000000[0m
+[0;32mI (160647) MAIN: 33.000000[0m
+[0;32mI (161647) MAIN: 33.000000[0m
+[0;32mI (162647) MAIN: 33.000000[0m
+[0;32mI (163647) MAIN: 33.000000[0m
+[0;32mI (164647) MAIN: 33.000000[0m
+[0;32mI (165647) MAIN: 33.000000[0m
+[0;32mI (166647) MAIN: 33.000000[0m
+[0;32mI (167647) MAIN: 32.500000[0m
+[0;32mI (168647) MAIN: 32.500000[0m
+[0;32mI (169647) MAIN: 33.000000[0m
+[0;32mI (170647) MAIN: 32.500000[0m
+[0;32mI (171647) MAIN: 33.000000[0m
+[0;32mI (172647) MAIN: 33.000000[0m
+[0;32mI (173647) MAIN: 33.000000[0m
+[0;32mI (174647) MAIN: 33.000000[0m
+[0;32mI (175647) MAIN: 33.000000[0m
+[0;32mI (176647) MAIN: 33.000000[0m
+[0;32mI (177647) MAIN: 33.000000[0m
+[0;32mI (178647) MAIN: 33.000000[0m
+[0;32mI (179647) MAIN: 33.000000[0m
+[0;32mI (180647) MAIN: 33.000000[0m
+[0;32mI (181647) MAIN: 33.000000[0m
+[0;32mI (182647) MAIN: 33.000000[0m
+[0;32mI (183647) MAIN: 33.000000[0m
+[0;32mI (184647) MAIN: 33.000000[0m
+[0;32mI (185647) MAIN: 33.000000[0m
+����������������������������������������������������������������[0;32mI (186647) MAIN: 33.000000[0m
+[0;32mI (187647) MAIN: 33.000000[0m
+[0;32mI (188647) MAIN: 33.000000[0m
+[0;32mI (189647) MAIN: 33.000000[0m
+[0;32mI (190647) MAIN: 33.000000[0m
+[0;32mI (191647) MAIN: 33.000000[0m
+[0;32mI (192647) MAIN: 33.000000[0m
+[0;32mI (193647) MAIN: 33.000000[0m
+[0;32mI (194647) MAIN: 33.000000[0m
+[0;32mI (195647) MAIN: 33.000000[0m
+[0;32mI (196647) MAIN: 33.000000[0m
+[0;32mI (197647) MAIN: 33.000000[0m
+[0;32mI (198647) MAIN: 32.500000[0m
+[0;32mI (199647) MAIN: 33.000000[0m
+[0;32mI (200647) MAIN: 33.000000[0m
+[0;32mI (201647) MAIN: 33.000000[0m
+[0;32mI (202647) MAIN: 33.000000[0m
+[0;32mI (203647) MAIN: 33.000000[0m
+[0;32mI (204647) MAIN: 33.000000[0m
+[0;32mI (205647) MAIN: -127.000000[0m
+[0;32mI (206647) MAIN: 33.000000[0m
+[0;32mI (207647) MAIN: 33.000000[0m
+[0;32mI (208647) MAIN: 33.000000[0m
+[0;32mI (209647) MAIN: 33.000000[0m
+[0;32mI (210647) MAIN: 33.000000[0m
+[0;32mI (211647) MAIN: 33.000000[0m
+[0;32mI (212647) MAIN: 33.000000[0m
+[0;32mI (213647) MAIN: 33.000000[0m
+[0;32mI (214647) MAIN: 33.000000[0m
+[0;32mI (215647) MAIN: 33.000000[0m
+[0;32mI (216647) MAIN: 33.000000[0m
+[0;32mI (217647) MAIN: 33.000000[0m
+[0;32mI (218647) MAIN: 33.000000[0m
+[0;32mI (219647) MAIN: 33.000000[0m
+[0;32mI (220647) MAIN: 33.000000[0m
+[0;32mI (221647) MAIN: 33.000000[0m
+[0;32mI (222647) MAIN: 33.000000[0m
+[0;32mI (223647) MAIN: 33.000000[0m
+[0;32mI (224647) MAIN: 33.000000[0m
+[0;32mI (225647) MAIN: 33.000000[0m
+[0;32mI (226647) MAIN: 33.000000[0m
+[0;32mI (227647) MAIN: 33.000000[0m
+[0;32mI (228647) MAIN: 33.000000[0m
+[0;32mI (229647) MAIN: 33.000000[0m
+[0;32mI (230647) MAIN: 33.000000[0m
+[0;32mI (231647) MAIN: 33.000000[0m
+����������������������������������������������������������������2mI (232647) MAIN: 33.000000[0m
+[0;32mI (233647) MAIN: 33.000000[0m
+[0;32mI (234647) MAIN: 33.000000[0m
+[0;32mI (235647) MAIN: 33.000000[0m
+[0;32mI (236647) MAIN: 33.000000[0m
+[0;32mI (237647) MAIN: 33.000000[0m
+[0;32mI (238647) MAIN: 33.000000[0m
+[0;32mI (239647) MAIN: 33.000000[0m
+[0;32mI (240647) MAIN: 33.000000[0m
+[0;32mI (241647) MAIN: 33.000000[0m
+[0;32mI (242647) MAIN: 33.000000[0m
+[0;32mI (243647) MAIN: 33.000000[0m
+[0;32mI (244647) MAIN: 33.000000[0m
+[0;32mI (245647) MAIN: 33.000000[0m
+[0;32mI (246647) MAIN: 33.000000[0m
+[0;32mI (247647) MAIN: 33.000000[0m
+[0;32mI (248647) MAIN: 33.000000[0m
+[0;32mI (249647) MAIN: 33.000000[0m
+[0;32mI (250647) MAIN: 33.000000[0m
+[0;32mI (251647) MAIN: 33.000000[0m
+[0;32mI (252647) MAIN: 33.000000[0m
+[0;32mI (253647) MAIN: 33.000000[0m
+[0;32mI (254647) MAIN: 33.000000[0m
+[0;32mI (255647) MAIN: 33.000000[0m
+[0;32mI (256647) MAIN: 33.000000[0m
+[0;32mI (257647) MAIN: 33.000000[0m
+[0;32mI (258647) MAIN: 33.000000[0m
+[0;32mI (259647) MAIN: 33.000000[0m
+[0;32mI (260647) MAIN: 33.000000[0m
+[0;32mI (261647) MAIN: 33.000000[0m
+[0;32mI (262647) MAIN: 33.000000[0m
+[0;32mI (263647) MAIN: 33.000000[0m
+[0;32mI (264647) MAIN: 33.000000[0m
+[0;32mI (265647) MAIN: 33.000000[0m
+[0;32mI (266647) MAIN: 33.000000[0m
+[0;32mI (267647) MAIN: 33.000000[0m
+[0;32mI (268647) MAIN: 33.000000[0m
+[0;32mI (269647) MAIN: 33.000000[0m
+[0;32mI (270647) MAIN: 33.000000[0m
+[0;32mI (271647) MAIN: 33.000000[0m
+[0;32mI (272647) MAIN: 33.000000[0m
+[0;32mI (273647) MAIN: 33.000000[0m
+[0;32mI (274647) MAIN: 33.000000[0m
+[0;32mI (275647) MAIN: 33.000000[0m
+[0;32mI (276647) MAIN: 32.500000[0m
+[0;32mI (277647) MAIN: 33.000000[0m
+[0;32mI (278647) MAIN: 33.000000[0m
+[0;32mI (279647) MAIN: 33.000000[0m
+[0;32mI (280647) MAIN: 33.000000[0m
+[0;32mI (281647) MAIN: 33.000000[0m
+[0;32mI (282647) MAIN: 33.000000[0m
+[0;32mI (283647) MAIN: 33.000000[0m
+[0;32mI (284647) MAIN: 33.000000[0m
+[0;32mI (285647) MAIN: 33.000000[0m
+[0;32mI (286647) MAIN: 33.000000[0m
+[0;32mI (287647) MAIN: 33.000000[0m
+[0;32mI (288647) MAIN: 33.000000[0m
+[0;32mI (289647) MAIN: 33.000000[0m
+[0;32mI (290647) MAIN: 33.000000[0m
+[0;32mI (291647) MAIN: 33.000000[0m
+[0;32mI (292647) MAIN: 33.000000[0m
+[0;32mI (293647) MAIN: 33.000000[0m
+[0;32mI (294647) MAIN: 33.000000[0m
+[0;32mI (295647) MAIN: 33.000000[0m
+[0;32mI (296647) MAIN: 33.000000[0m
+[0;32mI (297647) MAIN: 33.000000[0m
+[0;32mI (298647) MAIN: 33.000000[0m
+[0;32mI (299647) MAIN: 33.000000[0m
+[0;32mI (300647) MAIN: 33.000000[0m
+[0;32mI (301647) MAIN: 33.000000[0m
+[0;32mI (302647) MAIN: 33.000000[0m
+[0;32mI (303647) MAIN: 33.000000[0m
+[0;32mI (304647) MAIN: 33.000000[0m
+[0;32mI (305647) MAIN: 33.000000[0m
+[0;32mI (306647) MAIN: 33.000000[0m
+[0;32mI (307647) MAIN: 33.000000[0m
+[0;32mI (308647) MAIN: 33.000000[0m
+[0;32mI (309647) MAIN: 33.000000[0m
+[0;32mI (310647) MAIN: 33.000000[0m
+[0;32mI (311647) MAIN: 33.000000[0m
+[0;32mI (312647) MAIN: 33.000000[0m
+[0;32mI (313647) MAIN: 33.000000[0m
+[0;32mI (314647) MAIN: 33.000000[0m
+[0;32mI (315647) MAIN: 33.000000[0m
+[0;32mI (316647) MAIN: 33.000000[0m
+[0;32mI (317647) MAIN: 33.000000[0m
+[0;32mI (318647) MAIN: 33.000000[0m
+[0;32mI (319647) MAIN: 33.000000[0m
+[0;32mI (320647) MAIN: 33.000000[0m
+[0;32mI (321647) MAIN: 33.000000[0m
+[0;32mI (322647) MAIN: 33.000000[0m
+[0;32mI (323647) MAIN: 33.000000[0m
+[0;32mI (324647) MAIN: 33.000000[0m
+����������������������������������������������������������������0;32mI (325647) MAIN: 33.000000[0m
+[0;32mI (326647) MAIN: 33.000000[0m
+[0;32mI (327647) MAIN: 33.000000[0m
+[0;32mI (328647) MAIN: 33.000000[0m
+[0;32mI (329647) MAIN: 33.000000[0m
+[0;32mI (330647) MAIN: 33.000000[0m
+[0;32mI (331647) MAIN: 33.000000[0m
+[0;32mI (332647) MAIN: 33.000000[0m
+[0;32mI (333647) MAIN: 33.000000[0m
+[0;32mI (334647) MAIN: 33.000000[0m
+[0;32mI (335647) MAIN: 33.000000[0m
+[0;32mI (336647) MAIN: 33.000000[0m
+[0;32mI (337647) MAIN: 33.000000[0m
+[0;32mI (338647) MAIN: 33.000000[0m
+[0;32mI (339647) MAIN: 33.000000[0m
+[0;32mI (340647) MAIN: 33.000000[0m
+[0;32mI (341647) MAIN: 33.000000[0m
+[0;32mI (342647) MAIN: 33.000000[0m
+[0;32mI (343647) MAIN: 33.000000[0m
+[0;32mI (344647) MAIN: 33.000000[0m
+[0;32mI (345647) MAIN: 33.000000[0m
+[0;32mI (346647) MAIN: 33.000000[0m
+[0;32mI (347647) MAIN: 33.000000[0m
+[0;32mI (348647) MAIN: 33.000000[0m
+[0;32mI (349647) MAIN: 33.000000[0m
+[0;32mI (350647) MAIN: 33.000000[0m
+[0;32mI (351647) MAIN: 33.000000[0m
+[0;32mI (352647) MAIN: 33.000000[0m
+[0;32mI (353647) MAIN: 33.000000[0m
+[0;32mI (354647) MAIN: 33.000000[0m
+[0;32mI (355647) MAIN: 33.000000[0m
+[0;32mI (356647) MAIN: 33.000000[0m
+[0;32mI (357647) MAIN: 33.000000[0m
+[0;32mI (358647) MAIN: 33.000000[0m
+[0;32mI (359647) MAIN: 33.000000[0m
+[0;32mI (360647) MAIN: 33.000000[0m
+[0;32mI (361647) MAIN: 33.000000[0m
+[0;32mI (362647) MAIN: 33.000000[0m
+[0;32mI (363647) MAIN: 33.000000[0m
+[0;32mI (364647) MAIN: 33.000000[0m
+[0;32mI (365647) MAIN: 33.000000[0m
+[0;32mI (366647) MAIN: 33.000000[0m
+[0;32mI (367647) MAIN: 33.000000[0m
+[0;32mI (368647) MAIN: 33.000000[0m
+[0;32mI (369647) MAIN: 33.000000[0m
+[0;32mI (370647) MAIN: 33.000000[0m
+[0;32mI (371647) MAIN: 33.000000[0m
+[0;32mI (372647) MAIN: 33.000000[0m
+[0;32mI (373647) MAIN: 33.000000[0m
+[0;32mI (374647) MAIN: 33.000000[0m
+[0;32mI (375647) MAIN: 33.000000[0m
+[0;32mI (376647) MAIN: 33.000000[0m
+[0;32mI (377647) MAIN: 33.000000[0m
+[0;32mI (378647) MAIN: 33.000000[0m
+[0;32mI (379647) MAIN: 33.000000[0m
+[0;32mI (380647) MAIN: 33.000000[0m
+[0;32mI (381647) MAIN: 33.000000[0m
+[0;32mI (382647) MAIN: 33.000000[0m
+[0;32mI (383647) MAIN: 33.000000[0m
+[0;32mI (384647) MAIN: 33.000000[0m
+[0;32mI (385647) MAIN: 33.000000[0m
+[0;32mI (386647) MAIN: 33.000000[0m
+[0;32mI (387647) MAIN: 33.000000[0m
+[0;32mI (388647) MAIN: 33.000000[0m
+[0;32mI (389647) MAIN: 33.000000[0m
+[0;32mI (390647) MAIN: 33.000000[0m
+[0;32mI (391647) MAIN: 33.000000[0m
+[0;32mI (392647) MAIN: 33.000000[0m
+[0;32mI (393647) MAIN: 33.000000[0m
+[0;32mI (394647) MAIN: 33.000000[0m
+[0;32mI (395647) MAIN: 33.000000[0m
+[0;32mI (396647) MAIN: 33.000000[0m
+[0;32mI (397647) MAIN: 33.000000[0m
+[0;32mI (398647) MAIN: 33.000000[0m
+[0;32mI (399647) MAIN: 33.000000[0m
+[0;32mI (400647) MAIN: 33.000000[0m
+[0;32mI (401647) MAIN: 33.000000[0m
+[0;32mI (402647) MAIN: 33.000000[0m
+[0;32mI (403647) MAIN: 33.000000[0m
+[0;32mI (404647) MAIN: 33.000000[0m
+[0;32mI (405647) MAIN: 33.000000[0m
+[0;32mI (406647) MAIN: 33.000000[0m
+[0;32mI (407647) MAIN: 33.000000[0m
+[0;32mI (408647) MAIN: 33.000000[0m
+[0;32mI (409647) MAIN: 33.000000[0m
+[0;32mI (410647) MAIN: 33.000000[0m
+[0;32mI (411647) MAIN: 33.000000[0m
+[0;32mI (412647) MAIN: 33.000000[0m
+[0;32mI (413647) MAIN: 33.000000[0m
+[0;32mI (414647) MAIN: 33.000000[0m
+[0;32mI (415647) MAIN: 33.000000[0m
+[0;32mI (416647) MAIN: 33.000000[0m
+[0;32mI (417647) MAIN: 33.000000[0m
+[0;32mI (418647) MAIN: 33.000000[0m
+[0;32mI (419647) MAIN: 33.000000[0m
+[0;32mI (420647) MAIN: 33.000000[0m
+[0;32mI (421647) MAIN: 33.000000[0m
+[0;32mI (422647) MAIN: 33.000000[0m
+[0;32mI (423647) MAIN: 33.000000[0m
+[0;32mI (424647) MAIN: 33.000000[0m
+[0;32mI (425647) MAIN: 33.000000[0m
+[0;32mI (426647) MAIN: 33.000000[0m
+[0;32mI (427647) MAIN: 33.000000[0m
+[0;32mI (428647) MAIN: 33.000000[0m
+[0;32mI (429647) MAIN: 33.000000[0m
+[0;32mI (430647) MAIN: 33.000000[0m
+[0;32mI (431647) MAIN: 33.000000[0m
+[0;32mI (432647) MAIN: 33.000000[0m
+[0;32mI (433647) MAIN: 33.000000[0m
+[0;32mI (434647) MAIN: 33.000000[0m
+[0;32mI (435647) MAIN: 33.000000[0m
+[0;32mI (436647) MAIN: 33.000000[0m
+[0;32mI (437647) MAIN: 33.000000[0m
+[0;32mI (438647) MAIN: 33.000000[0m
+[0;32mI (439647) MAIN: 33.000000[0m
+[0;32mI (440647) MAIN: 33.000000[0m
+[0;32mI (441647) MAIN: 33.000000[0m
+[0;32mI (442647) MAIN: 33.000000[0m
+[0;32mI (443647) MAIN: 33.000000[0m
+[0;32mI (444647) MAIN: 33.000000[0m
+[0;32mI (445647) MAIN: 33.000000[0m
+[0;32mI (446647) MAIN: 33.000000[0m
+[0;32mI (447647) MAIN: 33.000000[0m
+[0;32mI (448647) MAIN: 33.000000[0m
+[0;32mI (449647) MAIN: 33.000000[0m
+[0;32mI (450647) MAIN: 33.000000[0m
+[0;32mI (451647) MAIN: 33.000000[0m
+[0;32mI (452647) MAIN: 33.000000[0m
+[0;32mI (453647) MAIN: 33.000000[0m
+[0;32mI (454647) MAIN: 33.000000[0m
+[0;32mI (455647) MAIN: 33.000000[0m
+[0;32mI (456647) MAIN: 33.000000[0m
+[0;32mI (457647) MAIN: 33.000000[0m
+[0;32mI (458647) MAIN: 33.000000[0m
+[0;32mI (459647) MAIN: 33.000000[0m
+[0;32mI (460647) MAIN: 33.000000[0m
+[0;32mI (461647) MAIN: 33.000000[0m
+[0;32mI (462647) MAIN: 33.000000[0m
+[0;32mI (463647) MAIN: 33.000000[0m
+[0;32mI (464647) MAIN: 33.000000[0m
+[0;32mI (465647) MAIN: 33.000000[0m
+[0;32mI (466647) MAIN: 33.000000[0m
+[0;32mI (467647) MAIN: 33.000000[0m
+[0;32mI (468647) MAIN: 33.000000[0m
+[0;32mI (469647) MAIN: 33.000000[0m
+[0;32mI (470647) MAIN: 33.000000[0m
+[0;32mI (471647) MAIN: 33.000000[0m
+[0;32mI (472647) MAIN: 33.000000[0m
+[0;32mI (473647) MAIN: 33.000000[0m
+[0;32mI (474647) MAIN: 33.000000[0m
+[0;32mI (475647) MAIN: 33.000000[0m
+[0;32mI (476647) MAIN: 33.000000[0m
+[0;32mI (477647) MAIN: 33.000000[0m
+[0;32mI (478647) MAIN: 33.000000[0m
+[0;32mI (479647) MAIN: 33.000000[0m
+[0;32mI (480647) MAIN: 33.000000[0m
+[0;32mI (481647) MAIN: 33.000000[0m
+[0;32mI (482647) MAIN: 33.000000[0m
+����������������������������������������������������������������0;32mI (483647) MAIN: 33.000000[0m
+[0;32mI (484647) MAIN: 33.000000[0m
+[0;32mI (485647) MAIN: 33.000000[0m
+[0;32mI (486647) MAIN: 33.000000[0m
+[0;32mI (487647) MAIN: 33.000000[0m
+[0;32mI (488647) MAIN: 33.000000[0m
+[0;32mI (489647) MAIN: 33.000000[0m
+[0;32mI (490647) MAIN: 33.000000[0m
+[0;32mI (491647) MAIN: 33.000000[0m
+[0;32mI (492647) MAIN: 33.000000[0m
+[0;32mI (493647) MAIN: 33.000000[0m
+[0;32mI (494647) MAIN: 33.000000[0m
+[0;32mI (495647) MAIN: 33.000000[0m
+[0;32mI (496647) MAIN: 33.000000[0m
+[0;32mI (497647) MAIN: 33.000000[0m
+[0;32mI (498647) MAIN: 33.000000[0m
+[0;32mI (499647) MAIN: 33.000000[0m
+[0;32mI (500647) MAIN: 33.000000[0m
+[0;32mI (501647) MAIN: 33.000000[0m
+[0;32mI (502647) MAIN: 33.000000[0m
+[0;32mI (503647) MAIN: 33.000000[0m
+[0;32mI (504647) MAIN: 33.000000[0m
+[0;32mI (505647) MAIN: 33.000000[0m
+[0;32mI (506647) MAIN: 33.000000[0m
+[0;32mI (507647) MAIN: 33.000000[0m
+[0;32mI (508647) MAIN: 33.000000[0m
+[0;32mI (509647) MAIN: 33.000000[0m
+[0;32mI (510647) MAIN: 33.000000[0m
+[0;32mI (511647) MAIN: 33.000000[0m
+[0;32mI (512647) MAIN: 33.000000[0m
+[0;32mI (513647) MAIN: 33.000000[0m
+[0;32mI (514647) MAIN: 33.000000[0m
+[0;32mI (515647) MAIN: 33.000000[0m
+[0;32mI (516647) MAIN: 33.000000[0m
+[0;32mI (517647) MAIN: 33.000000[0m
+[0;32mI (518647) MAIN: 33.000000[0m
+[0;32mI (519647) MAIN: 33.000000[0m
+[0;32mI (520647) MAIN: 33.000000[0m
+[0;32mI (521647) MAIN: 33.000000[0m
+[0;32mI (522647) MAIN: 33.000000[0m
+[0;32mI (523647) MAIN: 33.000000[0m
+[0;32mI (524647) MAIN: 33.000000[0m
+[0;32mI (525647) MAIN: 33.000000[0m
+[0;32mI (526647) MAIN: 33.000000[0m
+[0;32mI (527647) MAIN: 33.000000[0m
+[0;32mI (528647) MAIN: 33.000000[0m
+[0;32mI (529647) MAIN: 33.000000[0m
+[0;32mI (530647) MAIN: 33.000000[0m
+[0;32mI (531647) MAIN: 33.000000[0m
+[0;32mI (532647) MAIN: 33.000000[0m
+[0;32mI (533647) MAIN: 33.000000[0m
+[0;32mI (534647) MAIN: 33.000000[0m
+[0;32mI (535647) MAIN: 33.000000[0m
+[0;32mI (536647) MAIN: 33.000000[0m
+[0;32mI (537647) MAIN: 33.000000[0m
+[0;32mI (538647) MAIN: 33.000000[0m
+[0;32mI (539647) MAIN: 33.000000[0m
+[0;32mI (540647) MAIN: 33.000000[0m
+[0;32mI (541647) MAIN: 33.000000[0m

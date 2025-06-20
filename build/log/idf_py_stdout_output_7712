@@ -1,0 +1,8 @@
+[0/1] Re-running CMake...
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 1 dependencies:
+NOTICE: [1/1] idf (5.2.5)
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+F:\esp\Espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -S"F:\esp\Espressif\frameworks\anomaly detection" -B"F:\esp\Espressif\frameworks\anomaly detection\build"

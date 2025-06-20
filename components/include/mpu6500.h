@@ -62,7 +62,6 @@
 #define MPU6500_CLOCK_PLL_EXT19M (0x05)
 
 #define BYTE_2_INT_BE(byte, i) ((int16_t)((byte[i] << 8) + (byte[i + 1])))
-#define BYTE_2_INT_LE(byte, i) ((int16_t)((byte[i + 1] << 8) + (byte[i])))
 
 typedef struct {
     float x, y, z;
@@ -79,7 +78,7 @@ typedef enum {
     GYRO_FS_250DPS = 0,
     GYRO_FS_500DPS,
     GYRO_FS_1000DPS,
-    GYRO_FS_2500DPS
+    GYRO_FS_2000DPS
 } gyro_fs_t;
 
 typedef struct {
@@ -91,7 +90,7 @@ typedef struct {
 } mpu6500_calibration_t;
 
 typedef struct {
-    uint16_t imu_sample_rate;
+    int imu_sample_rate;
 
     accel_fs_t accel_fs;
     gyro_fs_t gyro_fs;

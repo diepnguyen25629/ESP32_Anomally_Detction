@@ -1,0 +1,401 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfc0h (188352) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfe8 vaddr=3ffbdb60 size=02030h (  8240) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f1ch (814876) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f44 vaddr=3ffbfb90 size=040ach ( 16556) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010aff8 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  fc930b2d7...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2648 len 0000D9B8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (666) main_task: Started on CPU0[0m
+[0;32mI (670) main_task: Calling app_main()[0m
+[0;32mI (710) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (712) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (715) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (800) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1389) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1396) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1404) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1447) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1475) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1484) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1493) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1503) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1506) MPU6500: Initializating MPU6500[0m
+[0;32mI (1552) BMP280: Initializating BMP280[0m
+[0;32mI (1552) main_task: Returned from app_main()[0m
+[0;32mI (2671) MAIN: 33.000000[0m
+[0;32mI (3671) MAIN: 33.000000[0m
+[0;32mI (4672) MAIN: 33.000000[0m
+[0;32mI (5671) MAIN: 33.000000[0m
+[0;32mI (6672) MAIN: 33.000000[0m
+[0;32mI (7671) MAIN: 33.000000[0m
+[0;32mI (8671) MAIN: 33.000000[0m
+[0;32mI (9671) MAIN: 33.000000[0m
+[0;32mI (10671) MAIN: 33.000000[0m
+[0;32mI (11671) MAIN: 33.000000[0m
+[0;32mI (12671) MAIN: 33.000000[0m
+[0;32mI (13673) MAIN: 33.000000[0m
+[0;32mI (14671) MAIN: 33.000000[0m
+[0;32mI (15672) MAIN: 33.000000[0m
+[0;32mI (16671) MAIN: 33.000000[0m
+[0;32mI (17671) MAIN: -127.000000[0m
+[0;32mI (18671) MAIN: 33.000000[0m
+[0;32mI (19671) MAIN: 33.000000[0m
+[0;32mI (20671) MAIN: 33.000000[0m
+[0;32mI (21671) MAIN: 33.000000[0m
+[0;32mI (22671) MAIN: 33.000000[0m
+[0;32mI (23671) MAIN: 33.000000[0m
+[0;32mI (24673) MAIN: -127.000000[0m
+[0;32mI (25671) MAIN: 33.000000[0m
+[0;32mI (26672) MAIN: 33.000000[0m
+[0;32mI (27671) MAIN: 33.000000[0m
+[0;32mI (28671) MAIN: -127.000000[0m
+[0;32mI (29671) MAIN: 33.000000[0m
+[0;32mI (30671) MAIN: 33.000000[0m
+[0;32mI (31671) MAIN: 33.000000[0m
+[0;32mI (32671) MAIN: 33.000000[0m
+[0;32mI (33671) MAIN: 33.000000[0m
+[0;32mI (34671) MAIN: 33.000000[0m
+[0;32mI (35672) MAIN: 33.000000[0m
+[0;32mI (36671) MAIN: 33.000000[0m
+[0;32mI (37672) MAIN: 33.000000[0m
+[0;32mI (38671) MAIN: 33.000000[0m
+[0;32mI (39671) MAIN: 33.000000[0m
+[0;32mI (40671) MAIN: 33.000000[0m
+[0;32mI (41671) MAIN: 33.000000[0m
+[0;32mI (42671) MAIN: 33.000000[0m
+[0;32mI (43671) MAIN: 33.000000[0m
+[0;32mI (44671) MAIN: 33.000000[0m
+[0;32mI (45671) MAIN: 33.000000[0m
+[0;32mI (46672) MAIN: -127.000000[0m
+[0;32mI (47671) MAIN: 33.000000[0m
+[0;32mI (48672) MAIN: 33.000000[0m
+[0;32mI (49671) MAIN: 33.000000[0m
+[0;32mI (50671) MAIN: 33.000000[0m
+[0;32mI (51671) MAIN: 33.000000[0m
+[0;32mI (52671) MAIN: 33.000000[0m
+[0;32mI (53671) MAIN: 33.000000[0m
+[0;32mI (54671) MAIN: 33.000000[0m
+[0;32mI (55671) MAIN: 33.000000[0m
+[0;32mI (56671) MAIN: 33.000000[0m
+[0;32mI (57672) MAIN: 33.000000[0m
+[0;32mI (58671) MAIN: 33.000000[0m
+[0;32mI (59672) MAIN: 33.000000[0m
+[0;32mI (60671) MAIN: 33.000000[0m
+[0;32mI (61671) MAIN: 33.000000[0m
+[0;32mI (62671) MAIN: 33.000000[0m
+[0;32mI (63671) MAIN: 33.000000[0m
+[0;32mI (64671) MAIN: 33.000000[0m
+[0;32mI (65671) MAIN: 33.000000[0m
+[0;32mI (66673) MAIN: -127.000000[0m
+[0;32mI (67671) MAIN: 33.000000[0m
+[0;32mI (68672) MAIN: 33.000000[0m
+[0;32mI (69671) MAIN: 33.000000[0m
+[0;32mI (70671) MAIN: -127.000000[0m
+[0;32mI (71671) MAIN: 33.000000[0m
+[0;32mI (72671) MAIN: 33.000000[0m
+[0;32mI (73671) MAIN: 33.000000[0m
+[0;32mI (74671) MAIN: 33.000000[0m
+[0;32mI (75671) MAIN: 33.000000[0m
+[0;32mI (76671) MAIN: 33.000000[0m
+[0;32mI (77673) MAIN: -127.000000[0m
+[0;32mI (78671) MAIN: 33.000000[0m
+[0;32mI (79672) MAIN: 33.000000[0m
+[0;32mI (80671) MAIN: 33.000000[0m
+[0;32mI (81671) MAIN: -127.000000[0m
+[0;32mI (82671) MAIN: 33.000000[0m
+[0;32mI (83671) MAIN: 33.000000[0m
+[0;32mI (84671) MAIN: 33.000000[0m
+[0;32mI (85671) MAIN: 33.000000[0m
+[0;32mI (86671) MAIN: 33.000000[0m
+[0;32mI (87671) MAIN: 33.000000[0m
+[0;32mI (88672) MAIN: -127.000000[0m
+[0;32mI (89671) MAIN: 33.000000[0m
+[0;32mI (90672) MAIN: 33.000000[0m
+[0;32mI (91671) MAIN: 33.000000[0m
+[0;32mI (92671) MAIN: 33.000000[0m
+[0;32mI (93671) MAIN: 33.000000[0m
+[0;32mI (94671) MAIN: 33.000000[0m
+[0;32mI (95671) MAIN: 33.000000[0m
+[0;32mI (96671) MAIN: 33.000000[0m
+[0;32mI (97671) MAIN: 33.000000[0m
+[0;32mI (98671) MAIN: 33.000000[0m
+[0;32mI (99672) MAIN: 33.000000[0m
+[0;32mI (100671) MAIN: 33.000000[0m
+[0;32mI (101672) MAIN: 33.000000[0m
+[0;32mI (102671) MAIN: 33.000000[0m
+[0;32mI (103671) MAIN: 33.000000[0m
+[0;32mI (104671) MAIN: 33.000000[0m
+[0;32mI (105671) MAIN: 33.000000[0m
+[0;32mI (106671) MAIN: 33.000000[0m
+[0;32mI (107671) MAIN: 33.000000[0m
+[0;32mI (108671) MAIN: 33.000000[0m
+[0;32mI (109671) MAIN: 33.000000[0m
+[0;32mI (110672) MAIN: 33.000000[0m
+[0;32mI (111671) MAIN: 33.000000[0m
+[0;32mI (112673) MAIN: 33.000000[0m
+[0;32mI (113671) MAIN: 33.000000[0m
+[0;32mI (114671) MAIN: 33.000000[0m
+[0;32mI (115671) MAIN: 33.000000[0m
+[0;33mW (115830) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (116095) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;32mI (116676) MAIN: -127.000000[0m
+[0;32mI (117676) MAIN: -127.000000[0m
+[0;33mW (118158) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (118170) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (118173) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+[0;32mI (118676) MAIN: -127.000000[0m
+[0;32mI (119676) MAIN: 33.000000[0m
+[0;32mI (120676) MAIN: -127.000000[0m
+[0;33mW (121323) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (121672) MAIN: -127.000000[0m
+[0;32mI (122671) MAIN: 33.000000[0m
+[0;32mI (123671) MAIN: 33.000000[0m
+[0;32mI (124671) MAIN: 33.000000[0m
+[0;32mI (125672) MAIN: 33.000000[0m
+[0;32mI (126671) MAIN: 33.000000[0m
+[0;32mI (127671) MAIN: 33.000000[0m
+[0;32mI (128671) MAIN: 33.000000[0m
+[0;32mI (129671) MAIN: 33.000000[0m
+[0;32mI (130673) MAIN: -127.000000[0m
+[0;32mI (130703) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (130703) WIFI_BT: Waiting for WiFi config via Bluetooth...[0m
+[0;33mW (130809) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+[0;32mI (131123) WIFI_BT: Bluetooth disabled[0m
+[0;32mI (131127) wifi:wifi driver task: 3ffbd57c, prio:23, stack:3584, core=0[0m
+[0;32mI (131146) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (131146) wifi:wifi certification version: v7.0[0m
+[0;32mI (131147) wifi:config NVS flash: enabled[0m
+[0;32mI (131147) wifi:config nano formating: disabled[0m
+[0;32mI (131152) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (131157) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (131161) wifi:Init management short buffer num: 32[0m
+[0;32mI (131166) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (131170) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (131175) wifi:Init static rx buffer num: 10[0m
+[0;32mI (131178) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (131184) wifi_init: tcpip mbox: 32[0m
+[0;32mI (131187) wifi_init: udp mbox: 6[0m
+[0;32mI (131191) wifi_init: tcp mbox: 6[0m
+[0;32mI (131195) wifi_init: tcp tx win: 5760[0m
+[0;32mI (131199) wifi_init: tcp rx win: 5760[0m
+[0;32mI (131204) wifi_init: tcp mss: 1440[0m
+[0;32mI (131208) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (131253) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (131254) wifi:enable tsf[0m
+[0;32mI (131257) WIFI_BT: WiFi connecting to Tien[0m
+����������������������������������������������������������������(131666) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;32mI (131668) wifi:state: init -> auth (b0)[0m
+[0;32mI (131675) wifi:state: auth -> assoc (0)[0m
+[0;32mI (131683) wifi:state: assoc -> run (10)[0m
+[0;32mI (131715) wifi:connected with Tien, aid = 25, channel 1, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (131716) wifi:security: WPA2-PSK, phy: bgn, rssi: -36[0m
+[0;32mI (131742) wifi:pm start, type: 1[0m
+
+[0;32mI (131743) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (131795) MAIN: 33.000000[0m
+[0;32mI (131806) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (132673) MAIN: 33.000000[0m
+[0;32mI (133673) MAIN: 33.000000[0m
+[0;32mI (134676) MAIN: -127.000000[0m
+[0;32mI (134753) esp_netif_handlers: sta ip: 192.168.1.42, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (134754) WIFI_BT: Got IP: 192.168.1.42[0m
+[0;32mI (134994) TCP_CONNECT: Successfully connected to 192.168.1.41:12345[0m
+[0;32mI (135680) MAIN: -127.000000[0m
+[0;32mI (136674) MAIN: -127.000000[0m
+[0;32mI (137674) MAIN: 33.000000[0m
+[0;32mI (138681) MAIN: -127.000000[0m
+[0;32mI (139673) MAIN: 33.000000[0m
+[0;32mI (140673) MAIN: 33.000000[0m
+[0;32mI (141673) MAIN: 33.000000[0m
+[0;32mI (142680) MAIN: -127.000000[0m
+[0;32mI (143673) MAIN: 33.000000[0m
+[0;32mI (144674) MAIN: 33.000000[0m
+[0;32mI (145674) MAIN: 33.000000[0m
+[0;32mI (146675) MAIN: -127.000000[0m
+[0;32mI (147673) MAIN: 33.000000[0m
+[0;32mI (148673) MAIN: 33.000000[0m
+[0;32mI (149673) MAIN: 33.000000[0m
+[0;32mI (150681) MAIN: -127.000000[0m
+[0;32mI (151675) MAIN: -127.000000[0m
+[0;32mI (152673) MAIN: 33.000000[0m
+[0;32mI (153673) MAIN: 33.000000[0m
+[0;32mI (154673) MAIN: 33.000000[0m
+[0;32mI (155683) MAIN: -127.000000[0m
+[0;32mI (156673) MAIN: 33.000000[0m
+[0;32mI (157673) MAIN: 33.000000[0m
+[0;32mI (158680) MAIN: -127.000000[0m
+[0;32mI (159677) MAIN: 33.000000[0m
+[0;32mI (160673) MAIN: 33.000000[0m
+[0;32mI (161673) MAIN: 33.000000[0m
+[0;32mI (162673) MAIN: 33.000000[0m
+[0;32mI (163675) MAIN: 33.000000[0m
+[0;32mI (164673) MAIN: 33.000000[0m
+[0;32mI (165673) MAIN: 33.000000[0m
+[0;32mI (166677) MAIN: -127.000000[0m
+[0;32mI (167673) MAIN: 33.000000[0m
+����������������������������������������������������������������2mI (168675) MAIN: 33.000000[0m
+[0;32mI (169674) MAIN: 33.000000[0m
+[0;32mI (170673) MAIN: 33.000000[0m
+[0;32mI (171673) MAIN: 33.000000[0m
+[0;32mI (172678) MAIN: -127.000000[0m
+[0;32mI (173673) MAIN: 33.000000[0m
+[0;32mI (174680) MAIN: -127.000000[0m
+[0;32mI (175673) MAIN: 33.000000[0m
+[0;32mI (176678) MAIN: -127.000000[0m
+[0;32mI (177676) MAIN: 33.000000[0m
+[0;32mI (178673) MAIN: 33.000000[0m
+����������������������������������������������������������������[0;32mI (179673) MAIN: 33.000000[0m
+[0;32mI (180675) MAIN: -127.000000[0m
+[0;32mI (181679) MAIN: -127.000000[0m
+[0;32mI (182681) MAIN: -127.000000[0m
+[0;32mI (183673) MAIN: 33.000000[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfc0h (188352) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfe8 vaddr=3ffbdb60 size=02030h (  8240) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f1ch (814876) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f44 vaddr=3ffbfb90 size=040ach ( 16556) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010aff8 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  fc930b2d7...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2648 len 0000D9B8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (666) main_task: Started on CPU0[0m
+[0;32mI (670) main_task: Calling app_main()[0m
+[0;32mI (709) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (711) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (714) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (799) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1369) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1376) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1381) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1383) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1430) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1457) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1467) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1476) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1486) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1489) MPU6500: Initializating MPU6500[0m
+[0;32mI (1523) BMP280: Initializating BMP280[0m
+[0;32mI (1523) main_task: Returned from app_main()[0m
+[0;32mI (2643) MAIN: 33.000000[0m
+[0;32mI (3643) MAIN: 33.000000[0m
+[0;32mI (4643) MAIN: 33.000000[0m
+[0;32mI (5643) MAIN: 33.000000[0m
+[0;32mI (6643) MAIN: 33.000000[0m
+[0;32mI (7643) MAIN: 33.000000[0m
+[0;32mI (8642) MAIN: 33.000000[0m
+[0;32mI (9643) MAIN: 33.000000[0m
+[0;32mI (10642) MAIN: 33.000000[0m
+[0;32mI (11643) MAIN: 33.000000[0m
+[0;32mI (12642) MAIN: 33.000000[0m
+[0;32mI (13643) MAIN: 33.000000[0m
+[0;32mI (14642) MAIN: 33.000000[0m

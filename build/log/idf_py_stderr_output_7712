@@ -1,0 +1,10 @@
+CMake Error at F:/esp/Espressif/frameworks/esp-idf-v5.2.5/tools/cmake/build.cmake:288 (message):
+  Failed to resolve component 'cjson'.
+Call Stack (most recent call first):
+  F:/esp/Espressif/frameworks/esp-idf-v5.2.5/tools/cmake/build.cmake:324 (__build_resolve_and_add_req)
+  F:/esp/Espressif/frameworks/esp-idf-v5.2.5/tools/cmake/build.cmake:627 (__build_expand_requirements)
+  F:/esp/Espressif/frameworks/esp-idf-v5.2.5/tools/cmake/project.cmake:612 (idf_build_process)
+  CMakeLists.txt:8 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

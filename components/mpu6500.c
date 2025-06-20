@@ -94,15 +94,13 @@ void calibrate_accel_affine(const vector_t *raw, vector_t *corrected)
     float (*M)[3] = config->calibration.accel_cal_matric;
     vector_t *b = &config->calibration.accel_bias_offset;
 
-    float x = raw->x - b->x;
-    float y = raw->y - b->y;
-    float z = raw->z - b->z;
+    float x = raw->x;
+    float y = raw->y;
+    float z = raw->z;
 
-    corrected->x = M[0][0]*x + M[0][1]*y + M[0][2]*z;
-    corrected->y = M[1][0]*x + M[1][1]*y + M[1][2]*z;
-    corrected->z = M[2][0]*x + M[2][1]*y + M[2][2]*z;
-
-    
+    corrected->x = M[0][0]*x + M[1][0]*y + M[2][0]*z + b->x;
+    corrected->y = M[0][1]*x + M[1][1]*y + M[2][1]*z + b->y;
+    corrected->z = M[0][2]*x + M[1][2]*y + M[2][2]*z + b->z; 
 }
 
 void align_accel(uint8_t bytes[6], vector_t *v)

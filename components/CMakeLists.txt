@@ -7,5 +7,5 @@ idf_component_register(
          "ds18b20_1_wire.c"
          "wifi_bt.c"
     INCLUDE_DIRS "include"
-    REQUIRES driver fatfs vfs esp_rom esp_timer esp_wifi esp_event nvs_flash bt 
+    REQUIRES driver fatfs vfs esp_rom esp_timer esp_wifi esp_event nvs_flash bt json
 )

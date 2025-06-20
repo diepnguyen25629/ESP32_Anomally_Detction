@@ -1,0 +1,677 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2df50h (188240) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003df78 vaddr=3ffbdb60 size=020a0h (  8352) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c67e4h (813028) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=0010680c vaddr=3ffbfc00 size=0404ch ( 16460) load[0m
+[0;32mI (460) esp_image: segment 4: paddr=0010a860 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (535) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (552) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (558) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (564) cpu_start: ELF file SHA256:  bdb09ce99...[0m
+[0;32mI (569) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (579) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (584) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (589) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (596) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (602) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (608) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2658 len 0000D9A8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (627) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (641) spi_flash: detected chip: generic[0m
+[0;32mI (644) spi_flash: flash io: dio[0m
+[0;33mW (648) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (659) coexist: coex firmware version: 994b23e[0m
+[0;32mI (665) main_task: Started on CPU0[0m
+[0;32mI (669) main_task: Calling app_main()[0m
+[0;32mI (709) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (712) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (714) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1376) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1381) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1388) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1390) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1437) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1464) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1473) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1483) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1492) BMP280: Initializating BMP280[0m
+[0;32mI (1496) MPU6500: Initializating MPU6500[0m
+[0;32mI (1497) main_task: Returned from app_main()[0m
+[0;32mI (1609) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;33mW (44739) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (44932) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;33mW (47000) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (47012) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (47015) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+[0;33mW (50178) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (53692) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (53692) WIFI_BT: Waiting for WiFi config via Bluetooth...[0m
+[0;33mW (53798) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+[0;32mI (54114) WIFI_BT: Bluetooth disabled[0m
+[0;32mI (54119) wifi:wifi driver task: 3ffbd59c, prio:23, stack:3584, core=0[0m
+[0;32mI (54138) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (54138) wifi:wifi certification version: v7.0[0m
+[0;32mI (54138) wifi:config NVS flash: enabled[0m
+[0;32mI (54139) wifi:config nano formating: disabled[0m
+[0;32mI (54143) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (54148) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (54152) wifi:Init management short buffer num: 32[0m
+[0;32mI (54157) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (54161) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (54166) wifi:Init static rx buffer num: 10[0m
+[0;32mI (54169) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (54175) wifi_init: tcpip mbox: 32[0m
+[0;32mI (54178) wifi_init: udp mbox: 6[0m
+[0;32mI (54181) wifi_init: tcp mbox: 6[0m
+[0;32mI (54185) wifi_init: tcp tx win: 5760[0m
+[0;32mI (54190) wifi_init: tcp rx win: 5760[0m
+[0;32mI (54194) wifi_init: tcp mss: 1440[0m
+[0;32mI (54198) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (54209) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (54210) wifi:enable tsf[0m
+[0;32mI (54212) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (54228) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (54230) wifi:state: init -> auth (b0)[0m
+[0;32mI (54238) wifi:state: auth -> assoc (0)[0m
+[0;32mI (54247) wifi:state: assoc -> run (10)[0m
+[0;32mI (54353) wifi:connected with VINH HUYEN, aid = 6, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (54354) wifi:security: WPA2-PSK, phy: bgn, rssi: -74[0m
+[0;32mI (54359) wifi:pm start, type: 1[0m
+
+[0;32mI (54359) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (54475) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (57373) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (57374) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (59333) TCP_CONNECT: Successfully connected to 192.168.1.3:12345[0m
+[0;31mE (59335) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59436) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59536) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59636) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59736) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59836) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (59936) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60036) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60136) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60236) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60336) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60436) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60536) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60636) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60736) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60836) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (60936) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61036) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61136) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61236) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61336) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61437) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61538) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61638) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61738) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61838) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (61938) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62038) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62138) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62238) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62338) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62438) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62538) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62638) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62738) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62838) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (62939) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63039) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63139) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63239) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63339) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63439) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63539) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63639) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63739) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63839) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (63939) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64039) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64139) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64239) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64339) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64439) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64539) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64639) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64739) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64839) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (64939) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65039) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65139) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65239) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65339) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65439) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65539) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65639) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65739) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65840) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (65941) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66041) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66141) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66241) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66341) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66441) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66542) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66642) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66742) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66842) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (66942) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67043) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67143) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67244) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67344) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67444) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67545) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67645) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67745) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67845) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (67945) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68045) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68145) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68245) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68345) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68445) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68545) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68645) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68745) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68845) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (68945) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69045) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69145) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69245) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69345) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69445) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69545) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69645) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69745) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69845) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (69945) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70045) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70146) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70246) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70346) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70446) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70546) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70646) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70746) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70846) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (70946) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71046) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71146) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71246) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71346) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71446) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71546) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71647) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71748) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71848) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (71948) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72048) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72148) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72248) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72348) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72448) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72548) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72648) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72748) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72848) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (72950) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73050) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73150) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73250) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73350) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73450) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73550) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73650) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73750) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73850) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (73950) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74050) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74150) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74250) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74350) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74450) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74550) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74650) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74750) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74851) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (74952) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75052) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75152) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75252) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75352) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75452) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75552) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75652) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75752) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75852) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (75952) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76052) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76152) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76252) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76352) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76452) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76552) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76652) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76752) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76852) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (76952) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77052) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77152) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77252) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77352) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77452) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77552) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77652) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77752) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77852) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (77952) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78052) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78153) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78253) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78353) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78453) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78554) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78654) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78754) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78854) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (78954) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79055) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79155) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79255) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79355) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79455) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79555) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79655) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79755) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79855) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (79955) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80055) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80155) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80255) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80355) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80455) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80555) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80655) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80755) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80855) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (80955) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81055) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81155) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81256) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81356) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81456) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81556) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81657) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81757) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81857) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (81957) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82057) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82157) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82257) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82357) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82457) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82557) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82657) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82757) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82858) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (82958) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83058) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83158) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83258) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83358) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83458) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83558) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83658) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83758) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83858) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (83958) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84058) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84158) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84258) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84358) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84458) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84558) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84658) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84758) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84858) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (84958) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85058) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85158) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85258) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85358) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85459) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85559) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85660) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85761) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85861) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (85961) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86062) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86162) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86262) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86362) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86462) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86562) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86662) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86762) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86862) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (86962) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87064) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87164) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87264) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87364) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87464) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87564) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87664) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87764) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87864) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (87964) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88064) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88164) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88265) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88365) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88466) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88566) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88666) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88766) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88866) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (88966) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89066) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89166) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89266) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89367) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89467) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89567) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89667) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89767) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89867) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (89967) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90067) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90167) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90267) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90367) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90467) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90567) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90667) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90767) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90868) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (90968) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91068) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91168) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91268) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91368) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91468) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91568) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91668) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91768) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91868) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (91968) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92068) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92169) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92269) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92369) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92469) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92569) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92669) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92770) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92870) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (92970) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93070) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93170) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93270) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93370) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93470) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93570) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93670) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93770) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93870) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (93970) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94070) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94170) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94270) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94370) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94470) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94570) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94670) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94771) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94871) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (94971) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95071) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95171) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95271) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95371) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95471) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95571) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95671) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95771) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95871) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (95971) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96071) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96171) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96271) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96371) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96471) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96571) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96671) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96771) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96871) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (96971) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97072) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97172) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97272) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97372) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97472) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97572) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97672) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97772) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97872) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (97972) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98072) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98172) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98272) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98372) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98472) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98572) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98673) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98773) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98873) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (98973) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99073) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99173) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99273) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99373) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99473) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99573) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99673) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99773) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99873) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (99973) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100073) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100173) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100273) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100373) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100473) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100573) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100673) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100773) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100873) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (100973) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101073) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101173) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101273) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101373) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101473) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101573) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101673) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101773) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101873) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (101973) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102073) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102173) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102273) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102373) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102473) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102573) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102673) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102773) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102873) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (102973) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103073) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103173) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103273) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103373) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (103974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (104974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (105974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (106974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (107974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (108974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109274) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109374) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109474) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109574) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109674) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109774) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109874) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (109974) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110074) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110174) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110275) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110375) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110475) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110575) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110675) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110775) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110875) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (110975) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111075) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111175) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111275) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111375) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111475) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111575) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111675) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111775) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111875) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (111975) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112075) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112175) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112275) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112375) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112475) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112575) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112675) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112775) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112875) WIFI_BT: Failed to recevie sensor config[0m
+[0;31mE (112975) WIFI_BT: Failed to recevie sensor config[0m
+[0;32mI (112997) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (112998) wifi:state: run -> init (0)[0m
+[0;32mI (113003) wifi:pm stop, total sleep time: 12769173 us / 58643446 us[0m
+
+[0;32mI (113004) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (113010) WIFI_BT: Retry to connect...[0m
+[0;32mI (113011) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (113048) wifi:flush txq[0m
+[0;32mI (113048) wifi:stop sw txq[0m
+[0;32mI (113048) wifi:lmac stop hw txq[0m
+[0;32mI (113052) wifi:Deinit lldesc rx mblock:10[0m
+����������������������������������������������������������������[0;32mI (185804) MAIN: Recording: ON[0m
+[0;32mI (185849) SD_CARD_SPI: Started writing to file: /data/data28.bin[0m
+[0;32mI (191204) MAIN: Recording: OFF[0m
+[0;32mI (191232) SD_CARD_SPI: File closed[0m

@@ -1,0 +1,1610 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2de40h (187968) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003de68 vaddr=3ffbdb60 size=021b0h (  8624) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c58ech (809196) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=00105914 vaddr=3ffbfd10 size=03f2ch ( 16172) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=00109848 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  14ff76974...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD2638 len 0000D9C8 (54 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (640) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (706) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (708) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (711) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (796) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1378) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1383) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1391) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1392) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1439) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1466) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1475) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1485) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1494) BMP280: Initializating BMP280[0m
+[0;32mI (1498) MPU6500: Initializating MPU6500[0m
+[0;32mI (1499) main_task: Returned from app_main()[0m
+[0;32mI (1611) DS18B20_1_WIRE: Initializating DS18B20[0m
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+[0;33mW (42143) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (42372) BT_APPL: new conn_srvc id:26, app_id:255[0m
+-127.000000
+-127.000000
+[0;33mW (44452) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (44464) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (44466) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+-127.000000
+-127.000000
+-127.000000
+-127.000000
+[0;33mW (47630) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+[0;32mI (65295) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (65295) MAIN: Waiting for Bluetooth WiFi config...[0m
+[0;32mI (65295) MAIN: Disabling Bluetooth...[0m
+[0;33mW (65405) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+31.750000
+[0;32mI (65786) MAIN: Bluetooth disabled[0m
+[0;32mI (65791) wifi:wifi driver task: 3ffbb874, prio:23, stack:3584, core=0[0m
+[0;32mI (65809) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (65810) wifi:wifi certification version: v7.0[0m
+[0;32mI (65810) wifi:config NVS flash: enabled[0m
+[0;32mI (65811) wifi:config nano formating: disabled[0m
+[0;32mI (65815) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (65820) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (65824) wifi:Init management short buffer num: 32[0m
+[0;32mI (65829) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (65833) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (65838) wifi:Init static rx buffer num: 10[0m
+[0;32mI (65841) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (65847) wifi_init: tcpip mbox: 32[0m
+[0;32mI (65849) wifi_init: udp mbox: 6[0m
+[0;32mI (65853) wifi_init: tcp mbox: 6[0m
+[0;32mI (65857) wifi_init: tcp tx win: 5760[0m
+[0;32mI (65862) wifi_init: tcp rx win: 5760[0m
+[0;32mI (65866) wifi_init: tcp mss: 1440[0m
+[0;32mI (65870) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (65881) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (65882) wifi:enable tsf[0m
+[0;32mI (65884) WIFI_UART: WiFi connecting to Tien[0m
+[0;32mI (65899) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (65901) wifi:state: init -> auth (b0)[0m
+[0;32mI (65906) wifi:state: auth -> assoc (0)[0m
+[0;32mI (65914) wifi:state: assoc -> run (10)[0m
+[0;32mI (65946) wifi:connected with Tien, aid = 22, channel 11, BW20, bssid = 0c:01:4b:16:4b:20[0m
+[0;32mI (65947) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (65952) wifi:pm start, type: 1[0m
+
+[0;32mI (65952) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (65971) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+-127.000000
+31.750000
+31.750000
+[0;32mI (68971) esp_netif_handlers: sta ip: 192.168.1.33, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (68971) WIFI_UART: Got IP: 192.168.1.33[0m
+[0;32mI (69261) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+-127.000000
+-127.000000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+-127.000000
+-127.000000
+-127.000000
+-127.000000
+31.750000
+[0;32mI (83100) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (83104) wifi:state: run -> init (0)[0m
+[0;32mI (83108) wifi:pm stop, total sleep time: 6763570 us / 17155951 us[0m
+
+[0;32mI (83109) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1[0m
+[0;32mI (83117) WIFI_UART: Retry to connect...[0m
+[0;32mI (83117) WIFI_UART: Connect to AP failed.[0m
+[0;32mI (83124) wifi:flush txq[0m
+[0;32mI (83124) wifi:stop sw txq[0m
+[0;32mI (83126) wifi:lmac stop hw txq[0m
+[0;32mI (83130) MAIN: Wifi & GUI conection stopped,[0m
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+[0;32mI (109034) MAIN: Starting Wifi/GUI connection...[0m
+[0;31mE (109034) esp_netif_lwip: esp_netif_new_api: Failed to configure netif with config=0x3ffee450 (config or if_key is NULL or duplicate key)[0m
+
+assert failed: esp_netif_create_default_wifi_sta wifi_default.c:389 (netif)
+
+
+Backtrace: 0x40081bc6:0x3ffee2f0 0x40091e45:0x3ffee310 0x40099e8d:0x3ffee330 0x401333cb:0x3ffee450 0x400da17c:0x3ffee480 0x400d880b:0x3ffee630 0x40092a01:0x3ffee6d0
+
+
+
+
+ELF file SHA256: 14ff76974
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2de40h (187968) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003de68 vaddr=3ffbdb60 size=021b0h (  8624) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c58ech (809196) map[0m
+[0;32mI (452) esp_image: segment 3: paddr=00105914 vaddr=3ffbfd10 size=03f2ch ( 16172) load[0m
+[0;32mI (458) esp_image: segment 4: paddr=00109848 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (522) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (522) boot: Disabling RNG early entropy source...[0m
+[0;32mI (534) cpu_start: Multicore app[0m
+[0;32mI (543) cpu_start: Pro cpu start user code[0m
+[0;32mI (543) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (543) cpu_start: Application information:[0m
+[0;32mI (546) cpu_start: Project name:     main[0m
+[0;32mI (551) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (556) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (562) cpu_start: ELF file SHA256:  14ff76974...[0m
+[0;32mI (568) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (573) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (578) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (583) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (588) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (595) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (601) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (607) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (613) heap_init: At 3FFD2638 len 0000D9C8 (54 KiB): DRAM[0m
+[0;32mI (619) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (625) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (632) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (640) spi_flash: detected chip: generic[0m
+[0;32mI (643) spi_flash: flash io: dio[0m
+[0;33mW (647) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (658) coexist: coex firmware version: 994b23e[0m
+[0;32mI (663) main_task: Started on CPU0[0m
+[0;32mI (667) main_task: Calling app_main()[0m
+[0;32mI (705) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (708) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (711) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (1362) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1367) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1374) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1376) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1423) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1450) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1459) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1469) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1478) BMP280: Initializating BMP280[0m
+[0;32mI (1482) MPU6500: Initializating MPU6500[0m
+[0;32mI (1483) main_task: Returned from app_main()[0m
+[0;32mI (1595) DS18B20_1_WIRE: Initializating DS18B20[0m
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+ets Jul 29 2019 12:21:46
+
+rst:0x8 (TG1WDT_SYS_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (61) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (61) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (62) boot: Multicore bootloader[0m
+[0;32mI (67) boot: chip revision: v3.1[0m
+[0;32mI (71) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (75) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (80) boot.esp32: SPI Flash Size : 4MB[0m
+[0;33mW (84) boot.esp32: PRO CPU has been reset by WDT.[0m
+[0;33mW (90) boot.esp32: WDT reset info: PRO CPU PC=0x40087114[0m
+[0;33mW (96) boot.esp32: WDT reset info: APP CPU PC=0x400d3e1a[0m
+[0;32mI (102) boot: Enabling RNG early entropy source...[0m
+[0;32mI (107) boot: Partition Table:[0m
+[0;32mI (111) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (118) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (126) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (133) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (141) boot: End of partition table[0m
+[0;32mI (145) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2de40h (187968) map[0m
+[0;32mI (218) esp_image: segment 1: paddr=0003de68 vaddr=3ffbdb60 size=021b0h (  8624) load[0m
+[0;32mI (222) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c58ech (809196) map[0m
+[0;32mI (501) esp_image: segment 3: paddr=00105914 vaddr=3ffbfd10 size=03f2ch ( 16172) load[0m
+[0;32mI (508) esp_image: segment 4: paddr=00109848 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (571) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (571) boot: Disabling RNG early entropy source...[0m
+[0;32mI (583) cpu_start: Multicore app[0m
+[0;32mI (592) cpu_start: Pro cpu start user code[0m
+[0;32mI (592) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (592) cpu_start: Application information:[0m
+[0;32mI (595) cpu_start: Project name:     main[0m
+[0;32mI (600) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (606) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (612) cpu_start: ELF file SHA256:  14ff76974...[0m
+[0;32mI (617) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (622) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (627) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (632) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (637) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (644) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (650) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (656) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (662) heap_init: At 3FFD2638 len 0000D9C8 (54 KiB): DRAM[0m
+[0;32mI (668) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (675) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (681) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (689) spi_flash: detected chip: generic[0m
+[0;32mI (692) spi_flash: flash io: dio[0m
+[0;33mW (696) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (707) coexist: coex firmware version: 994b23e[0m
+[0;32mI (713) main_task: Started on CPU0[0m
+[0;32mI (717) main_task: Calling app_main()[0m
+[0;32mI (755) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (758) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (761) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (845) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1429) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1434) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1442) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1443) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1491) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1518) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1527) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1537) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1546) BMP280: Initializating BMP280[0m
+[0;32mI (1550) MPU6500: Initializating MPU6500[0m
+[0;32mI (1551) main_task: Returned from app_main()[0m
+[0;32mI (1663) DS18B20_1_WIRE: Initializating DS18B20[0m
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+ets Jul 29 2019 12:21:46
+
+rst:0x8 (TG1WDT_SYS_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (61) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (61) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (62) boot: Multicore bootloader[0m
+[0;32mI (67) boot: chip revision: v3.1[0m
+[0;32mI (71) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (75) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (80) boot.esp32: SPI Flash Size : 4MB[0m
+[0;33mW (84) boot.esp32: PRO CPU has been reset by WDT.[0m
+[0;33mW (90) boot.esp32: WDT reset info: PRO CPU PC=0x4008711c[0m
+[0;33mW (96) boot.esp32: WDT reset info: APP CPU PC=0x400d3e1a[0m
+[0;32mI (102) boot: Enabling RNG early entropy source...[0m
+[0;32mI (107) boot: Partition Table:[0m
+[0;32mI (111) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (118) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (126) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (133) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (141) boot: End of partition table[0m
+[0;32mI (145) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2de40h (187968) map[0m
+[0;32mI (218) esp_image: segment 1: paddr=0003de68 vaddr=3ffbdb60 size=021b0h (  8624) load[0m
+[0;32mI (222) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c58ech (809196) map[0m
+[0;32mI (501) esp_image: segment 3: paddr=00105914 vaddr=3ffbfd10 size=03f2ch ( 16172) load[0m
+[0;32mI (508) esp_image: segment 4: paddr=00109848 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (571) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (571) boot: Disabling RNG early entropy source...[0m
+[0;32mI (583) cpu_start: Multicore app[0m
+[0;32mI (592) cpu_start: Pro cpu start user code[0m
+[0;32mI (592) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (592) cpu_start: Application information:[0m
+[0;32mI (595) cpu_start: Project name:     main[0m
+[0;32mI (600) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (606) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (612) cpu_start: ELF file SHA256:  14ff76974...[0m
+[0;32mI (617) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (622) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (627) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (632) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (637) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (644) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (650) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (656) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (662) heap_init: At 3FFD2638 len 0000D9C8 (54 KiB): DRAM[0m
+[0;32mI (668) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (675) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (681) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (689) spi_flash: detected chip: generic[0m
+[0;32mI (692) spi_flash: flash io: dio[0m
+[0;33mW (696) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (707) coexist: coex firmware version: 994b23e[0m
+[0;32mI (713) main_task: Started on CPU0[0m
+[0;32mI (717) main_task: Calling app_main()[0m
+[0;32mI (757) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (759) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (762) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (847) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1426) WIFI_UART: Bluetooth ready[0m
+[0;32mI (1432) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1439) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1441) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1488) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1515) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1524) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1534) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1543) BMP280: Initializating BMP280[0m
+[0;32mI (1547) MPU6500: Initializating MPU6500[0m
+[0;32mI (1548) main_task: Returned from app_main()[0m
+[0;32mI (1660) DS18B20_1_WIRE: Initializating DS18B20[0m
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.500000
+31.750000
+31.500000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+[0;33mW (254175) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+-127.000000
+-127.000000
+31.750000
+[0;33mW (257359) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.500000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.500000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+-127.000000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000
+31.750000

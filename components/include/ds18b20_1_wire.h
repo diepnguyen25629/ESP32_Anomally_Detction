@@ -83,11 +83,11 @@ bool ds18b20_readScratchPad(const DeviceAddress *deviceAddress, uint8_t *scratch
 esp_err_t ds18b20_select(const DeviceAddress *address);
 uint8_t ds18b20_crc8(const uint8_t *addr, uint8_t len);
 bool ds18b20_isAllZeros(const uint8_t * const scratchPad);
-bool isConversionComplete();
-uint16_t millisToWaitForConversion();
+bool ds18b20_is_conversion_done(); 
+uint16_t millisToWaitForConversion(temp_resolution bitResolution);
 
-esp_err_t ds18b20_requestTemperatures();
-esp_err_t ds18b20_getTempC(const DeviceAddress *deviceAddress, float *temp);
+esp_err_t ds18b20_start_conversion();
+esp_err_t ds18b20_read_temperate(const DeviceAddress *deviceAddress, float *temp);
 int16_t calculateTemperature(const DeviceAddress *deviceAddress, uint8_t* scratchPad);
 
 void ds18b20_reset_search();

@@ -11,6 +11,7 @@
 #include "esp_err.h"
 #include "esp_task_wdt.h"
 #include "esp_timer.h"
+#include "esp_wifi.h"
 
 #include "driver/i2c.h"
 #include "driver/i2s_std.h"
@@ -46,22 +47,19 @@ static const char *TAG = "MAIN";
 #define LED_RECORD_GPIO GPIO_NUM_15
 #define LED_CONNECT_GPIO GPIO_NUM_22
 
-// Số lượng lô dữ liệu cảm biến ghi vào thẻ SD  
-#define IMUPT_WRITE_BATCH 75
+// Số lượng lô dữ liệu cảm biến ghi vào thẻ SD và gửi đến GUI 
+#define IMU_WRITE_BATCH 35
 #define AUDIO_BUF_LEN 512
-#define AUDIO_WRITE_BATCH 16 // Ghi 16 buffer 512 mẫu mỗi lần 
+#define AUDIO_WRITE_BATCH 10 // Ghi 16 buffer 512 mẫu mỗi lần 
 
-// Số lượng packet gửi đến cho GUI 
-#define MAX_SEND_IMUPT 25
-#define MAX_SEND_AUDIO 2
+#define PACKET_MAGIC                0xABCD      // Vị trí bắt đầu của packet
+#define PACKET_TYPE_IMU             0x01
+#define PACKET_TYPE_AUDIO           0x02
+#define PACKET_TYPE_PRE_TEMP        0x03
 
-#define PACKET_MAGIC            0xABCD      // Vị trí bắt đầu của packet
-#define PACKET_TYPE_IMUPT       0x01
-#define PACKET_TYPE_AUDIO       0x02
-
-#ifndef MIN
-#define MIN(a,b) (((a)<(b))?(a):(b))
-#endif
+#define IMU_CONFIG_UPDATED_EVENT                BIT0
+#define PRE_TEMP_CONFIG_UPDATED_EVENT           BIT1
+#define AUDIO_CONFIG_UPDATE_EVENT               BIT2
 
 // Cấu hình các tham số hiệu chỉnh, phạm vi đo và tần số lấy mẫu cho cảm biến mpu6500
 mpu6500_config_t mpu6500_cfg = {
@@ -76,7 +74,7 @@ mpu6500_config_t mpu6500_cfg = {
     },
     .imu_sample_rate = 100,
     .accel_fs = ACCEL_FS_16G,
-    .gyro_fs = GYRO_FS_2500DPS
+    .gyro_fs = GYRO_FS_2000DPS
 
 };
 
@@ -86,13 +84,13 @@ bmp280_config_t bmp280_cfg = {
         .filter = BMP280_FILTER_8,
         .oversampling_pressure = BMP280_ULTRA_HIGH_RES,     
         .oversampling_temperature = BMP280_LOW_POWER,  
-        .stanby = BMP280_STANDBY_250, 
-        .pre_sample_rate = 5
+        .stanby = BMP280_STANDBY_125, 
+        .pre_sample_rate = 1
 };
 
 // Cấu hình độ phân giải và tần số lấy mẫu của cảm biến ds18b20
 ds18b20_config_t ds18b20_cfg = {
-        .temp_resol = RESOLUTION_10_BIT,
+        .temp_resol = RESOLUTION_9_BIT,
         .temp_sample_rate = 1
 };
 
@@ -102,7 +100,7 @@ inmp441_config_t inmp441_cfg = {
     .bclk_io_num = 26,
     .ws_io_num = 27,
     .data_in_io_num = 25,
-    .data_bit_width = I2S_DATA_BIT_WIDTH_32BIT
+    .data_bit_width = I2S_DATA_BIT_WIDTH_16BIT
 };
 
 // Cấu hình các chân giao tiếp SPI của sd card 
@@ -116,28 +114,31 @@ sd_spi_config_t sd_cfg = {
 
 typedef struct {
     vector_t accel_data, gyro_data;
-    float temp_data, pre_data;
-}imupt_data_t;
+}imu_data_t;
 
 typedef struct {
-    int32_t audio_buf[AUDIO_BUF_LEN];
+    float temp_data, pre_data;
+}pre_temp_data_t;
+
+typedef struct {
+    int16_t audio_buf[AUDIO_BUF_LEN];
 }audio_data_t;
 
 // Bộ đệm và biến đếm để ghi dữ liệu imupt theo batch vào sd card
-imupt_data_t imupt_batch[IMUPT_WRITE_BATCH];
-int imupt_batch_index = 0;
+imu_data_t imu_batch[IMU_WRITE_BATCH];
+int imu_batch_index = 0;
 
 // Bộ đệm và biến đếm để ghi dữ liệu audio theo batch vào sd card
 audio_data_t audio_batch[AUDIO_WRITE_BATCH];
 int audio_batch_index = 0; 
 
 // Bộ đệm và biến đếm để gửi dữ liệu imupt theo batch đến GUI
-imupt_data_t imupt_batch_gui[IMUPT_WRITE_BATCH];
-int imupt_batch_gui_index = 0;
+imu_data_t imu_batch_gui[IMU_WRITE_BATCH];
+int imu_batch_gui_index = 0;
 
 // Bộ đệm và biến đếm để gửi dữ liệu audio theo batch đến GUI
 audio_data_t audio_batch_gui[AUDIO_WRITE_BATCH];
-int audio_batch_gui_index = 0; 
+int audio_batch_gui_index = 0;
 
 // Phần header dữ liệu nhị phân ghi vào sd và gửi đến GUI 
 typedef struct __attribute__((packed)) {
@@ -146,18 +147,44 @@ typedef struct __attribute__((packed)) {
     uint16_t length;
 } packet_header_t;
 
-QueueHandle_t imupt_queue;                              // Hàng đợi chứa dữ liệu cảm biến để ghi dữ liệu vào thẻ sd 
+esp_timer_handle_t imu_timer;
+esp_timer_handle_t pre_temp_timer;
+
+TaskHandle_t imu_task_handle;
+TaskHandle_t pre_temp_task_handle;
+TaskHandle_t audio_task_handle;
+
+QueueHandle_t imu_queue;                              // Hàng đợi chứa dữ liệu cảm biến để ghi dữ liệu vào thẻ sd 
 QueueHandle_t audio_queue;
-QueueHandle_t imupt_queue_gui;                           // Hàng đợi chứa dữ liệu cảm biến để gửi đến GUI
+QueueHandle_t pre_temp_queue;
+QueueHandle_t imu_queue_gui;                           // Hàng đợi chứa dữ liệu cảm biến để gửi đến GUI
 QueueHandle_t audio_queue_gui;
+QueueHandle_t pre_temp_queue_gui;
 
 volatile bool is_recording = false;                     // Trạng thái record vào sd card 
 volatile bool is_connect_gui = false;                   // Trạng thái kêt nối đến GUI
+volatile bool is_bluetooth = false;                     // Trạng thái bất/tắt bluetooth 
+volatile bool is_sensor_config = false;
+wifi_gui_config_t wifi_config;                          // Cấu hình wifi gửi từ GUI 
+
+int gui_socket = -1;
+
+void imu_timer_callback(void* arg) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xTaskNotifyFromISR(imu_task_handle, 0, eNoAction, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void pre_temp_timer_callback(void* arg) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xTaskNotifyFromISR(pre_temp_task_handle, 0, eNoAction, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 
 // Khởi tạo các cảm biến accelerometer, gyroscope, pressure, temperate rồi đưa dữ liệu vào hàng đợi
-void read_imupt_task(void *pvParameter)
+void read_imu_task(void *pvParameter)
 {   
-    imupt_data_t imupt_data; 
+    imu_data_t imu_data;
 
     // Khởi tạo giao tiếp I2C
     esp_err_t ret = i2c_master_init(I2C_MASTER_NUM, I2C_SDA_GPIO, I2C_SCL_GPIO);
@@ -175,18 +202,29 @@ void read_imupt_task(void *pvParameter)
         return;
     }
 
-    // Khởi tạo BMP280
-    ret = bmp280_init(&bmp280_cfg);
-    if (ret != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize BMP280");
-        vTaskDelete(NULL);
-        return;
+    while (1)
+    {
+        if (is_sensor_config) i2c_mpu6500_init(&mpu6500_cfg);
+
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        get_accel_gyro(&imu_data.accel_data, &imu_data.gyro_data);
+        if (is_recording) {
+            xQueueSend(imu_queue, &imu_data, 0);
+        }
+        if (is_connect_gui && imu_queue_gui != NULL) {
+            xQueueSend(imu_queue_gui, &imu_data, 0);
+        }
     }
+}
+
+void read_pre_temp_task(void *pvParameter) 
+{
+    pre_temp_data_t pre_temp_data;
 
     // Khởi tạo DS18B20
-    ret = ds18b20_init(ONE_WIRE_GPIO);
+    esp_err_t ret = ds18b20_init(ONE_WIRE_GPIO);
     if(ret != ESP_OK){
-        ESP_LOGE(TAG, " Failed to initialize DS18B20");
+        ESP_LOGE(TAG, " Failed to initialize 1-Wire");
         vTaskDelete(NULL);
         return;
     }
@@ -200,65 +238,32 @@ void read_imupt_task(void *pvParameter)
         return;
     }
     ds18b20_setResolution(&sensorAddr, 1, ds18b20_cfg.temp_resol);                         // Cấu hình độ phân giải cho cảm biến DS18B20 
- 
-    // Khoảng thời gian giữa các lần lặp dựa theo tần số của IMU
-    int imu_rate_hz = mpu6500_cfg.imu_sample_rate;
-    TickType_t loop_interval = pdMS_TO_TICKS(1000 / imu_rate_hz);
-    // Số vòng cần đợi trước khi cập nhật giá trị pressure và temperate
-    int pre_update_interval = imu_rate_hz / bmp280_cfg.pre_sample_rate;
-    int temp_update_interval = imu_rate_hz / ds18b20_cfg.temp_sample_rate;
 
-    int pre_count = 0;
-    int temp_count = 0;
+    // Khởi tạo BMP280
+    ret = bmp280_init(&bmp280_cfg);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize BMP280");
+        vTaskDelete(NULL);
+        return;
+    }
 
-    bool temp_conversion_started = false;
-    TickType_t temp_conversion_start_time = 0;
-
-    TickType_t xLastWakeTime = xTaskGetTickCount();
-
-    while (1)
-    {
-        if (get_accel_gyro(&imupt_data.accel_data, &imupt_data.gyro_data) != ESP_OK)
-            ESP_LOGE(TAG, "Failed to read MPU6500");
-
-        if (pre_count >= pre_update_interval) {
-            if (bmp280_read_pre(&imupt_data.pre_data) != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to read BMP280");
-            }
-            pre_count = 0;
+    while (1) {
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);        
+        bmp280_read_pre(&pre_temp_data.pre_data);
+        ds18b20_start_conversion();
+        // Đợi để ds18b20 chuyển đổi xong 
+        vTaskDelay(pdMS_TO_TICKS(millisToWaitForConversion(ds18b20_cfg.temp_resol)));
+        if (ds18b20_is_conversion_done()) {
+            ds18b20_read_temperate(&sensorAddr, &pre_temp_data.temp_data);
+            ESP_LOGI(TAG, "%f",pre_temp_data.temp_data);
         }
 
-        // Bắt đầu chuyển đổi nếu đến thời điểm
-        if (!temp_conversion_started && temp_count >= temp_update_interval) {
-            ds18b20_requestTemperatures();
-            temp_conversion_start_time = xTaskGetTickCount();
-            temp_conversion_started = true;
-            temp_count = 0;
+        if (is_recording) {
+            xQueueSend(pre_temp_queue, &pre_temp_data, 0);
         }
-
-        // Sau 750ms kể từ khi bắt đầu conversion, thì đọc dữ liệu
-        if (temp_conversion_started &&
-            (xTaskGetTickCount() - temp_conversion_start_time >= pdMS_TO_TICKS(1000))) {
-
-            if (ds18b20_getTempC(&sensorAddr, &imupt_data.temp_data) != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to read DS18B20");
-            }
-            temp_conversion_started = false; // Reset trạng thái
+        if (is_connect_gui && pre_temp_queue_gui != NULL) {
+            xQueueSend(pre_temp_queue_gui, &pre_temp_data, 0);
         }
-
-        if (xQueueSend(imupt_queue, &imupt_data, pdMS_TO_TICKS(10)) != pdTRUE) {
-           // printf("imupt_queue full ");
-        } 
-
-        if (imupt_queue_gui != NULL){
-            if (xQueueSend(imupt_queue_gui, &imupt_data, pdMS_TO_TICKS(10)) != pdTRUE) {
-               //printf(" imupt_queue_gui full ");
-            }
-        }
-        pre_count++;
-        temp_count++;
-
-        vTaskDelayUntil(&xLastWakeTime, loop_interval);
     }
 }
 
@@ -275,17 +280,19 @@ void read_audio_task(void *pvParameter)
     }
 
     while (1) {
+        if (is_sensor_config) {
+            inmp441_i2s_deinit();
+            inmp441_i2s_init(&inmp441_cfg);
+        } 
+    
         int bytes = inmp441_i2s_read(audio_data.audio_buf, sizeof(audio_data.audio_buf));
-
-        if (bytes > 0 ) {
-            if (xQueueSend(audio_queue, &audio_data, pdMS_TO_TICKS(10)) != pdTRUE) {
-                //printf("audio_queue full ");
+        if (bytes > 0 ) { 
+            if (is_recording) {
+                xQueueSend(audio_queue, &audio_data, 0);
             }
-            if (audio_queue_gui != NULL) {
-                if (xQueueSend(audio_queue_gui, &audio_data, pdMS_TO_TICKS(10)) != pdTRUE) {
-                   // printf("audio_queue_gui full");
-                }
-            }    
+            if (is_connect_gui && audio_queue_gui != NULL) {
+                xQueueSend(audio_queue_gui, &audio_data, 0); 
+            }
         }
     }
 }
@@ -295,10 +302,12 @@ void read_audio_task(void *pvParameter)
 void write_data_to_sd_task(void *pvParameter) {
     FILE *data_file = NULL;
     static char filepath[64];
-    imupt_data_t imupt_data_recv;
+    imu_data_t imu_data_recv;
     audio_data_t audio_data_recv;
+    pre_temp_data_t pre_temp_data_recv;
     int64_t last_reopen_us = 0;
     const int64_t REOPEN_INTERVAL_US = 120 * 1000 * 1000;
+
 
     while(1) {
         int now = esp_timer_get_time();
@@ -317,34 +326,53 @@ void write_data_to_sd_task(void *pvParameter) {
 
         // Nếu button được nhấn lần nữa thì kết thúc ghi        
         if (!is_recording && data_file != NULL) {
+            if (imu_batch_index > 0) {
+                    packet_header_t header = {
+                    .magic = PACKET_MAGIC,
+                    .type = PACKET_TYPE_IMU,
+                    .length = imu_batch_index * sizeof(imu_data_t),
+                };
+                sd_spi_write_binary_buffer(data_file, &header, sizeof(header), 1);
+                sd_spi_write_binary_buffer(data_file, imu_batch, sizeof(imu_data_t), imu_batch_index);
+                imu_batch_index = 0;                
+            }
+               if (audio_batch_index > 0) {
+                packet_header_t header = {
+                    .magic = PACKET_MAGIC,
+                    .type = PACKET_TYPE_AUDIO,
+                    .length = audio_batch_index * sizeof(audio_data_t),
+                };
+                sd_spi_write_binary_buffer(data_file, &header, sizeof(header), 1);
+                sd_spi_write_binary_buffer(data_file, audio_batch, sizeof(audio_data_t), audio_batch_index);
+                audio_batch_index = 0;
+                }
+            
             sd_spi_stop_write(data_file);
             data_file = NULL;
             vTaskDelay(pdMS_TO_TICKS(100));
             continue;
         }
 
-        // Fflush file theo chu kì 
+        // fflush file theo chu kì 
         if (data_file != NULL && now - last_reopen_us > REOPEN_INTERVAL_US) {
-            ESP_LOGI(TAG, "Cycling file: flushing and reopening to prevent data loss");
-
             fflush(data_file);
             last_reopen_us = now;
             continue;
         }
 
         if (is_recording && data_file != NULL) {
-            while (xQueueReceive(imupt_queue, &imupt_data_recv, 0) == pdTRUE) {
-                imupt_batch[imupt_batch_index++] = imupt_data_recv;
+            while (xQueueReceive(imu_queue, &imu_data_recv, 0) == pdTRUE) {
+                imu_batch[imu_batch_index++] = imu_data_recv;
 
-                if (imupt_batch_index >= IMUPT_WRITE_BATCH) {
+                if (imu_batch_index >= IMU_WRITE_BATCH) {
                     packet_header_t header = {
                     .magic = PACKET_MAGIC,
-                    .type = PACKET_TYPE_IMUPT,
-                    .length = imupt_batch_index * sizeof(imupt_data_t),
+                    .type = PACKET_TYPE_IMU,
+                    .length = imu_batch_index * sizeof(imu_data_t),
                 };
                 sd_spi_write_binary_buffer(data_file, &header, sizeof(header), 1);
-                sd_spi_write_binary_buffer(data_file, imupt_batch, sizeof(imupt_data_t), imupt_batch_index);
-                imupt_batch_index = 0;
+                sd_spi_write_binary_buffer(data_file, imu_batch, sizeof(imu_data_t), imu_batch_index);
+                imu_batch_index = 0;
                 }
             }
 
@@ -361,7 +389,17 @@ void write_data_to_sd_task(void *pvParameter) {
                 sd_spi_write_binary_buffer(data_file, audio_batch, sizeof(audio_data_t), audio_batch_index);
                 audio_batch_index = 0;
                 }
-            }                   
+            }
+            
+            if (xQueueReceive(pre_temp_queue, &pre_temp_data_recv, 0) == pdTRUE) {
+                packet_header_t header = {
+                    .magic = PACKET_MAGIC,
+                    .type = PACKET_TYPE_PRE_TEMP,
+                    .length = sizeof(pre_temp_data_t),
+                };
+                sd_spi_write_binary_buffer(data_file, &header, sizeof(header), 1);
+                sd_spi_write_binary_buffer(data_file, &pre_temp_data_recv, sizeof(pre_temp_data_t), 1);
+            }
         }
         vTaskDelay(pdMS_TO_TICKS(5));
     }
@@ -400,22 +438,195 @@ void gpio_init()
     gpio_set_level(LED_CONNECT_GPIO, 1); // LED OFF (nguồn ngoài, LOW là bật)
 }
 
+void gui_send_task(void *pvParameter) 
+{
+    int sock = *((int *)pvParameter);
+
+    imu_data_t imu_data_gui_recv;
+    audio_data_t audio_data_gui_recv;
+    pre_temp_data_t pre_temp_data_recv;
+ 
+    while(1) {
+        if (!is_connect_gui) break;
+        
+        while (xQueueReceive(imu_queue_gui, &imu_data_gui_recv, 0) == pdTRUE) {
+            imu_batch_gui[imu_batch_gui_index++] = imu_data_gui_recv;
+            if (imu_batch_gui_index >= IMU_WRITE_BATCH) {
+                packet_header_t header = {
+                .magic = PACKET_MAGIC,
+                .type = PACKET_TYPE_IMU,
+                .length = imu_batch_gui_index * sizeof(imu_data_t),
+            };
+            send(sock, &header, sizeof(header), 0);
+            send(sock, imu_batch_gui, imu_batch_gui_index * sizeof(imu_data_t), 0);
+            imu_batch_gui_index = 0;
+            }
+        }
+
+        while (xQueueReceive(audio_queue_gui, &audio_data_gui_recv, 0) == pdTRUE) {
+            audio_batch_gui[audio_batch_gui_index++] = audio_data_gui_recv;
+            if (audio_batch_gui_index >= AUDIO_WRITE_BATCH) {
+            packet_header_t header = {
+                .magic = PACKET_MAGIC,
+                .type = PACKET_TYPE_AUDIO,
+                .length = audio_batch_gui_index * sizeof(audio_data_t),
+            };
+
+            send(sock, &header, sizeof(header), 0);
+            send(sock, audio_batch_gui, audio_batch_gui_index * sizeof(audio_data_t), 0);
+            audio_batch_gui_index = 0;
+            }          
+        }
+
+        if (xQueueReceive(pre_temp_queue_gui, &pre_temp_data_recv, 0) == pdTRUE) {
+            packet_header_t header = {
+                .magic = PACKET_MAGIC,
+                .type = PACKET_TYPE_PRE_TEMP,
+                .length = sizeof(pre_temp_data_t),
+            };
+            
+            send(sock, &header, sizeof(header), 0);
+            send(sock, &pre_temp_data_recv, sizeof(pre_temp_data_t), 0);
+        }
+        vTaskDelay(pdMS_TO_TICKS(5));     
+    }
+    close(sock);
+    vTaskDelete(NULL);
+}
+
+void receive_sensor_config_task(void *pvParameter)
+{
+    int sock = *((int *)pvParameter);
+    free(pvParameter);
+
+    while (1)
+    {
+        if (!is_connect_gui) break;
+    
+        sensor_config_t sensor_cfg;
+        if (wait_sensor_config(&sensor_cfg, sock) == ESP_OK) {
+
+        mpu6500_cfg.accel_fs = sensor_cfg.accel_fs;
+        mpu6500_cfg.gyro_fs = sensor_cfg.gyro_fs;
+        mpu6500_cfg.calibration = sensor_cfg.calibration;
+        mpu6500_cfg.imu_sample_rate = sensor_cfg.imu_sample_rate;
+        inmp441_cfg.audio_sample_rate = sensor_cfg.audio_sample_rate;
+
+        is_sensor_config = true;
+        } else {
+            is_sensor_config = false;
+        }
+        vTaskDelay(pdMS_TO_TICKS(50));
+    }
+    vTaskDelete(NULL);
+}
+
+void bt_wifi_gui_config_task(void *pvParameter)
+{
+    if (is_bluetooth) {
+        // Đợi nhận cấu hình wifi từ semaphore của bluetooth 
+        wait_wifi_config(&wifi_config);
+
+        bluetooth_disconnect(); 
+        is_bluetooth = false;
+    }
+
+    wifi_connect(wifi_config.ssid, wifi_config.password);
+
+    // Kết nối TCP đến GUI 
+    int sock = tcp_socket_connect(wifi_config.ip, 12345);
+    if (sock < 0) {
+        vTaskDelete(NULL);
+        return;
+    } 
+
+    gui_socket = sock;
+    int *sock_ptr = malloc(sizeof(int));
+    if (sock_ptr == NULL) {
+        ESP_LOGE(TAG, "Malloc failed for socket ptr");
+        close(gui_socket);
+        gui_socket = -1;
+        vTaskDelete(NULL);
+        return;
+    }
+    *sock_ptr = gui_socket;
+
+    imu_queue_gui = xQueueCreate(35, sizeof(imu_data_t));
+    audio_queue_gui = xQueueCreate(15, sizeof(audio_data_t));
+    pre_temp_queue_gui = xQueueCreate(10, sizeof(pre_temp_data_t));
+
+    if(!imu_queue_gui || !audio_queue_gui || !pre_temp_queue_gui){
+        ESP_LOGE(TAG, "Fail to create queue GUI");
+        return;
+    }
+
+    is_connect_gui = true;   
+    // Truyền socket cho task con 
+    xTaskCreatePinnedToCore(gui_send_task, "Send To GUI", 8192, (void *)sock_ptr, 5, NULL, 0);
+    xTaskCreatePinnedToCore(receive_sensor_config_task, "Receive Sensor Config From GUI", 6000, (void *)sock_ptr, 4, NULL, 0);
+    vTaskDelay(pdMS_TO_TICKS(100));
+    vTaskDelete(NULL);
+}
+
+void stop_wifi_gui_connection() 
+{       
+    is_connect_gui = false;
+    if (gui_socket >= 0) {
+        close(gui_socket);
+        gui_socket = -1;
+    }
+
+    if (imu_queue_gui) {
+        vQueueDelete(imu_queue_gui);
+        imu_queue_gui = NULL;
+    }
+
+    if (pre_temp_queue_gui) {
+        vQueueDelete(pre_temp_queue_gui);
+        pre_temp_queue_gui = NULL;
+    }
+    if (audio_queue_gui) {
+        vQueueDelete(audio_queue_gui);
+        audio_queue_gui = NULL;
+    }
+    wifi_disconnect();
+
+} 
 // Kiểm tra trạng thái của button 
+// Nếu nhấn dưới 3s thì bật/tắt ghi dữ liệu và thẻ sd
+// Nếu nhấn trên 3s thì bật/tắt wifi kết nối với GUI 
 void button_monitor_task(void *pvParameter)
 {
     bool last_button_state = true;
+    int64_t press_start_time = 0;
+    const int64_t long_press_duration = 3000000;  // 3s = 3000000 us
+    volatile bool is_bt_wifi_started = false;
+
     while (1) {
         bool button_state = gpio_get_level(BUTTON_GPIO);
 
-        // Nút được nhấn (LOW)
         if (!button_state && last_button_state) {
-            is_recording = !is_recording;
-            xQueueReset(imupt_queue);   // Xoá dữ liệu cũ
-            xQueueReset(audio_queue);
-            ESP_LOGI(TAG, "Recording: %s", is_recording ? "ON" : "OFF");
-            vTaskDelay(pdMS_TO_TICKS(200));  // Chống dội nút
+            press_start_time = esp_timer_get_time();
         }
 
+        if (button_state && !last_button_state) {
+            int64_t press_duration = (esp_timer_get_time() - press_start_time);
+
+            if (press_duration >= long_press_duration) {
+                is_bt_wifi_started = !is_bt_wifi_started;
+                if (is_bt_wifi_started) {
+                    ESP_LOGI(TAG, "Starting Wifi/GUI connection...");
+                    xTaskCreatePinnedToCore(bt_wifi_gui_config_task, "BT_WIFI", 8192, NULL, 4, NULL, 0);
+                } else {
+                    ESP_LOGI(TAG, "Stopping Wifi/GUI connection...");
+                    stop_wifi_gui_connection();
+                }
+            } else {
+                is_recording = !is_recording;
+                ESP_LOGI(TAG, "Recording: %s", is_recording ? "ON" : "OFF");                
+            }
+            vTaskDelay(pdMS_TO_TICKS(200));  // chống dội nút
+        }
         last_button_state = button_state;
         vTaskDelay(pdMS_TO_TICKS(50));
     }
@@ -442,111 +653,6 @@ void led_blink_task(void *pvParameter)
     }
 }
 
-void gui_send_task(void *pvParameter) {
-    int sock = *((int *)pvParameter);
-    free(pvParameter);
-
-    imupt_data_t imupt_data_gui_recv;
-    audio_data_t audio_data_gui_recv;
-
-    while(1) {
-        if (!is_connect_gui) {
-            break;
-        }
-        while (xQueueReceive(imupt_queue_gui, &imupt_data_gui_recv, 0) == pdTRUE) {
-            imupt_batch_gui[imupt_batch_gui_index++] = imupt_data_gui_recv;
-            if (imupt_batch_gui_index >= IMUPT_WRITE_BATCH) {
-                packet_header_t header = {
-                .magic = PACKET_MAGIC,
-                .type = PACKET_TYPE_IMUPT,
-                .length = imupt_batch_gui_index * sizeof(imupt_data_t),
-            };
-            if (send(sock, &header, sizeof(header), 0) < 0 ||
-            send(sock, imupt_batch_gui, imupt_batch_gui_index * sizeof(imupt_data_t), 0) < 0) {
-                ESP_LOGE(TAG, "Send imupt to GUI failed");
-                is_connect_gui = false;
-            }
-            imupt_batch_gui_index = 0;
-            }
-        }
-
-        while (xQueueReceive(audio_queue_gui, &audio_data_gui_recv, 0) == pdTRUE) {
-            audio_batch_gui[audio_batch_gui_index++] = audio_data_gui_recv;
-            if (audio_batch_gui_index >= AUDIO_WRITE_BATCH) {
-            packet_header_t header = {
-                .magic = PACKET_MAGIC,
-                .type = PACKET_TYPE_AUDIO,
-                .length = audio_batch_gui_index * sizeof(audio_data_t),
-            };
-
-            if (send(sock, &header, sizeof(header), 0) < 0 ||
-            send(sock, audio_batch_gui, audio_batch_gui_index * sizeof(audio_data_t), 0) < 0) {
-                ESP_LOGE(TAG, "Send audio to GUI failed");
-                is_connect_gui = false;
-            }
-            audio_batch_gui_index = 0;
-            }          
-        }
-        vTaskDelay(pdMS_TO_TICKS(5));     
-    }
-    close(sock);
-    vTaskDelete(NULL);
-}
-
-void bt_wifi_config_task(void *pvParameter)
-{
-    ESP_LOGI(TAG, "Waiting for Bluetooth WiFi config...");
-    
-    // Chờ semaphore báo đã nhận được cấu hình mới thực hiện cấu hình wifi 
-    xSemaphoreTake(wifi_bt_get_semaphore(), portMAX_DELAY);
-    wifi_bt_config_t config = wifi_bt_get_config();
-
-    // Hủy kết nối Bluetooth  
-    ESP_LOGI(TAG, "Disabling Bluetooth...");
-
-    esp_spp_deinit();
-    vTaskDelay(pdMS_TO_TICKS(100));   // Cho SPP thoát hẳn
-    esp_bluedroid_disable();
-    esp_bluedroid_deinit();
-    esp_bt_controller_disable();
-    esp_bt_controller_deinit();
-    vTaskDelay(pdMS_TO_TICKS(100));
-
-    ESP_LOGI(TAG, "Bluetooth disabled");
-
-    // Kết nối WiFi
-    wifi_bt_start_wifi(config.ssid, config.password);
-
-    // Kết nối TCP đến GUI 
-    int sock = wifi_bt_tcp_connect(config.gui_ip, 12345);
-    if (sock < 0) {
-        vTaskDelete(NULL);
-        return;
-    } 
-    int *sock_ptr = malloc(sizeof(int));
-    if (sock_ptr == NULL) {
-        ESP_LOGE(TAG, "Malloc failed for socket ptr");
-        close(sock);
-        vTaskDelete(NULL);
-        return;
-    }
-    *sock_ptr = sock;
-
-    imupt_queue_gui = xQueueCreate(50, sizeof(imupt_data_t));
-    audio_queue_gui = xQueueCreate(20, sizeof(audio_data_t));
-
-    if(!imupt_queue_gui || !audio_queue_gui){
-        ESP_LOGE(TAG, "Fail to create queue GUI");
-        return;
-    }
-
-    is_connect_gui = true;   
-    // Truyền socket cho task con 
-    xTaskCreate(gui_send_task, "Send To GUI", 8192, (void *)sock_ptr, 5, NULL);
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    vTaskDelete(NULL);
-}
-
 void app_main(void)
 {
     // Khởi tạo NVS
@@ -557,17 +663,16 @@ void app_main(void)
         ESP_ERROR_CHECK(nvs_flash_init());
     }
 
-    // Bật bluetooth 
-    wifi_bt_init();
-
+    bluetooth_init();
+    is_bluetooth = true;
     if (sd_spi_mount(&sd_cfg) != ESP_OK){
         return;
     }
+    imu_queue = xQueueCreate(35, sizeof(imu_data_t));
+    audio_queue = xQueueCreate(15, sizeof(audio_data_t));
+    pre_temp_queue = xQueueCreate(10, sizeof(pre_temp_data_t));
 
-    imupt_queue = xQueueCreate(50, sizeof(imupt_data_t));
-    audio_queue = xQueueCreate(20, sizeof(audio_data_t));
-
-    if (!imupt_queue || !audio_queue) {
+    if (!imu_queue || !audio_queue || !pre_temp_queue) {
     ESP_LOGE(TAG, "Failed to create queues!");
     return;
     }
@@ -576,10 +681,25 @@ void app_main(void)
     xTaskCreate(button_monitor_task, "Button", 2048, NULL, 4, NULL);
     xTaskCreate(led_blink_task, "LED", 1024, NULL, 4, NULL);
 
-    xTaskCreate(read_imupt_task, "ReadIMUPT", 6000, NULL, 5, NULL);
-    xTaskCreate(read_audio_task, "ReadAudio", 6000, NULL, 6, NULL);
+    xTaskCreatePinnedToCore(read_imu_task, "ReadIMU", 3000, NULL, 7, &imu_task_handle, 1);
+    xTaskCreatePinnedToCore(read_audio_task, "ReadAudio", 6000, NULL, 8, &audio_task_handle, 1);
+    xTaskCreatePinnedToCore(read_pre_temp_task, "ReadPreTemp", 2048, NULL, 9, &pre_temp_task_handle, 1);
 
-    xTaskCreate(write_data_to_sd_task, "WriteIMUPT", 8192, NULL, 8, NULL);
+    xTaskCreate(write_data_to_sd_task, "WriteDataToSDCard", 6000, NULL, 5, NULL);
 
-    xTaskCreate(bt_wifi_config_task, "bt_wifi_task", 8192, NULL, 4, NULL);
+    // Tạo timer IMU
+    const esp_timer_create_args_t imu_timer_args = {
+        .callback = &imu_timer_callback,
+        .name = "imu_timer"
+    };
+    esp_timer_create(&imu_timer_args, &imu_timer);
+    esp_timer_start_periodic(imu_timer, 1000000/(mpu6500_cfg.imu_sample_rate));
+
+    // Tạo timer Pre/Temp
+    const esp_timer_create_args_t pre_temp_timer_args = {
+        .callback = &pre_temp_timer_callback,
+        .name = "pre_temp_timer"
+    };
+    esp_timer_create(&pre_temp_timer_args, &pre_temp_timer);
+    esp_timer_start_periodic(pre_temp_timer, 1000000/(bmp280_cfg.pre_sample_rate));
 }

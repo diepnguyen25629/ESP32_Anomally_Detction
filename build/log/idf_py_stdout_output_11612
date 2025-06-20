@@ -1,0 +1,464 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfa0h (188320) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfc8 vaddr=3ffbdb60 size=02050h (  8272) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f14h (814868) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f3c vaddr=3ffbfbb0 size=0409ch ( 16540) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010afe0 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  ec109e118...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2658 len 0000D9A8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (665) main_task: Started on CPU0[0m
+[0;32mI (669) main_task: Calling app_main()[0m
+[0;32mI (709) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (711) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (714) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (798) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1402) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1407) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1414) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1416) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1463) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1490) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1500) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1509) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1519) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1522) MPU6500: Initializating MPU6500[0m
+[0;32mI (1556) BMP280: Initializating BMP280[0m
+[0;32mI (1556) main_task: Returned from app_main()[0m
+[0;33mW (86112) BT_HCI: hcif conn complete: hdl 0x80, st 0x0[0m
+[0;33mW (86438) BT_APPL: new conn_srvc id:26, app_id:255[0m
+[0;33mW (88507) BT_RFCOMM: port_rfc_closed RFCOMM connection in server:1 state 2 closed: Closed (res: 19)[0m
+[0;33mW (88519) BT_RFCOMM: rfc_find_lcid_mcb LCID reused LCID:0x41 current:0x0[0m
+[0;33mW (88522) BT_RFCOMM: RFCOMM_DisconnectInd LCID:0x41[0m
+[0;33mW (91664) BT_HCI: hcif disc complete: hdl 0x80, rsn 0x13[0m
+[0;32mI (105268) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (105268) WIFI_BT: Waiting for WiFi config via Bluetooth...[0m
+[0;33mW (105374) BT_APPL: bta_dm_disable BTA_DISABLE_DELAY set to 200 ms[0m
+[0;32mI (105704) WIFI_BT: Bluetooth disabled[0m
+[0;32mI (105709) wifi:wifi driver task: 3ffbd518, prio:23, stack:3584, core=0[0m
+[0;32mI (105728) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (105728) wifi:wifi certification version: v7.0[0m
+[0;32mI (105729) wifi:config NVS flash: enabled[0m
+[0;32mI (105730) wifi:config nano formating: disabled[0m
+[0;32mI (105734) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (105739) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (105743) wifi:Init management short buffer num: 32[0m
+[0;32mI (105748) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (105752) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (105757) wifi:Init static rx buffer num: 10[0m
+[0;32mI (105761) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (105766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (105769) wifi_init: udp mbox: 6[0m
+[0;32mI (105773) wifi_init: tcp mbox: 6[0m
+[0;32mI (105777) wifi_init: tcp tx win: 5760[0m
+[0;32mI (105781) wifi_init: tcp rx win: 5760[0m
+[0;32mI (105786) wifi_init: tcp mss: 1440[0m
+[0;32mI (105790) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (105801) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (105802) wifi:enable tsf[0m
+[0;32mI (105804) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (105817) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (105818) wifi:state: init -> auth (b0)[0m
+[0;32mI (105844) wifi:state: auth -> assoc (0)[0m
+[0;32mI (105852) wifi:state: assoc -> run (10)[0m
+[0;32mI (105962) wifi:connected with VINH HUYEN, aid = 5, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (105963) wifi:security: WPA2-PSK, phy: bgn, rssi: -82[0m
+[0;32mI (105969) wifi:pm start, type: 1[0m
+
+[0;32mI (105969) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (106016) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (108983) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (108984) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (109205) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+[0;32mI (135927) WIFI_BT: Received sensor config: {"accel_fs": 3, "gyro_fs": 3, "imu_sample_rate": 100, "audio_sample_rate": 16000, "accel_cal_matrix": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "accel_bias": [0.0, 0.0, 0.0], "gyro_bias": [0.0, 0.0, 0.0]}[0m
+[0;32mI (135941) WIFI_BT: Parsed sensor config OK[0m
+[0;32mI (135948) MPU6500: Initializating MPU6500[0m
+[0;32mI (135953) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (135989) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136022) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136056) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136087) MPU6500: Initializating MPU6500[0m
+[0;32mI (136089) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136123) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136157) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136190) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136225) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136228) MPU6500: Initializating MPU6500[0m
+[0;32mI (136258) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136292) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136325) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136359) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136368) MPU6500: Initializating MPU6500[0m
+[0;32mI (136392) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136425) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136459) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136496) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136508) MPU6500: Initializating MPU6500[0m
+[0;32mI (136530) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136565) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136598) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136632) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136648) MPU6500: Initializating MPU6500[0m
+[0;32mI (136666) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136700) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136733) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136766) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136788) MPU6500: Initializating MPU6500[0m
+[0;32mI (136800) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136836) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136870) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136903) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136927) MPU6500: Initializating MPU6500[0m
+[0;32mI (136936) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (136970) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137003) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137036) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137067) MPU6500: Initializating MPU6500[0m
+[0;32mI (137070) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137103) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137136) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137171) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137205) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137208) MPU6500: Initializating MPU6500[0m
+[0;32mI (137239) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137273) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137307) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137340) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137348) MPU6500: Initializating MPU6500[0m
+[0;32mI (137373) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137406) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137440) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137473) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137488) MPU6500: Initializating MPU6500[0m
+[0;32mI (137507) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137541) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137575) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137609) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137628) MPU6500: Initializating MPU6500[0m
+[0;32mI (137643) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137677) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137710) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137744) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137768) MPU6500: Initializating MPU6500[0m
+[0;32mI (137778) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137812) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137847) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137881) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137907) MPU6500: Initializating MPU6500[0m
+[0;32mI (137914) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137947) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (137981) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138014) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138047) MPU6500: Initializating MPU6500[0m
+[0;32mI (138048) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138081) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138115) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138148) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138182) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138188) MPU6500: Initializating MPU6500[0m
+[0;32mI (138216) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138250) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138284) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138317) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138328) MPU6500: Initializating MPU6500[0m
+[0;32mI (138351) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138384) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138417) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138451) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138469) MPU6500: Initializating MPU6500[0m
+[0;32mI (138484) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138518) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138552) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138585) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138608) MPU6500: Initializating MPU6500[0m
+[0;32mI (138619) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138653) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (138687) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (233782) MAIN: Stopping Wifi/GUI connection...[0m
+[0;32mI (233783) wifi:state: run -> init (0)[0m
+[0;32mI (233788) wifi:pm stop, total sleep time: 20079841 us / 127818615 us[0m
+
+[0;32mI (233789) wifi:new:<7,0>, old:<7,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (233796) WIFI_BT: Retry to connect...[0m
+[0;32mI (233797) WIFI_BT: Connect to AP failed.[0m
+[0;32mI (233834) wifi:flush txq[0m
+[0;32mI (233834) wifi:stop sw txq[0m
+[0;32mI (233834) wifi:lmac stop hw txq[0m
+[0;32mI (233838) wifi:Deinit lldesc rx mblock:10[0m
+����������������������������������������������������������������0;32mI (333440) MAIN: Starting Wifi/GUI connection...[0m
+[0;32mI (333442) wifi:wifi driver task: 3ffbd770, prio:23, stack:3584, core=0[0m
+[0;32mI (333461) wifi:wifi firmware version: 01d22db[0m
+[0;32mI (333461) wifi:wifi certification version: v7.0[0m
+[0;32mI (333461) wifi:config NVS flash: enabled[0m
+[0;32mI (333462) wifi:config nano formating: disabled[0m
+[0;32mI (333467) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (333472) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (333476) wifi:Init management short buffer num: 32[0m
+[0;32mI (333481) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (333485) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (333490) wifi:Init static rx buffer num: 10[0m
+[0;32mI (333493) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (333499) wifi_init: tcpip mbox: 32[0m
+[0;32mI (333502) wifi_init: udp mbox: 6[0m
+[0;32mI (333506) wifi_init: tcp mbox: 6[0m
+[0;32mI (333510) wifi_init: tcp tx win: 5760[0m
+[0;32mI (333514) wifi_init: tcp rx win: 5760[0m
+[0;32mI (333519) wifi_init: tcp mss: 1440[0m
+[0;32mI (333523) wifi_init: WiFi IRAM OP enabled[0m
+[0;33mW (333528) event: handler already registered, overwriting[0m
+[0;33mW (333534) event: handler already registered, overwriting[0m
+[0;32mI (333545) wifi:mode : sta (cc:7b:5c:27:ec:d4)[0m
+[0;32mI (333546) wifi:enable tsf[0m
+[0;32mI (333549) WIFI_BT: WiFi connecting to VINH HUYEN[0m
+[0;32mI (333567) wifi:new:<7,0>, old:<1,0>, ap:<255,255>, sta:<7,0>, prof:1[0m
+[0;32mI (333569) wifi:state: init -> auth (b0)[0m
+[0;32mI (333582) wifi:state: auth -> assoc (0)[0m
+[0;32mI (333594) wifi:state: assoc -> run (10)[0m
+[0;32mI (333705) wifi:connected with VINH HUYEN, aid = 5, channel 7, BW20, bssid = 50:42:89:36:a7:7a[0m
+[0;32mI (333706) wifi:security: WPA2-PSK, phy: bgn, rssi: -83[0m
+[0;32mI (333711) wifi:pm start, type: 1[0m
+
+[0;32mI (333711) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (333755) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (336725) esp_netif_handlers: sta ip: 192.168.1.8, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (336726) WIFI_BT: Got IP: 192.168.1.8[0m
+[0;32mI (343999) TCP_CONNECT: Successfully connected to 192.168.1.12:12345[0m
+[0;32mI (360857) WIFI_BT: Received sensor config: {"accel_fs": 0, "gyro_fs": 0, "imu_sample_rate": 100, "audio_sample_rate": 16000, "accel_cal_matrix": [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], "accel_bias": [0.0, 0.0, 0.0], "gyro_bias": [0.0, 0.0, 0.0]}[0m
+[0;32mI (360871) WIFI_BT: Parsed sensor config OK[0m
+[0;32mI (360877) MPU6500: Initializating MPU6500[0m
+[0;32mI (360897) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (360931) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (360964) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (360997) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361017) MPU6500: Initializating MPU6500[0m
+[0;32mI (361031) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361065) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361100) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361134) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361157) MPU6500: Initializating MPU6500[0m
+[0;32mI (361168) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361202) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361235) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361269) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361297) MPU6500: Initializating MPU6500[0m
+[0;32mI (361302) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361335) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361369) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361402) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361436) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361439) MPU6500: Initializating MPU6500[0m
+[0;32mI (361470) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361504) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361538) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361571) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361577) MPU6500: Initializating MPU6500[0m
+[0;32mI (361604) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361638) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361672) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361705) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361718) MPU6500: Initializating MPU6500[0m
+[0;32mI (361740) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361775) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361809) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361843) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361858) MPU6500: Initializating MPU6500[0m
+[0;32mI (361876) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361910) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361943) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361977) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (361997) MPU6500: Initializating MPU6500[0m
+[0;32mI (362010) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362044) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362077) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362111) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362137) MPU6500: Initializating MPU6500[0m
+[0;32mI (362145) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362179) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362213) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362246) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362278) MPU6500: Initializating MPU6500[0m
+[0;32mI (362280) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362314) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362347) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362380) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362414) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362418) MPU6500: Initializating MPU6500[0m
+[0;32mI (362448) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362482) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362516) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362550) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362558) MPU6500: Initializating MPU6500[0m
+[0;32mI (362584) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362617) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362651) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362684) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362698) MPU6500: Initializating MPU6500[0m
+[0;32mI (362718) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362752) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362786) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362819) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362838) MPU6500: Initializating MPU6500[0m
+[0;32mI (362854) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362887) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362921) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362954) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (362977) MPU6500: Initializating MPU6500[0m
+[0;32mI (362988) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363021) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363054) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363088) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363118) MPU6500: Initializating MPU6500[0m
+[0;32mI (363122) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363156) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363190) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363223) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363257) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363258) MPU6500: Initializating MPU6500[0m
+[0;32mI (363290) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363324) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363357) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363391) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363398) MPU6500: Initializating MPU6500[0m
+[0;32mI (363425) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363459) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363493) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363527) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363538) MPU6500: Initializating MPU6500[0m
+[0;32mI (363560) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363594) INMP441_I2S: INMP441 I2S deinitialized[0m
+[0;32mI (363629) INMP441_I2S: INMP441 I2S deinitialized[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15620
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.2.5-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Jun  7 2025 18:27:38[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2dfa0h (188320) map[0m
+[0;32mI (169) esp_image: segment 1: paddr=0003dfc8 vaddr=3ffbdb60 size=02050h (  8272) load[0m
+[0;32mI (173) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=c6f14h (814868) map[0m
+[0;32mI (454) esp_image: segment 3: paddr=00106f3c vaddr=3ffbfbb0 size=0409ch ( 16540) load[0m
+[0;32mI (461) esp_image: segment 4: paddr=0010afe0 vaddr=40080000 size=1e1d8h (123352) load[0m
+[0;32mI (524) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (524) boot: Disabling RNG early entropy source...[0m
+[0;32mI (536) cpu_start: Multicore app[0m
+[0;32mI (545) cpu_start: Pro cpu start user code[0m
+[0;32mI (545) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (545) cpu_start: Application information:[0m
+[0;32mI (548) cpu_start: Project name:     main[0m
+[0;32mI (553) cpu_start: App version:      c9125ae-dirty[0m
+[0;32mI (559) cpu_start: Compile time:     Jun 11 2025 15:42:32[0m
+[0;32mI (565) cpu_start: ELF file SHA256:  ec109e118...[0m
+[0;32mI (570) cpu_start: ESP-IDF:          v5.2.5-dirty[0m
+[0;32mI (575) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (580) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (585) cpu_start: Chip rev:         v3.1[0m
+[0;32mI (590) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (597) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (603) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (609) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (615) heap_init: At 3FFD2658 len 0000D9A8 (54 KiB): DRAM[0m
+[0;32mI (621) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (628) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 4009E1D8 len 00001E28 (7 KiB): IRAM[0m
+[0;32mI (642) spi_flash: detected chip: generic[0m
+[0;32mI (645) spi_flash: flash io: dio[0m
+[0;33mW (649) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (660) coexist: coex firmware version: 994b23e[0m
+[0;32mI (665) main_task: Started on CPU0[0m
+[0;32mI (669) main_task: Calling app_main()[0m
+[0;32mI (709) BTDM_INIT: BT controller compile version [f7360be][0m
+[0;32mI (711) BTDM_INIT: Bluetooth MAC: cc:7b:5c:27:ec:d6[0m
+[0;32mI (714) phy_init: phy_version 4840,02e0d70,Sep  2 2024,19:39:07[0m
+[0;32mI (799) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1368) WIFI_BT: Bluetooth SPP ready[0m
+[0;32mI (1375) SD_CARD_SPI: Mounting SD card at /data[0m
+[0;32mI (1381) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1382) sdspi_transaction: cmd=52, R1 response: command not supported[0m
+[0;32mI (1430) sdspi_transaction: cmd=5, R1 response: command not supported[0m
+Name: 00000
+Type: SDHC/SDXC
+Speed: 20.00 MHz (limit: 20.00 MHz)
+Size: 14910MB
+CSD: ver=2, sector_size=512, capacity=30535680 read_bl_len=9
+SSR: bus_width=1
+[0;32mI (1457) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1467) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1476) gpio: GPIO[22]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1486) DS18B20_1_WIRE: Initializating DS18B20[0m
+[0;32mI (1489) MPU6500: Initializating MPU6500[0m
+[0;32mI (1523) BMP280: Initializating BMP280[0m
+[0;32mI (1523) main_task: Returned from app_main()[0m
